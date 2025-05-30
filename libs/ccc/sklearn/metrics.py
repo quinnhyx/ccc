@@ -94,7 +94,7 @@ def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarra
     start_cont = time.time()
     contingency = get_contingency_matrix(part0, part1)
     end_cont = time.time()
-    dif_cont = end_cont-start_cont
+    dif_cont = (end_cont-start_cont)*1000
     print(f"contingency time:{dif_cont}")
 
     n_c = np.ravel(contingency.sum(axis=1))
@@ -132,7 +132,7 @@ def adjusted_rand_index(part0: np.ndarray, part1: np.ndarray) -> float:
     start_conf = time.time()
     (tn, fp), (fn, tp) = get_pair_confusion_matrix(part0, part1)
     end_conf = time.time()
-    dif_conf = end_conf-start_conf
+    dif_conf = (end_conf-start_conf)*1000
     print(f"confusion time:{dif_conf}")
 
     # convert to Python integer types, to avoid overflow or underflow
