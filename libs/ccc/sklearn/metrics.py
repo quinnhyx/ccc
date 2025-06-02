@@ -35,10 +35,9 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-import time
 import numpy as np
 from numba import njit
-
+import time
 
 @njit(cache=True, nogil=True)
 def get_contingency_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
@@ -68,7 +67,6 @@ def get_contingency_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
         cont_mat[part0[i], part1[i]] += 1
 
     return cont_mat
-
 
 @njit(cache=True, nogil=True)
 def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
@@ -104,6 +102,18 @@ def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarra
     C[0, 0] = n_samples**2 - C[0, 1] - C[1, 0] - sum_squares
     return C
 
+@njit(cache=True, nogil=True)
+def helper(contingency: np.ndarray, n_samples: int) -> np.ndarray:
+    """Computes the confusion matrix from a pre-computed contingency matrix."""
+    n_c = np.ravel(contingency.sum(axis=1))
+    n_k = np.ravel(contingency.sum(axis=0))
+    sum_squares = (contingency**2).sum()
+    C = np.empty((2, 2), dtype=np.int64)
+    C[1, 1] = sum_squares - n_samples
+    C[0, 1] = contingency.dot(n_k).sum() - sum_squares
+    C[1, 0] = contingency.transpose().dot(n_c).sum() - sum_squares
+    C[0, 0] = n_samples**2 - C[0, 1] - C[1, 0] - sum_squares
+    return C
 
 def adjusted_rand_index(part0: np.ndarray, part1: np.ndarray) -> float:
     """
@@ -125,18 +135,19 @@ def adjusted_rand_index(part0: np.ndarray, part1: np.ndarray) -> float:
         partitions. This number is between something around 0 (partitions do not
         match; it could be negative in some cases) and 1.0 (perfect match).
     """
-    start_cont = time.time()
+    start = time.time()
     contingency = get_contingency_matrix(part0, part1)
-    end_cont = time.time()
-    diff_cont = (end_cont - start_cont)*1000
-    print(f"Contingency matrix time:{diff_cont} ms")
+    end = time.time()
+    contingency_time = (end - start) * 1000
+    print(f"Contingency matrix time: {contingency_time} ms")
 
+    n_samples = np.int64(part0.shape[0])
 
-    start_conf = time.time()
-    (tn, fp), (fn, tp) = get_pair_confusion_matrix(part0, part1)
-    end_conf = time.time()
-    diff_conf = (end_conf - start_conf)*1000
-    print(f"Pair confusion matrix time:{diff_conf} ms")
+    start_2 = time.time()
+    (tn, fp), (fn, tp) = helper(contingency, n_samples)
+    # (tn, fp), (fn, tp) = get_pair_confusion_matrix(part0, part1)
+    end_2 = time.time()
+    print(f"Confusion Matrix Execution time: {(end_2 - start_2) * 1000} ms")
     # convert to Python integer types, to avoid overflow or underflow
     tn, fp, fn, tp = int(tn), int(fp), int(fn), int(tp)
 
