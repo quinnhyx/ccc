@@ -39,6 +39,7 @@ import time
 import numpy as np
 from numba import njit
 
+
 @njit(cache=True, nogil=True)
 def get_contingency_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
     """
@@ -69,6 +70,7 @@ def get_contingency_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
     return cont_mat
 
 
+@njit(cache=True, nogil=True)
 def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
     """
     Returns the pair confusion matrix from two clustering partitions. It is an
@@ -91,12 +93,7 @@ def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarra
     n_samples = np.int64(part0.shape[0])
 
     # Computation using the contingency data
-    start_cont = time.time()
     contingency = get_contingency_matrix(part0, part1)
-    end_cont = time.time()
-    dif_cont = (end_cont-start_cont)*1000
-    print(f"contingency time:{dif_cont}")
-
     n_c = np.ravel(contingency.sum(axis=1))
     n_k = np.ravel(contingency.sum(axis=0))
     sum_squares = (contingency**2).sum()
@@ -105,7 +102,6 @@ def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarra
     C[0, 1] = contingency.dot(n_k).sum() - sum_squares
     C[1, 0] = contingency.transpose().dot(n_c).sum() - sum_squares
     C[0, 0] = n_samples**2 - C[0, 1] - C[1, 0] - sum_squares
-
     return C
 
 
@@ -129,12 +125,18 @@ def adjusted_rand_index(part0: np.ndarray, part1: np.ndarray) -> float:
         partitions. This number is between something around 0 (partitions do not
         match; it could be negative in some cases) and 1.0 (perfect match).
     """
+    start_cont = time.time()
+    contingency = get_contingency_matrix(part0, part1)
+    end_cont = time.time()
+    diff_cont = (end_cont - start_cont)*1000
+    print(f"Contingency matrix time:{diff_cont} ms")
+
+
     start_conf = time.time()
     (tn, fp), (fn, tp) = get_pair_confusion_matrix(part0, part1)
     end_conf = time.time()
-    dif_conf = (end_conf-start_conf)*1000
-    print(f"confusion time:{dif_conf}")
-
+    diff_conf = (end_conf - start_conf)*1000
+    print(f"Pair confusion matrix time:{diff_conf} ms")
     # convert to Python integer types, to avoid overflow or underflow
     tn, fp, fn, tp = int(tn), int(fp), int(fn), int(tp)
 
