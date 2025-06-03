@@ -4,6 +4,10 @@ import time
 import numpy as np
 import pandas as pd
 import pytest
+"""when using cuda in metrics"""
+import multiprocessing as mp
+mp.set_start_method("spawn", force=True)
+
 from sklearn.preprocessing import minmax_scale
 
 from ccc.coef import ccc
