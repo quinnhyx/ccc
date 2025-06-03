@@ -448,3 +448,4 @@ def test_cm_with_pandas_dataframe_several_features():
     assert isinstance(pvalue, np.ndarray)
     assert pvalue.shape == cm_value.shape
     assert np.issubdtype(pvalue.dtype, float)
+    
