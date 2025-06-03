@@ -1,6 +1,6 @@
 import os
 import time
-
+import torch
 import numpy as np
 import pandas as pd
 import pytest
@@ -245,7 +245,7 @@ def test_cm_single_argument_is_matrix():
     assert pvalue[1] > 0.10
     assert pvalue[2] > 0.10
 
-
+@pytest.mark.skipif(torch.cuda.is_available(), reason="Test measures CPU parallelism; not relevant for GPU runs")
 @pytest.mark.skipif(os.cpu_count() < 2, reason="requires at least 2 cores")
 @pytest.mark.skipif(IN_GITHUB_ACTIONS, reason="Test doesn't work in Github Actions.")
 def test_cm_large_n_objects_pvalue_permutations_is_parallelized():
