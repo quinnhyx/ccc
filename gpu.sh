@@ -4,7 +4,7 @@
 #SBATCH --ntasks=64  # Adjust based on the required parallelism
 #SBATCH --partition=gpuq
 #SBATCH --output=clm_%j.out
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 
 # Load necessary modules
 module load python

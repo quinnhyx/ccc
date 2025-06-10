@@ -1,0 +1,1891 @@
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+Running CCC with GPU support...
+
+Testing with 2 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 0.01821703909521387
+Time taken: 709.50 ms
+
+Testing with 2 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 0.0035874785103167236
+Time taken: 900.76 ms
+
+Testing with 2 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 0.00042521302716494073
+Time taken: 922.28 ms
+
+Testing with 2 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 3.505370107952689e-05
+Time taken: 1186.60 ms
+
+Testing with 2 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 1.3703085774852829e-06
+Time taken: 5012.66 ms
+
+Testing with 2 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: 7.970741458018277e-08
+Time taken: 60546.78 ms
+
+Testing with 4 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.01378747 0.02600541 0.03879507 0.01688727 0.01364117 0.01551803]
+Time taken: 1905.06 ms
+
+Testing with 4 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00067688 0.00359167 0.00323005 0.00158888 0.00539981 0.00162679]
+Time taken: 1724.66 ms
+
+Testing with 4 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00019078 0.0001646  0.000301   0.00065278 0.00026805 0.00032792]
+Time taken: 1979.88 ms
+
+Testing with 4 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.55256229e-05 1.08341148e-06 4.75783516e-05 2.54793566e-05
+ 2.22967297e-05 1.26084696e-05]
+Time taken: 2495.52 ms
+
+Testing with 4 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.44069098e-06 7.71317122e-07 1.61200551e-06 4.32522993e-06
+ 2.35405066e-06 1.06901847e-06]
+Time taken: 10639.62 ms
+
+Testing with 4 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.15013403e-07 1.41988706e-07 2.63801913e-07 2.78331339e-07
+ 4.31114350e-07 2.72910409e-07]
+Time taken: 126625.12 ms
+
+Testing with 6 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.03515695 0.033385   0.02923767 0.00965401 0.03248376 0.01081481
+ 0.03933333 0.04798367 0.02693421 0.012846   0.04270847 0.04422222
+ 0.03945659 0.01260526 0.04716308]
+Time taken: 3493.05 ms
+
+Testing with 6 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00271273 0.00291105 0.00645277 0.00187176 0.00383406 0.0006981
+ 0.00041373 0.00170471 0.00170455 0.00248483 0.00077733 0.00243667
+ 0.00220735 0.00062386 0.00094562]
+Time taken: 3425.39 ms
+
+Testing with 6 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00033109 0.00025681 0.00017121 0.00061549 0.00035643 0.00018642
+ 0.00030872 0.00014054 0.00039711 0.0002304  0.00028194 0.00056106
+ 0.00030276 0.00019243 0.00033335]
+Time taken: 3621.91 ms
+
+Testing with 6 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.36581944e-05 1.70883544e-05 2.99553758e-05 3.33625563e-05
+ 1.11109259e-05 4.09540572e-05 5.11402513e-05 2.41978759e-05
+ 2.29586073e-05 5.09359930e-05 1.30882432e-05 3.13200792e-05
+ 4.24358985e-05 3.95861593e-05 2.36942978e-05]
+Time taken: 4327.04 ms
+
+Testing with 6 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.03000161e-06 3.93178468e-06 5.61046833e-06 3.31215723e-06
+ 2.46675931e-06 3.39047404e-06 2.89732071e-06 3.80312420e-06
+ 3.19525151e-06 2.18998461e-06 3.56218353e-06 2.66333142e-06
+ 1.76406207e-06 3.20790607e-06 2.36023875e-06]
+Time taken: 16786.01 ms
+
+Testing with 6 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.11394992e-07 1.13046075e-07 1.47174144e-07 2.42669434e-07
+ 3.11899467e-07 1.55992717e-07 4.19003674e-07 1.19374243e-07
+ 1.75631230e-07 2.04262570e-07 2.22714380e-07 1.51216237e-07
+ 2.24826527e-07 5.79791179e-07 7.82943962e-07]
+Time taken: 197178.14 ms
+
+Testing with 8 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.0157037  0.02711111 0.00914495 0.02630357 0.0177     0.01917654
+ 0.04716151 0.02546296 0.03935185 0.03742583 0.0282848  0.03020408
+ 0.03814732 0.03901352 0.0715876  0.02322817 0.03084176 0.00965401
+ 0.03362963 0.03688889 0.05853538 0.03500586 0.03175023 0.01785714
+ 0.03243895 0.03135559 0.03562254 0.02926383]
+Time taken: 6140.46 ms
+
+Testing with 8 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00210933 0.0051628  0.00364695 0.00028485 0.00477404 0.0026016
+ 0.00118968 0.00409351 0.00494076 0.00205629 0.00196955 0.00245389
+ 0.00170662 0.00199781 0.00108923 0.00165647 0.00306996 0.00319636
+ 0.00328958 0.00312173 0.00077947 0.00228453 0.00180366 0.0028251
+ 0.00193631 0.00209872 0.00123763 0.00286978]
+Time taken: 5783.25 ms
+
+Testing with 8 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.92485068e-04 2.58836215e-04 2.33749231e-04 2.64648623e-04
+ 1.80147537e-04 3.11219778e-04 1.62290902e-04 6.55267772e-05
+ 5.06696321e-04 5.11181683e-04 2.81447985e-04 3.01603898e-04
+ 3.46666466e-04 1.68966897e-04 2.51310267e-04 4.95917494e-04
+ 2.99989093e-04 1.81041852e-04 5.60152569e-04 3.74132883e-04
+ 4.29388231e-04 3.15775441e-04 1.03983997e-04 3.73445760e-04
+ 1.49083241e-04 3.59510288e-04 4.28533706e-04 1.72236300e-04]
+Time taken: 6080.72 ms
+
+Testing with 8 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.46864750e-05 3.22727636e-05 9.89944900e-05 8.79177835e-06
+ 9.34198684e-06 2.70613436e-05 3.04765679e-05 2.57887727e-05
+ 2.10209318e-05 2.49225593e-05 1.62814347e-05 9.69523626e-06
+ 4.89827898e-05 3.41720201e-05 4.37725865e-05 2.32930127e-05
+ 2.16207034e-05 1.87296873e-05 1.15492386e-05 2.99600429e-05
+ 2.00159605e-05 6.49243144e-06 1.61466945e-05 3.35602356e-05
+ 1.89194146e-05 9.80882595e-06 5.88478832e-06 4.28164923e-05]
+Time taken: 7254.80 ms
+
+Testing with 8 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.60433220e-06 3.72635570e-06 4.57888080e-06 1.29402651e-06
+ 3.62366652e-06 3.04145906e-06 2.68553870e-06 2.23925149e-06
+ 2.68442489e-06 2.70307239e-06 2.21975275e-06 1.49565648e-06
+ 5.21566581e-07 3.18647649e-06 1.14430907e-06 2.69111323e-06
+ 3.83687922e-06 2.89759312e-06 2.76092460e-06 1.92697624e-06
+ 4.60288090e-06 1.94385789e-06 1.99199999e-06 9.36244085e-07
+ 5.17026017e-06 2.75780769e-06 2.21171394e-06 3.28947617e-06]
+Time taken: 24448.63 ms
+
+Testing with 8 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.74947309e-07 2.14055239e-07 1.82493104e-07 6.34645418e-07
+ 8.48287954e-08 5.28989804e-07 3.97649488e-07 6.62337064e-09
+ 2.82907078e-07 4.54727573e-07 3.39218596e-07 5.53263557e-07
+ 3.50527718e-07 2.46845111e-07 3.30736533e-07 3.85902341e-07
+ 2.68905287e-07 5.64715745e-08 4.60273070e-07 5.14515387e-07
+ 3.63592124e-07 3.35008035e-07 1.06688090e-07 1.79827233e-07
+ 1.75814777e-07 3.53175957e-07 4.72211587e-07 1.31268202e-07]
+Time taken: 273671.47 ms
+
+Testing with 10 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.02534681 0.04361154 0.02849608 0.047574   0.02881892 0.02385185
+ 0.         0.01490275 0.03522838 0.01407407 0.04027571 0.03243895
+ 0.03020408 0.01130263 0.02361043 0.03800676 0.01015228 0.02042105
+ 0.03234583 0.03020408 0.01108258 0.02546296 0.02546296 0.01316872
+ 0.01820005 0.03483012 0.03065134 0.04380652 0.04334705 0.03842846
+ 0.03473136 0.01862908 0.01609856 0.00914495 0.01518465 0.03870526
+ 0.01388889 0.01142539 0.05213103 0.04223679 0.03020408 0.02733526
+ 0.01542735 0.03525926 0.04974223]
+Time taken: 9192.33 ms
+
+Testing with 10 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00140095 0.0013043  0.00308627 0.00587718 0.00294266 0.00137078
+ 0.00622045 0.00475156 0.00129011 0.00312769 0.00338215 0.0011142
+ 0.0003375  0.00473375 0.00250951 0.00236113 0.00310013 0.00578366
+ 0.00418719 0.00029542 0.00371033 0.00254036 0.00172296 0.00391303
+ 0.00197642 0.00674976 0.00178088 0.00415888 0.00124094 0.00396262
+ 0.00333574 0.0013325  0.00166686 0.00119574 0.00486932 0.00152083
+ 0.00248855 0.00171123 0.00224427 0.00297103 0.00100693 0.00320362
+ 0.0013325  0.00266751 0.00117831]
+Time taken: 9237.54 ms
+
+Testing with 10 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.14210769e-04 4.42065069e-04 8.18673021e-05 3.12808435e-04
+ 1.47006530e-04 8.67618982e-05 3.77079730e-04 1.90089376e-04
+ 5.71196711e-04 5.76076180e-04 3.25981181e-04 1.48996804e-04
+ 4.46469936e-04 8.37686492e-05 2.40507159e-04 5.35083513e-04
+ 2.96108264e-04 3.29226037e-04 3.58010010e-04 4.70596086e-04
+ 2.56624289e-04 3.60784801e-04 1.52672197e-04 1.19749302e-04
+ 3.81968531e-04 3.91566631e-04 3.19615953e-04 3.88899061e-04
+ 3.62421972e-04 4.06962398e-04 4.50673429e-04 7.11668232e-04
+ 2.34129105e-04 2.52827512e-04 1.43356818e-04 3.42826659e-04
+ 4.15587748e-04 4.21493027e-04 3.69365170e-04 2.85735735e-04
+ 2.00795881e-04 3.96878511e-04 1.62489545e-04 5.67066967e-04
+ 2.50451113e-04]
+Time taken: 9342.58 ms
+
+Testing with 10 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [4.38906268e-05 4.81779757e-05 2.74257786e-05 1.11700874e-05
+ 3.71437539e-05 3.08989483e-05 3.48307973e-05 5.64436859e-05
+ 1.22071517e-05 2.69992181e-05 2.63658864e-05 9.71359714e-06
+ 1.96830997e-05 1.90928265e-05 3.48717099e-05 2.41062895e-05
+ 4.63351414e-06 2.46482560e-05 2.33297480e-05 2.42179426e-05
+ 4.13778850e-05 1.52156735e-05 2.15006508e-05 2.22330924e-05
+ 1.77906723e-05 3.65177133e-05 2.66726117e-05 1.22089922e-05
+ 2.34854533e-05 1.28841298e-05 3.27905470e-05 6.24859797e-05
+ 2.00711477e-05 2.64484815e-05 3.00406008e-05 3.62658304e-05
+ 1.18973226e-05 2.61755359e-05 4.85990609e-05 2.74301416e-05
+ 2.11825002e-05 1.66256663e-05 3.52020773e-05 2.16326490e-05
+ 2.56955886e-05]
+Time taken: 11086.72 ms
+
+Testing with 10 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.59267503e-06 4.03719839e-06 1.43041461e-06 1.40492839e-06
+ 2.23457667e-06 5.79415559e-06 6.39840540e-06 2.04153704e-06
+ 3.13079351e-06 3.28256971e-06 3.47548511e-06 1.66296598e-06
+ 1.24676700e-06 1.69553277e-06 6.03310903e-06 3.93633585e-06
+ 3.63577145e-06 1.35181693e-06 2.49719154e-06 5.10760414e-06
+ 2.52433200e-06 3.64657103e-06 1.35433285e-06 2.95237806e-06
+ 3.39830586e-06 1.88406782e-06 7.34055034e-06 1.78891916e-06
+ 2.66967231e-06 1.57563173e-06 2.58840793e-06 4.79214917e-06
+ 3.34921425e-06 4.51310751e-06 3.84467069e-06 1.64606529e-06
+ 2.82620648e-06 2.76068217e-06 3.52577808e-06 3.71089339e-06
+ 2.03312991e-06 1.76425724e-06 4.45502821e-06 3.63074404e-06
+ 2.09608506e-06]
+Time taken: 34136.25 ms
+
+Testing with 10 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.63807962e-07 9.42032724e-07 2.78108953e-07 4.56166634e-07
+ 1.71919853e-07 2.35298590e-07 5.09043905e-07 2.90169052e-07
+ 3.61471882e-07 3.63372259e-07 3.71896207e-07 3.04033998e-07
+ 3.73020681e-07 3.54569484e-07 3.36525782e-07 4.20467050e-07
+ 4.15841811e-08 4.41670420e-07 4.61900196e-07 2.59973433e-07
+ 2.80887529e-07 2.37443153e-07 4.42780049e-07 1.13412910e-07
+ 2.86499443e-07 5.08549466e-07 3.92091103e-08 3.59819005e-07
+ 2.44591126e-07 1.83095011e-07 1.80073627e-07 4.08252966e-07
+ 4.31486752e-07 1.14908160e-07 1.18881415e-07 2.09570195e-07
+ 3.65605563e-07 4.84632404e-07 2.91734608e-07 7.08535949e-08
+ 3.52342071e-07 5.41311272e-07 1.28654601e-07 2.75377895e-07
+ 4.27108874e-07]
+Time taken: 356984.98 ms
+
+Testing with 12 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.02811191 0.03344811 0.03738318 0.04027571 0.02121628 0.02919228
+ 0.02854565 0.02074113 0.02743241 0.02385185 0.02116923 0.02954523
+ 0.02326213 0.0256861  0.01733333 0.03254154 0.03311025 0.01852063
+ 0.0529     0.05517572 0.06246176 0.0496     0.04164505 0.01244444
+ 0.02385185 0.06054872 0.05105048 0.0125044  0.02811191 0.02042973
+ 0.01316872 0.01999234 0.0405575  0.05730504 0.04207886 0.03020408
+ 0.06899592 0.0140435  0.0331     0.02811191 0.03738318 0.02074113
+ 0.01298627 0.02740195 0.00965079 0.03722504 0.06899592 0.0173821
+ 0.0174384  0.02466667 0.04761728 0.04798367 0.02733526 0.01733333
+ 0.05002904 0.0255148  0.03059773 0.0284475  0.0331     0.02139163
+ 0.01142154 0.0448156  0.0157037  0.01267198 0.02307681 0.03004889]
+Time taken: 12866.87 ms
+
+Testing with 12 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00200201 0.00683702 0.00194353 0.00687731 0.00463834 0.00265832
+ 0.00363996 0.00115049 0.00127872 0.00606107 0.00220994 0.00239255
+ 0.00343545 0.00208182 0.00160635 0.00110536 0.00491587 0.00170867
+ 0.00286123 0.00639875 0.00099358 0.00180322 0.00070848 0.00340395
+ 0.00173733 0.00161878 0.00523632 0.00215234 0.00410681 0.00472345
+ 0.00138419 0.0021261  0.00253672 0.00087801 0.00170471 0.00273871
+ 0.00307969 0.00133028 0.00250168 0.00190023 0.00259197 0.00095359
+ 0.00191177 0.0015104  0.00281934 0.0018505  0.00263692 0.00305479
+ 0.00240286 0.00102006 0.0008453  0.00173076 0.00155684 0.00317359
+ 0.00253216 0.00222182 0.00182529 0.00059831 0.00256075 0.00202064
+ 0.00242457 0.00551704 0.00170471 0.00254244 0.00240667 0.00281919]
+Time taken: 13125.49 ms
+
+Testing with 12 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.59223476e-04 1.68620082e-04 2.34684382e-04 3.35706078e-04
+ 5.11773822e-04 3.84142077e-04 3.03893954e-04 1.19022091e-04
+ 1.79465056e-04 3.71801238e-04 3.53800535e-04 3.22256305e-04
+ 4.89655878e-04 2.08595531e-04 5.00130996e-04 2.80419132e-04
+ 3.24534726e-04 7.22781669e-05 3.00346881e-04 3.60423502e-04
+ 3.16142505e-04 9.50391069e-05 1.11422288e-04 1.26523380e-04
+ 4.13936217e-04 0.00000000e+00 2.77493093e-04 2.93389891e-04
+ 2.41182760e-04 1.87087600e-04 2.01990336e-04 2.37306824e-04
+ 1.87771521e-04 3.19742224e-04 3.22436431e-04 3.18274927e-04
+ 8.60890470e-05 1.31388140e-03 1.61983000e-04 1.42300219e-04
+ 4.16651423e-04 4.31913702e-04 5.73819695e-05 4.14158918e-04
+ 1.13962444e-04 1.92021486e-04 1.08025928e-04 4.32265825e-04
+ 4.09319708e-04 4.20051213e-04 4.01743866e-04 1.82248226e-04
+ 2.16627981e-04 2.77293746e-05 2.99059613e-04 5.50943698e-04
+ 1.31043105e-04 3.16181620e-04 2.62145946e-04 1.29862166e-04
+ 4.98949578e-05 1.16131453e-04 1.09292611e-04 4.04184130e-04
+ 1.78292693e-04 4.93771404e-04]
+Time taken: 13351.40 ms
+
+Testing with 12 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.25952692e-05 1.09701833e-05 2.76710057e-05 1.58371062e-05
+ 2.09123689e-05 2.20282487e-05 5.48361290e-05 1.28095054e-05
+ 1.20890477e-05 2.06280514e-05 2.42599175e-05 3.09602096e-05
+ 2.74545745e-05 2.54140432e-05 3.17330671e-05 1.60861280e-05
+ 1.91626398e-05 1.26352422e-05 1.93725133e-05 4.19925297e-05
+ 3.33543205e-05 3.29683445e-05 1.93492982e-05 2.75496289e-05
+ 3.65384393e-05 5.21143325e-05 2.12493600e-05 3.21538431e-05
+ 2.55842738e-05 9.51773629e-05 1.37851190e-05 3.25008223e-05
+ 1.99588790e-05 2.81857091e-05 3.41990501e-05 8.47997568e-06
+ 4.30151731e-05 1.92307648e-05 1.62239592e-05 5.79582122e-06
+ 2.08838866e-05 1.29838053e-05 2.52706865e-05 4.02683522e-05
+ 8.72077761e-06 3.29620161e-05 3.33415196e-05 2.42656733e-05
+ 2.08476430e-05 2.03617658e-05 2.92928549e-05 3.09794856e-05
+ 4.97084891e-05 1.81523015e-05 1.36174865e-05 2.63876111e-05
+ 1.31200499e-05 3.64987971e-05 7.84777764e-05 3.52085042e-05
+ 3.48085154e-05 2.11090000e-05 0.00000000e+00 1.59162662e-05
+ 1.59431026e-05 2.92895216e-05]
+Time taken: 15392.89 ms
+
+Testing with 12 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.09947941e-06 3.62007653e-06 4.02537060e-06 1.08478351e-06
+ 3.37623134e-06 1.80270565e-07 1.62386499e-06 1.31299247e-06
+ 3.58041987e-06 3.68575357e-06 4.31332064e-06 5.24283917e-06
+ 3.08721517e-06 2.62737885e-06 4.77921978e-06 3.66600800e-06
+ 2.64386835e-06 3.47087866e-06 3.16405755e-06 9.49773439e-07
+ 8.28426257e-06 5.06800409e-06 3.68289868e-06 5.10031124e-06
+ 1.39369696e-06 2.36707605e-06 2.37431738e-06 8.41053739e-07
+ 3.60142635e-06 3.77407437e-06 3.78276113e-06 2.97900702e-06
+ 2.30524680e-06 3.02302844e-06 1.40950472e-06 2.07130962e-06
+ 2.10955675e-06 7.22919992e-06 2.43479365e-06 1.76916923e-06
+ 4.11011599e-06 9.75257830e-07 3.85160428e-06 5.82684431e-06
+ 4.68384916e-06 4.34531513e-06 1.44287065e-06 1.60185352e-06
+ 6.72731568e-06 2.29171750e-06 3.88600598e-06 4.93218791e-06
+ 3.89339705e-06 4.17678201e-06 7.82831674e-07 3.03140950e-06
+ 1.32307252e-06 6.55144607e-06 3.22103363e-06 3.10870282e-06
+ 1.39533148e-06 2.19880411e-06 2.72825833e-06 2.74911738e-06
+ 1.13003149e-06 3.79301678e-06]
+Time taken: 44549.45 ms
+
+Testing with 12 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [7.80065795e-08 3.68699899e-07 1.51822714e-07 5.91676324e-07
+ 2.38988444e-07 5.42556089e-07 2.94336173e-07 3.09038248e-07
+ 4.86286943e-07 4.51751875e-07 1.99178240e-07 2.17131762e-07
+ 3.13687165e-07 4.92982010e-08 2.88575452e-07 2.95006674e-07
+ 3.85796317e-07 3.19546976e-07 2.18318111e-07 1.13281694e-07
+ 1.78588472e-07 2.35719507e-07 1.77148950e-07 2.45604155e-07
+ 3.54612626e-07 3.05004981e-07 3.57788273e-07 2.04402032e-07
+ 2.28572958e-07 4.22675932e-07 2.43151478e-07 3.10474975e-07
+ 1.98552970e-07 3.77363944e-07 9.71359997e-08 2.30440320e-07
+ 2.24705905e-07 1.48881199e-07 1.18593323e-07 1.86555062e-07
+ 2.73444967e-07 4.37855734e-07 3.60380846e-07 4.01136516e-07
+ 2.89398851e-07 1.07161663e-07 1.94864487e-07 3.89361356e-07
+ 4.53536035e-07 3.81428136e-07 3.63206994e-07 2.05426322e-07
+ 4.76640277e-07 7.83742791e-08 2.18999052e-07 3.71521059e-07
+ 2.26889501e-07 3.11814225e-07 5.74671663e-07 1.79210199e-07
+ 3.91572242e-07 2.01116228e-07 1.20155167e-07 3.29675921e-07
+ 4.27341228e-07 4.52225205e-07]
+Time taken: 444130.64 ms
+
+Testing with 14 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.01565714 0.03240741 0.04131825 0.04380709 0.01874877 0.06899592
+ 0.0441     0.04680209 0.03479365 0.05041231 0.05514643 0.02735171
+ 0.07514529 0.06659655 0.02546296 0.0213979  0.0496     0.02275062
+ 0.01792    0.01565714 0.01999234 0.01752572 0.03697688 0.03738318
+ 0.01896296 0.01351534 0.04164505 0.00434286 0.03653631 0.02681052
+ 0.03020408 0.02168121 0.04255319 0.03020408 0.01128032 0.01838086
+ 0.01381442 0.02359986 0.01381442 0.0232     0.02114177 0.03614859
+ 0.02000362 0.04224229 0.05923166 0.04377069 0.05309128 0.04045786
+ 0.03020408 0.0661     0.04641776 0.0353     0.02514477 0.01565714
+ 0.03496898 0.0595     0.015992   0.02874074 0.01330924 0.03290867
+ 0.03475    0.04049281 0.0342     0.03020408 0.03127572 0.02356295
+ 0.03479365 0.03688889 0.02489138 0.05607477 0.02507407 0.04426955
+ 0.01779496 0.02865923 0.0118935  0.04798367 0.00182216 0.02222222
+ 0.01659543 0.02368678 0.02691529 0.01755608 0.02926383 0.03020408
+ 0.01147982 0.02515409 0.04777632 0.01815379 0.03009259 0.01440695
+ 0.01869159]
+Time taken: 17847.69 ms
+
+Testing with 14 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00418719 0.00112724 0.00327063 0.00533921 0.0033565  0.00179327
+ 0.00157222 0.00249783 0.0024112  0.00135171 0.00314553 0.0019201
+ 0.00247318 0.00249513 0.00516818 0.00626169 0.00296858 0.00172752
+ 0.00222892 0.00251948 0.00767958 0.00440482 0.00150519 0.00331221
+ 0.00117689 0.00236073 0.00216786 0.00388917 0.00386849 0.
+ 0.00339106 0.00346858 0.00331551 0.00364647 0.00039294 0.00220476
+ 0.         0.00213714 0.00494815 0.00292597 0.00266734 0.00266489
+ 0.0020638  0.0026016  0.00456162 0.00355047 0.00190023 0.00182878
+ 0.00106552 0.0001665  0.00362663 0.00618924 0.00371014 0.00226097
+ 0.00228695 0.00306542 0.00142763 0.00277267 0.00201947 0.00605388
+ 0.00490804 0.00315293 0.00606688 0.00211509 0.00297338 0.0049559
+ 0.00059012 0.00173996 0.00501608 0.00164644 0.00474552 0.00134724
+ 0.0030981  0.00345795 0.0032989  0.00202912 0.00231498 0.00121216
+ 0.00244535 0.00357542 0.00071895 0.00213714 0.00222874 0.0012822
+ 0.00203891 0.0037351  0.00633201 0.00275692 0.00473143 0.00492888
+ 0.002217  ]
+Time taken: 18003.23 ms
+
+Testing with 14 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.87073805e-04 5.32135149e-04 2.15922126e-04 6.26216110e-04
+ 2.15335353e-04 2.68745303e-04 2.68109470e-04 1.79622425e-04
+ 3.64200901e-04 3.46259506e-04 2.87233705e-04 9.22142178e-05
+ 2.60396536e-04 1.18991488e-04 1.38608396e-04 3.29250736e-04
+ 7.29502957e-04 1.40069348e-04 3.67499292e-04 6.56972811e-04
+ 2.37389171e-04 3.41865941e-04 3.00113051e-04 1.39778252e-04
+ 1.18406311e-04 2.58835694e-04 8.74104268e-05 2.93401520e-04
+ 4.44789306e-04 8.51288824e-05 1.95591410e-04 3.32663269e-04
+ 1.91449868e-04 2.22232016e-04 2.65069566e-04 3.07727858e-04
+ 2.76230843e-04 1.41661853e-04 1.36308680e-04 1.12804391e-04
+ 1.40036036e-04 7.17100116e-04 2.94964282e-04 2.02961322e-04
+ 2.63536948e-04 1.53858090e-04 2.88564322e-04 7.97279648e-04
+ 1.15024640e-04 1.61401328e-04 3.31507954e-04 6.19655962e-04
+ 2.60036014e-04 1.07983643e-04 4.03692927e-04 2.11854984e-04
+ 2.27200180e-04 2.38005071e-04 3.15919650e-04 1.99631915e-04
+ 5.05740867e-04 2.63064841e-04 3.68182429e-04 2.69542764e-04
+ 2.63107157e-04 2.07347905e-04 2.01749175e-04 2.58963919e-04
+ 1.70543779e-04 2.24386651e-04 2.29188452e-04 2.02815424e-04
+ 2.98889509e-04 2.56161376e-04 3.01192254e-04 2.83729226e-05
+ 2.52966737e-04 2.04732787e-04 9.53921062e-05 1.66825655e-04
+ 1.48824859e-04 4.23040713e-04 1.58340007e-04 1.70652798e-04
+ 1.30236587e-04 3.05670523e-04 1.62596079e-04 3.04213214e-04
+ 1.19944256e-04 6.87748608e-04 3.69847228e-04]
+Time taken: 18280.43 ms
+
+Testing with 14 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [5.96562575e-05 3.42851886e-05 3.28402909e-05 1.06111661e-05
+ 1.75873916e-05 2.79039581e-05 3.75737479e-05 3.25106251e-05
+ 4.84694155e-05 4.82379765e-05 2.72388448e-05 2.05664913e-05
+ 2.71659894e-05 1.70416636e-05 3.67746237e-05 2.24233963e-05
+ 6.86006193e-05 4.46986410e-05 3.03944772e-05 2.47391528e-05
+ 2.25315556e-05 1.86758294e-05 3.84205526e-05 9.06718601e-06
+ 3.16099242e-05 1.63254856e-05 4.24482523e-05 4.13455242e-05
+ 1.16221168e-05 2.01674034e-05 1.44424717e-05 3.33801705e-06
+ 2.22423481e-05 8.58141791e-07 6.39605396e-05 2.55521864e-05
+ 2.06481000e-05 3.55719672e-05 2.97334596e-05 8.59280161e-07
+ 1.55999096e-05 2.14914941e-05 8.46108716e-06 2.91349385e-05
+ 4.78204685e-05 1.59571542e-05 2.34225730e-05 6.57742103e-06
+ 2.12808884e-05 8.57327353e-06 5.85588856e-05 2.47528341e-05
+ 2.68888160e-05 3.33493720e-05 4.38996638e-05 3.35635362e-05
+ 1.95556034e-05 3.06499098e-05 2.44441383e-05 3.72350554e-05
+ 4.86448765e-05 3.20374534e-05 4.12659127e-05 2.00709777e-05
+ 4.04335494e-05 3.08125214e-05 3.90893034e-05 6.16557554e-05
+ 4.16745502e-05 1.53471380e-05 4.65048952e-06 1.14143541e-05
+ 8.74042710e-06 4.49777261e-05 3.49834997e-05 3.75981734e-05
+ 1.04556130e-05 2.96934742e-05 1.86140385e-06 2.92678943e-05
+ 4.80455131e-05 2.38473026e-05 3.52159858e-05 2.78220683e-05
+ 1.64063361e-05 2.45970336e-05 3.54002053e-05 3.03269508e-05
+ 1.49537556e-05 2.13632744e-05 1.67095346e-05]
+Time taken: 20813.42 ms
+
+Testing with 14 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.62794302e-06 3.70194383e-06 1.97160964e-06 3.67543020e-06
+ 3.59454815e-06 3.80610711e-06 2.84218349e-06 3.34305834e-06
+ 4.40360002e-06 3.49176374e-06 2.35781017e-06 6.60310214e-06
+ 1.91707178e-06 4.03945520e-06 2.98051157e-06 3.02099336e-06
+ 3.69509204e-06 1.71824566e-06 2.94808292e-06 3.84047751e-06
+ 1.25404370e-06 3.83071828e-06 1.38538003e-06 2.69571928e-06
+ 2.47168779e-06 4.41429312e-06 6.72598602e-06 2.65867465e-06
+ 2.92426176e-06 2.10336299e-06 1.57134500e-06 3.66640222e-06
+ 3.79089008e-06 4.69310918e-06 2.33844122e-06 3.65151281e-06
+ 1.78570314e-06 2.06397846e-06 1.30644855e-06 2.73871377e-06
+ 1.51685399e-06 1.74291226e-06 1.59797254e-06 2.76000264e-06
+ 2.72856259e-06 2.40393654e-06 3.26862569e-06 3.81684218e-06
+ 2.12672306e-06 3.66707577e-06 0.00000000e+00 4.19148302e-06
+ 2.46464234e-06 1.36335259e-06 2.24842443e-06 2.53572492e-06
+ 1.55145126e-06 3.90015526e-06 3.22713823e-06 3.90772321e-06
+ 2.10758012e-06 3.24905814e-06 3.79513119e-06 4.93993715e-06
+ 2.89828359e-06 1.56762733e-06 2.80925943e-06 2.57310896e-06
+ 6.09723439e-07 5.94502126e-07 3.08295415e-06 9.01090401e-06
+ 2.52330470e-06 6.05783137e-07 2.47644086e-06 1.68181640e-06
+ 2.31821031e-06 2.80262670e-06 2.95214595e-06 3.31281177e-06
+ 2.98176317e-06 2.06876211e-06 2.76679391e-06 3.90227779e-06
+ 1.55707672e-06 4.94468105e-06 3.74661375e-06 5.97974131e-06
+ 1.78777193e-06 2.93911527e-06 4.52197936e-06]
+Time taken: 56751.56 ms
+
+Testing with 14 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.95079381e-07 5.07473242e-07 1.29674554e-07 7.85589831e-08
+ 3.71171175e-07 2.28157548e-07 4.40291073e-07 1.73012117e-07
+ 4.76140757e-07 1.66593836e-07 4.16324452e-07 1.59621384e-07
+ 2.54687055e-07 1.86429906e-07 3.01705416e-07 2.02602778e-07
+ 2.07196884e-07 1.81510718e-07 2.64448891e-08 1.96360679e-07
+ 3.82494285e-07 1.11922442e-07 3.27312066e-07 1.48232815e-07
+ 2.06062057e-08 1.84348035e-07 3.90888598e-07 1.76456238e-07
+ 5.36366337e-07 4.33651142e-08 3.53789749e-07 1.34571226e-07
+ 2.10471851e-07 3.63319096e-07 2.11650455e-07 5.54864101e-07
+ 1.90092618e-07 2.71693985e-07 4.82886427e-07 2.06183957e-07
+ 2.89362011e-07 2.40380938e-07 2.00749760e-07 1.56846246e-07
+ 1.64988955e-07 6.15571744e-07 5.43564391e-07 3.39303618e-07
+ 4.16905083e-07 2.83105407e-07 1.44690007e-07 3.52015792e-07
+ 2.48169468e-07 1.69381519e-07 3.31449679e-07 1.37409427e-07
+ 3.56034679e-07 2.46940315e-07 1.62295115e-07 2.93875153e-07
+ 2.37318305e-07 2.61225219e-07 5.09044538e-07 4.92746514e-08
+ 1.11190381e-07 2.92044428e-07 3.33950336e-07 0.00000000e+00
+ 3.94086753e-07 1.64621560e-07 1.76066195e-07 1.69663005e-07
+ 3.59128672e-07 1.40946449e-07 2.81098343e-07 1.74125310e-07
+ 2.04178246e-07 9.37403011e-08 9.18287808e-08 2.59038319e-07
+ 3.34544663e-07 3.64578586e-07 4.77420708e-07 1.61595894e-07
+ 2.53374275e-07 3.65289304e-07 4.00745149e-07 2.86230925e-07
+ 2.17390419e-07 2.77357738e-07 4.56071680e-08]
+Time taken: 537137.88 ms
+
+Testing with 16 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.02081825 0.02097741 0.03692572 0.04798367 0.04798367 0.0405896
+ 0.02028578 0.01377275 0.00965401 0.03148057 0.04581166 0.0639
+ 0.05487228 0.03870526 0.01935113 0.02928731 0.03389213 0.04898099
+ 0.03608676 0.01351534 0.02721314 0.03059377 0.02212355 0.02129807
+ 0.02807393 0.02432895 0.02681052 0.04021014 0.00902425 0.02062143
+ 0.02874074 0.03594817 0.04653689 0.02323285 0.03177576 0.05728537
+ 0.04361154 0.01384753 0.02052964 0.02777778 0.02059259 0.01565714
+ 0.00434286 0.0597378  0.06433787 0.02516263 0.04232164 0.02041835
+ 0.02686996 0.03016071 0.02676999 0.02000579 0.05732876 0.02766769
+ 0.03020408 0.01651316 0.04861111 0.01936578 0.0543865  0.02186589
+ 0.02711111 0.01574029 0.03065134 0.01009724 0.04261528 0.01244444
+ 0.04270847 0.02546916 0.0375873  0.02926383 0.03468736 0.03561785
+ 0.01609865 0.03020408 0.04716871 0.07640615 0.01047586 0.02514477
+ 0.04798367 0.02546296 0.06298148 0.04798367 0.04798367 0.02222222
+ 0.02314815 0.05340649 0.02385185 0.00989271 0.02881892 0.00817231
+ 0.01613513 0.01402675 0.01633749 0.02865923 0.02262666 0.01525833
+ 0.03865387 0.04595216 0.0290272  0.01602341 0.03057964 0.02097741
+ 0.02954841 0.02028578 0.03135559 0.05324074 0.01851852 0.03563726
+ 0.04049281 0.02338925 0.01967091 0.03084211 0.01896296 0.00299401
+ 0.04448548 0.03127572 0.037584   0.03142488 0.02725194 0.00809784]
+Time taken: 23235.83 ms
+
+Testing with 16 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00282375 0.00097013 0.002475   0.00265712 0.00063604 0.00324649
+ 0.00076636 0.00366623 0.00540441 0.00072281 0.00085665 0.00342885
+ 0.00297154 0.00269906 0.00423167 0.00190937 0.00171913 0.00138515
+ 0.00488145 0.0017862  0.0030981  0.00087559 0.00249583 0.00184955
+ 0.00224199 0.00274815 0.0007988  0.0052853  0.0024134  0.00352548
+ 0.0017591  0.00370633 0.00378061 0.00279394 0.00391303 0.0017486
+ 0.00163592 0.00178117 0.00296695 0.00019984 0.00052073 0.00281121
+ 0.00150523 0.00140695 0.00240447 0.00418478 0.00330412 0.00149502
+ 0.00418575 0.00271434 0.00278857 0.00208715 0.00011586 0.002396
+ 0.00222182 0.0037438  0.00298232 0.00232078 0.00148878 0.00119574
+ 0.00410955 0.00148771 0.00252993 0.00365213 0.         0.00160706
+ 0.00595994 0.0024968  0.00325868 0.00368638 0.00356369 0.00235931
+ 0.00492646 0.00355636 0.00093252 0.00379258 0.00399823 0.00285635
+ 0.00299639 0.00273871 0.00246462 0.00341335 0.00195829 0.00393859
+ 0.00324856 0.0054033  0.0016091  0.00375818 0.00145079 0.00386285
+ 0.00362663 0.00124235 0.00341853 0.00131862 0.00277704 0.00355161
+ 0.00140081 0.00189483 0.00342828 0.00194017 0.00233814 0.00134024
+ 0.00129011 0.00367201 0.00474825 0.00419787 0.00747048 0.00148797
+ 0.00261892 0.00236766 0.0030981  0.00338366 0.00418719 0.00144089
+ 0.00284638 0.00374665 0.00674976 0.00265598 0.00461322 0.00204932]
+Time taken: 23365.70 ms
+
+Testing with 16 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [6.11004690e-04 1.79552950e-04 2.25407636e-04 3.89196818e-04
+ 1.36485838e-04 2.14031898e-04 3.15746209e-04 4.29827381e-04
+ 2.39898763e-04 6.03355511e-04 6.66516584e-05 4.15334155e-04
+ 3.04429843e-04 2.46263404e-04 3.44666339e-04 2.07826510e-04
+ 1.59051163e-04 1.49687454e-04 4.66591099e-04 5.56067020e-04
+ 1.54939979e-04 2.40126126e-04 8.95005471e-05 2.37761523e-04
+ 3.87980375e-04 8.63425690e-05 3.97992618e-04 1.93582463e-04
+ 2.03956193e-04 1.47207554e-04 5.02068860e-04 2.79728449e-04
+ 1.66763684e-04 1.83743932e-04 5.05785860e-04 3.58156605e-04
+ 1.18861426e-04 1.47510671e-04 1.52151496e-04 1.72210668e-04
+ 1.08063658e-04 3.43892084e-04 4.04012591e-04 1.50692358e-04
+ 3.13463171e-04 2.22259861e-04 5.77681841e-04 3.11623646e-04
+ 2.29219385e-04 6.57817591e-05 3.45681064e-04 3.73745927e-04
+ 3.64563890e-04 2.12751611e-04 1.01000400e-04 6.61816187e-04
+ 4.45323621e-05 2.05059787e-04 4.82689915e-04 4.73576042e-04
+ 1.32390987e-04 2.45173842e-04 0.00000000e+00 1.11085323e-04
+ 6.89608450e-04 4.78410982e-04 4.01790182e-04 2.14207758e-04
+ 4.41552213e-04 6.41155767e-04 5.65253319e-04 2.23901685e-04
+ 1.84025838e-04 1.13765782e-04 6.39893995e-04 2.14290623e-04
+ 1.42952664e-04 3.02980601e-04 1.84019570e-04 4.46155786e-04
+ 3.02264663e-04 1.28253632e-04 2.80698356e-04 2.65417663e-04
+ 1.46911691e-04 4.59707920e-04 3.84028406e-04 2.95634467e-04
+ 2.51237502e-04 3.91794379e-04 1.54569824e-04 4.82543276e-04
+ 2.32087482e-04 2.45948349e-05 3.78667651e-04 2.51033613e-04
+ 2.57514955e-04 2.82939889e-04 2.48776312e-04 1.20596275e-04
+ 2.14584902e-04 4.01472360e-04 0.00000000e+00 4.21389524e-04
+ 1.09695921e-04 3.13151014e-04 3.27556413e-04 3.30602454e-04
+ 2.49233133e-04 1.81456295e-04 4.05483959e-04 5.58091626e-04
+ 2.95874166e-04 1.07591100e-04 3.29927962e-04 5.34582980e-04
+ 4.70991309e-04 3.64983602e-04 4.82201013e-04 3.24062751e-04]
+Time taken: 23585.91 ms
+
+Testing with 16 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.34358113e-05 2.07652884e-05 2.99425994e-05 3.09269828e-05
+ 1.83024830e-05 2.71886443e-05 3.40898409e-05 2.91194009e-05
+ 2.69919094e-05 6.52310069e-05 4.15525066e-05 3.35336745e-05
+ 3.15385077e-05 1.86751622e-05 1.75420859e-05 1.85815559e-05
+ 3.78866789e-05 2.56393704e-05 5.61592515e-05 2.73762934e-05
+ 6.79465384e-06 4.41063959e-05 2.74185319e-05 4.29531242e-05
+ 2.57205390e-05 3.49545492e-05 1.75349291e-05 3.10496577e-05
+ 3.13467530e-05 2.23961554e-05 3.44515870e-05 2.05581834e-05
+ 1.11800058e-05 4.71884318e-05 1.45837100e-05 4.45587275e-05
+ 5.00318010e-05 3.41252147e-05 4.03573161e-06 1.38402127e-05
+ 2.70070233e-05 1.46880703e-05 5.14682823e-05 3.39342193e-05
+ 2.57200492e-05 2.64640862e-05 2.87056514e-05 1.52206294e-05
+ 3.70697575e-05 3.78889562e-05 8.72669088e-06 2.42839785e-05
+ 2.47874218e-05 1.99605143e-05 1.31230249e-05 6.68478246e-05
+ 3.31051763e-05 3.55516604e-05 1.58999488e-05 3.83017364e-05
+ 1.74576746e-05 2.07180715e-05 2.72328462e-05 1.12626734e-06
+ 1.90734540e-05 2.48255562e-05 4.61338969e-05 2.69840176e-05
+ 2.76367937e-05 2.81246846e-05 3.19402149e-05 2.24802661e-05
+ 2.09254097e-05 2.05898173e-05 3.59110656e-05 2.39826195e-05
+ 2.31777318e-05 1.91468545e-05 2.87493273e-05 3.32122643e-05
+ 2.43686330e-05 3.62412127e-05 1.82890255e-05 9.68766688e-06
+ 1.48560728e-05 4.47603476e-05 4.90372808e-05 6.18909586e-05
+ 9.69181675e-06 2.13312355e-05 2.28584572e-05 2.89897199e-05
+ 5.59348594e-05 3.73766634e-05 6.99785328e-06 3.83775567e-05
+ 2.21040924e-05 1.54836645e-05 1.16693408e-05 1.64019937e-05
+ 1.91896255e-05 3.29714614e-05 2.93075205e-05 3.45499333e-05
+ 2.54748163e-05 1.68001088e-05 5.68155682e-06 2.58332821e-05
+ 1.78868958e-05 4.19439166e-05 1.03834361e-06 5.77513515e-05
+ 3.69736526e-05 3.91699224e-05 6.57526100e-05 7.11157611e-06
+ 2.44652272e-05 3.36995850e-05 2.08204869e-05 3.14157940e-05]
+Time taken: 26597.44 ms
+
+Testing with 16 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.04881423e-06 5.73922074e-06 1.64596470e-06 3.06797110e-06
+ 1.62336725e-06 1.73574671e-06 3.76631512e-06 3.06703500e-06
+ 3.82764687e-06 2.65101493e-06 2.78686686e-06 2.32439043e-06
+ 1.93489591e-06 1.85797071e-06 2.09678976e-06 2.72756815e-06
+ 3.66135970e-08 3.34402405e-06 2.59039196e-06 2.27775257e-06
+ 1.87892456e-06 3.37512291e-06 2.99421465e-06 5.05563808e-06
+ 2.27192436e-06 1.87835497e-06 2.35739894e-06 2.89148588e-06
+ 2.01527589e-06 4.46748093e-06 2.54351216e-06 3.74075228e-06
+ 9.32566170e-07 3.30085812e-06 3.24172166e-06 2.57513856e-06
+ 4.20043680e-06 3.27687973e-06 2.81342319e-06 2.78597206e-06
+ 2.65636527e-06 2.25578002e-06 1.64712539e-06 4.61994764e-06
+ 2.83722512e-06 5.83380639e-07 1.87525396e-06 3.57456451e-06
+ 5.29304255e-06 1.61145661e-06 6.74353275e-06 4.56370554e-06
+ 3.25333015e-06 2.43228367e-06 6.06590142e-07 4.74360863e-06
+ 3.19337895e-06 4.38896783e-06 8.24791233e-06 3.48019742e-06
+ 3.12902613e-06 1.80732363e-06 7.78921956e-07 3.12393256e-06
+ 1.15635227e-06 4.23128545e-06 5.67516567e-06 2.96806597e-06
+ 1.74470534e-06 1.79886528e-06 3.25435059e-06 4.41958742e-06
+ 3.76405407e-06 3.39296986e-06 4.33308400e-06 3.93762300e-06
+ 2.52568218e-06 4.58699545e-06 2.44527589e-06 2.44043519e-06
+ 1.54579953e-06 2.98043712e-06 2.45482143e-06 2.07277494e-06
+ 8.33230000e-07 1.30390444e-06 2.87714562e-06 2.45960146e-06
+ 1.27044419e-06 1.83912025e-06 3.03206603e-06 2.74626298e-06
+ 1.37603889e-06 3.20531531e-06 1.06528051e-06 2.59444902e-06
+ 4.32114055e-06 2.41690669e-06 3.45521743e-06 3.91737056e-06
+ 2.51067714e-06 1.56715011e-06 6.11808481e-06 4.45615770e-06
+ 2.21255249e-06 1.46875763e-06 3.66722341e-06 2.34186219e-06
+ 3.62703656e-06 2.42092421e-06 2.69947429e-06 4.07900647e-06
+ 2.86354755e-06 3.75883669e-06 1.90468407e-06 3.89420279e-06
+ 2.21747463e-06 1.37183458e-06 2.70692852e-06 1.73996804e-06]
+Time taken: 69828.41 ms
+
+Testing with 16 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.28649626e-07 2.15120402e-07 2.55803730e-07 1.79936492e-07
+ 1.96823617e-07 4.75212261e-07 4.90311797e-07 4.05626305e-07
+ 4.13723695e-07 4.82071158e-07 5.54906051e-07 1.59782960e-07
+ 2.74744738e-07 1.70623770e-07 3.16830193e-07 3.87016659e-07
+ 9.13112788e-08 3.74407590e-07 3.25791854e-07 3.14007513e-07
+ 1.87353522e-07 3.42884819e-07 2.09053722e-07 5.02014301e-07
+ 2.09108135e-07 3.80942180e-08 2.38052901e-07 4.31563915e-07
+ 1.91394818e-07 2.22479683e-07 2.09084495e-07 5.25291339e-07
+ 1.86987759e-07 2.56769322e-07 2.44612187e-07 3.17442075e-07
+ 2.73846829e-07 2.28994338e-07 1.35155526e-07 2.37524501e-07
+ 5.75701420e-07 2.46495915e-07 3.98403273e-07 3.14049711e-07
+ 2.42201184e-07 2.54908592e-07 4.21861792e-07 4.40058336e-07
+ 4.22344928e-07 2.01210448e-07 2.58082576e-07 3.90391229e-07
+ 2.62222109e-07 2.20423305e-07 2.64829566e-07 1.49455435e-07
+ 1.85929453e-07 2.82451669e-07 3.91469278e-07 3.05777951e-07
+ 1.43146986e-07 1.07696679e-07 3.61559510e-07 5.58599132e-07
+ 3.51713721e-07 3.01946891e-07 2.91862097e-07 3.57386799e-07
+ 3.56120616e-07 3.07930113e-07 1.47146966e-07 1.12491748e-07
+ 4.02925989e-07 3.53436988e-07 4.19858076e-07 2.31288164e-07
+ 3.27248836e-07 2.31402349e-07 3.46061134e-07 2.52960519e-07
+ 2.15845602e-07 2.56647856e-07 1.93228711e-07 1.36741568e-07
+ 5.73699305e-08 5.02865098e-07 1.92279502e-07 1.83180666e-07
+ 1.13559141e-07 7.14482818e-07 1.77992130e-07 2.64359196e-07
+ 4.16794925e-07 8.02908500e-08 1.34763686e-07 1.47344462e-07
+ 4.89696738e-07 1.71886732e-07 2.58732721e-07 3.15237449e-07
+ 2.02591319e-07 3.30800927e-07 9.07884518e-08 2.02165440e-07
+ 1.49569831e-07 1.38105287e-07 1.13427967e-07 1.06145461e-07
+ 2.77186107e-07 1.86305644e-07 4.02382082e-07 1.65338900e-07
+ 1.65213851e-07 2.09123842e-07 1.63732410e-07 2.45713226e-07
+ 9.78692682e-08 2.96308490e-07 3.15552936e-07 1.38810567e-07]
+Time taken: 634882.96 ms
+
+Testing with 18 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.02464547 0.00236914 0.02518492 0.02711111 0.03009259 0.01565714
+ 0.03240741 0.01407407 0.04541893 0.0269306  0.01009724 0.03222314
+ 0.08724664 0.02450224 0.03562254 0.01609865 0.0414037  0.02533642
+ 0.05417935 0.0252615  0.04859557 0.01885534 0.0380288  0.02960332
+ 0.03550983 0.00592593 0.0276     0.01935113 0.04716871 0.06899592
+ 0.03784295 0.02349362 0.02322817 0.01821704 0.03615386 0.01489698
+ 0.01942314 0.01356893 0.03965818 0.0204695  0.0230648  0.03018306
+ 0.03160538 0.03177576 0.06787998 0.00750417 0.03515695 0.03628038
+ 0.0284475  0.04400714 0.01259362 0.01936578 0.02691529 0.02926383
+ 0.05527355 0.02404386 0.01449329 0.03906564 0.03175023 0.01453858
+ 0.05173094 0.02676999 0.02678616 0.0352995  0.02811191 0.03246434
+ 0.02236422 0.01408947 0.033385   0.01964022 0.0290272  0.032
+ 0.02981747 0.03929168 0.05098891 0.01295806 0.02805381 0.02099498
+ 0.03054467 0.02041835 0.04805187 0.02530019 0.02674999 0.03254154
+ 0.0167835  0.0232     0.01128032 0.01351534 0.00721173 0.04798367
+ 0.05350072 0.03289177 0.0364     0.04595216 0.03656463 0.02920635
+ 0.04255319 0.02534681 0.03136149 0.02748255 0.03307999 0.04553846
+ 0.02091968 0.04226009 0.04798367 0.04699552 0.04798367 0.02222222
+ 0.01565714 0.01752572 0.04173235 0.0320313  0.04798367 0.01657786
+ 0.03241768 0.04457143 0.04631474 0.00840761 0.01316872 0.04374538
+ 0.03243895 0.02721314 0.04118341 0.0358275  0.03541564 0.03020408
+ 0.02168121 0.03135559 0.0252615  0.0177     0.03114062 0.0221
+ 0.04118341 0.02811191 0.02698651 0.02748255 0.00654769 0.02074113
+ 0.03658346 0.02548148 0.02368678 0.02910883 0.06684546 0.0208254
+ 0.02984429 0.03240741 0.01244444 0.04016431 0.03020408 0.05123665
+ 0.01471138 0.0411286  0.02208544]
+Time taken: 29430.85 ms
+
+Testing with 18 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00132394 0.00129957 0.00170471 0.00167426 0.00278857 0.0013043
+ 0.00202481 0.00213747 0.00168608 0.00317927 0.00249261 0.00342014
+ 0.00254113 0.00239204 0.00504595 0.00152054 0.00210666 0.0031486
+ 0.001263   0.00206217 0.00240302 0.00142113 0.00271951 0.00303757
+ 0.00238423 0.00219623 0.00281285 0.00179327 0.00982483 0.00107836
+ 0.00291253 0.00418719 0.00336813 0.00201161 0.00376754 0.00358351
+ 0.00077355 0.00270589 0.00192004 0.00347397 0.00540441 0.00418424
+ 0.00319039 0.00101202 0.00104751 0.00270139 0.00193933 0.00318031
+ 0.00696833 0.00264618 0.00124043 0.00303105 0.00318609 0.00336243
+ 0.00348357 0.00754452 0.00192506 0.00320326 0.00418719 0.00674976
+ 0.00179403 0.00216224 0.00201161 0.00217089 0.00206159 0.00254941
+ 0.00528394 0.00314057 0.00293313 0.00204013 0.00374041 0.00362663
+ 0.00375359 0.00326511 0.00477978 0.00167754 0.0067959  0.00444459
+ 0.00394217 0.00456571 0.00147448 0.00146682 0.0018773  0.00329662
+ 0.00177108 0.001821   0.00067495 0.00095659 0.00281125 0.00263612
+ 0.00695862 0.00213714 0.00528687 0.0018117  0.00138824 0.00337199
+ 0.00075512 0.00092222 0.00264046 0.00166507 0.00234269 0.00325768
+ 0.00168977 0.00535091 0.00152261 0.00352509 0.00135717 0.00515321
+ 0.00298061 0.00211477 0.00505626 0.00246105 0.00180366 0.00062259
+ 0.00751565 0.00186893 0.00204927 0.00265346 0.00162768 0.0037648
+ 0.00377586 0.00308529 0.00453656 0.00357212 0.00164555 0.00294452
+ 0.001805   0.00395236 0.00312037 0.00393684 0.00625887 0.00392715
+ 0.00361001 0.00178117 0.00456966 0.00296033 0.00160334 0.00144051
+ 0.00284423 0.00321309 0.00184764 0.00221457 0.00312799 0.00098096
+ 0.0035413  0.00079777 0.00418478 0.00426247 0.00140372 0.00361816
+ 0.00462532 0.0033971  0.00393684]
+Time taken: 29504.53 ms
+
+Testing with 18 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.82067710e-04 2.05360957e-04 2.34901586e-04 1.19425678e-04
+ 6.41018811e-04 1.73546807e-04 7.32223877e-05 2.09770978e-04
+ 2.07716496e-04 2.46683208e-04 1.74948872e-04 3.67382323e-04
+ 2.79427067e-04 5.44846611e-04 2.15507174e-04 1.83276896e-04
+ 2.51314583e-04 4.62816349e-04 8.56647564e-05 3.85916626e-04
+ 6.47232239e-04 3.54134922e-04 3.23343213e-04 4.29058629e-04
+ 1.93174059e-04 3.45853763e-04 2.79072992e-04 2.78570480e-04
+ 4.11938118e-04 4.48273109e-04 3.47115564e-04 2.73004884e-04
+ 1.93454807e-05 3.42497863e-04 2.95874210e-04 2.38233180e-04
+ 3.44928991e-04 2.00490304e-04 3.14458708e-04 4.26670228e-04
+ 6.01827164e-05 4.04574560e-04 3.81993576e-04 2.00340188e-04
+ 5.88695498e-04 2.04427879e-04 2.35444729e-04 1.56448790e-04
+ 2.19290794e-04 4.65395392e-04 2.01468828e-04 1.95314325e-04
+ 2.32203493e-04 1.78514273e-04 4.06681342e-04 2.19605888e-04
+ 1.66602823e-04 2.67998301e-04 4.48261426e-04 3.75450114e-04
+ 2.37366647e-04 3.09500739e-04 4.18492465e-04 2.62836118e-04
+ 3.30921380e-04 2.09242191e-04 2.63201876e-04 2.65009483e-04
+ 7.45672766e-04 1.49348135e-04 4.42319663e-04 1.72254970e-04
+ 2.79253782e-04 6.40966408e-04 1.92750150e-04 1.37191627e-04
+ 3.62982241e-04 5.31697474e-05 2.84806265e-04 1.67382985e-04
+ 4.10941462e-04 1.46721378e-04 6.09066911e-04 4.19358202e-04
+ 2.03907962e-04 1.64155223e-04 1.21025962e-04 3.49464949e-04
+ 5.32262505e-04 4.00100058e-04 2.41566168e-04 6.61816187e-04
+ 5.44152296e-04 4.10786595e-04 2.35290089e-04 3.06199106e-04
+ 2.69880557e-04 2.02891549e-04 1.45768737e-04 1.86354548e-04
+ 1.15935386e-04 2.22605618e-04 3.60726092e-04 6.60116492e-05
+ 4.10876241e-04 8.30244044e-05 7.59844783e-05 1.95658876e-04
+ 3.81245417e-04 3.66100498e-04 3.45960651e-05 1.54048649e-04
+ 3.25584193e-04 2.74720764e-04 2.07808395e-04 2.93974902e-04
+ 1.19405321e-04 2.76106419e-04 4.07292197e-04 2.31845666e-04
+ 3.59197207e-04 2.52620200e-04 1.80273278e-04 4.24756981e-04
+ 3.00932456e-04 3.28102656e-04 2.63588714e-04 2.18562478e-04
+ 1.85415200e-04 4.73030082e-04 2.27811131e-04 3.89665643e-04
+ 5.25771466e-04 3.46528841e-04 3.76844300e-04 3.77705656e-04
+ 2.00640487e-04 8.74089890e-04 1.45517074e-04 2.08022143e-04
+ 1.97694656e-04 4.39650953e-04 4.44202616e-04 2.39154001e-04
+ 1.65804682e-04 3.85864787e-04 1.73194098e-04 1.36735661e-04
+ 2.81794805e-04 3.88825182e-04 3.79383923e-04 1.68164129e-04
+ 1.12233809e-04]
+Time taken: 30197.75 ms
+
+Testing with 18 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [5.65860659e-05 5.12453998e-05 2.34482455e-05 3.03353378e-05
+ 4.14949762e-06 3.54622916e-05 1.85900123e-05 2.09177719e-05
+ 3.36332777e-05 4.89716871e-05 5.29738039e-05 2.98459917e-06
+ 3.60554943e-05 2.91662383e-05 1.99731993e-05 1.09157199e-05
+ 1.93457495e-05 2.64289693e-05 2.29780295e-06 3.86495379e-05
+ 1.93986480e-05 2.81705089e-05 1.74187484e-05 4.45275270e-05
+ 1.50783809e-05 1.86390773e-05 1.97759275e-05 2.99935745e-05
+ 4.01267013e-05 4.32187096e-05 2.76025136e-05 3.77656462e-05
+ 1.74482735e-05 2.79762876e-05 3.65277667e-05 4.71539715e-05
+ 1.91167735e-05 2.23293550e-05 4.26932904e-05 1.73643314e-05
+ 3.16063890e-05 1.18777787e-05 3.67506233e-05 5.58597019e-05
+ 2.69868397e-05 8.04367175e-06 6.43615975e-06 3.35421353e-05
+ 2.59231369e-05 2.71824958e-05 2.81549673e-05 3.70319108e-05
+ 4.12659127e-05 2.18097181e-05 2.39993371e-05 2.77684072e-05
+ 5.92028298e-05 1.64215284e-05 1.05776092e-05 2.69665697e-05
+ 2.79324115e-05 1.08028385e-05 1.50139706e-05 1.46814404e-05
+ 1.19014920e-06 2.22611896e-05 2.42692781e-05 2.49258448e-05
+ 2.40514108e-05 3.31372366e-05 3.98136926e-05 9.92436264e-06
+ 3.20571533e-05 4.79781697e-05 6.62991912e-06 2.33289816e-05
+ 2.75047877e-05 4.59321763e-05 2.56697435e-05 2.95420641e-05
+ 6.13637515e-05 2.86002790e-05 5.71436883e-06 2.91604443e-05
+ 2.88374835e-05 2.82727675e-05 1.92634447e-05 1.73155073e-05
+ 2.31777318e-05 1.88593329e-05 8.72528967e-05 1.02830832e-05
+ 2.64604744e-05 5.75600851e-05 3.06033241e-05 4.50199910e-05
+ 2.86152981e-05 1.18246696e-05 4.31757327e-05 2.87591879e-05
+ 1.27880154e-05 4.46683289e-05 3.31260047e-05 4.91487976e-05
+ 1.24161087e-05 1.27488412e-05 3.23295398e-05 1.93247384e-05
+ 1.84311029e-05 2.05016089e-05 1.79203564e-05 1.07522226e-05
+ 7.20446596e-06 9.08795896e-06 2.75397262e-05 1.01028722e-05
+ 3.41259982e-05 1.49548896e-05 2.55999120e-05 3.33276570e-05
+ 1.55766797e-05 2.06090836e-05 1.04823566e-05 2.90015601e-05
+ 1.52353571e-05 3.52950736e-05 4.44837173e-05 1.78956244e-05
+ 2.59343447e-05 1.62577252e-05 9.95927902e-06 2.90617208e-05
+ 1.77681405e-05 1.37527801e-05 4.46260109e-05 2.68853836e-05
+ 1.79853468e-05 4.38207764e-05 3.23119871e-05 1.76420446e-05
+ 2.92706891e-05 2.11696156e-05 4.95333728e-05 3.66242325e-05
+ 1.52252435e-05 1.40086136e-05 3.37856854e-05 3.11955836e-05
+ 4.32578067e-05 2.07814043e-05 2.44869361e-05 9.67298431e-06
+ 5.78082276e-05]
+Time taken: 33640.05 ms
+
+Testing with 18 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [3.01729983e-06 2.53703272e-06 1.09752263e-06 3.41157788e-06
+ 1.55336779e-06 4.01930950e-06 2.39439033e-06 3.48939960e-06
+ 1.84533314e-06 2.01742253e-06 3.85057995e-06 2.70449727e-06
+ 2.65083846e-06 2.59125561e-06 3.27947574e-07 8.91026337e-08
+ 2.91235499e-06 1.43716866e-06 1.57627292e-06 1.94667370e-06
+ 3.35319765e-06 9.16515999e-07 2.35663759e-06 7.73794274e-06
+ 1.92506910e-06 1.95246592e-07 4.77833574e-06 2.91448333e-06
+ 1.59067918e-06 1.90482405e-06 5.05272780e-06 2.95281247e-06
+ 1.43695898e-06 4.38161919e-06 2.51346488e-06 2.60839222e-06
+ 2.06112159e-06 3.46822770e-06 3.63954274e-06 2.74992647e-06
+ 1.98614777e-06 2.97226940e-06 4.17170152e-06 2.94675533e-06
+ 8.18410689e-06 1.72989965e-06 3.20698066e-06 2.49737277e-06
+ 2.10558566e-06 2.54498022e-06 3.67114791e-06 2.78048285e-06
+ 2.55207172e-06 2.26702590e-06 3.49064148e-06 1.29038219e-06
+ 3.06277991e-06 2.71694977e-06 1.49966400e-06 5.38841613e-06
+ 3.61427618e-06 5.14996420e-06 5.68320463e-06 1.80277574e-06
+ 1.72307963e-06 2.25227045e-06 3.49318141e-06 3.59027977e-06
+ 2.84141936e-06 3.74614182e-06 2.28822438e-06 5.33861375e-06
+ 4.78169503e-06 3.46293180e-06 2.72189564e-06 1.24350409e-06
+ 2.40194408e-06 5.53968908e-06 5.65298887e-06 1.49760276e-06
+ 1.47128967e-06 5.21413421e-07 1.83127719e-06 1.08385615e-06
+ 2.97083554e-06 3.92178851e-06 3.12464788e-06 2.53159174e-06
+ 3.57387586e-06 2.92925842e-06 1.41816221e-06 4.67677678e-06
+ 1.57860397e-06 1.16124228e-06 2.09864178e-06 4.68901373e-06
+ 2.09745519e-06 1.50448173e-06 1.67757728e-06 3.30977831e-06
+ 4.05018331e-06 3.31156175e-06 4.16768000e-06 2.67863795e-06
+ 2.97384032e-06 4.94704547e-06 4.06236804e-06 2.60486676e-06
+ 4.87923552e-06 5.46937442e-06 2.67158301e-06 3.74644307e-06
+ 3.19033200e-06 1.42374034e-06 4.12580000e-06 3.45284270e-06
+ 9.60335931e-07 2.31248292e-06 1.78053783e-06 4.41872147e-06
+ 2.02198257e-06 2.20854268e-06 1.89698386e-06 9.12527869e-07
+ 1.96970920e-06 2.14693001e-06 2.48431981e-06 4.31797462e-06
+ 3.01568323e-06 7.73694726e-06 1.73203383e-06 3.96716337e-06
+ 8.04317525e-07 6.09413221e-07 1.72812780e-06 2.27499175e-06
+ 1.93355750e-06 2.99048707e-06 3.03252317e-06 2.18323044e-06
+ 3.49512599e-06 5.07671012e-06 4.01447067e-06 2.42140575e-06
+ 5.11078811e-06 9.94287294e-06 1.68495125e-06 2.21261636e-06
+ 2.22308986e-06 2.86757481e-06 1.80897681e-06 1.44336349e-06
+ 2.66905460e-06]
+Time taken: 84187.01 ms
+
+Testing with 18 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.48007132e-07 2.95720846e-07 4.03576742e-07 5.80295088e-07
+ 2.83165952e-07 1.32609819e-07 4.17321703e-07 3.04979348e-07
+ 7.35690129e-08 5.62035114e-07 4.33220345e-07 2.77979058e-07
+ 3.47698890e-07 2.53093936e-07 3.26371341e-07 4.95489374e-07
+ 3.65669787e-07 4.52183176e-07 1.70871224e-07 3.25474017e-07
+ 3.88712865e-07 3.96529169e-07 4.11621605e-07 1.58563910e-07
+ 1.69349078e-07 2.37006873e-07 1.96470559e-07 1.22059575e-07
+ 3.40537426e-07 3.91405386e-07 2.59873036e-07 3.11585772e-07
+ 2.99841127e-07 2.91950351e-07 3.80526268e-07 4.90772695e-07
+ 2.82266834e-07 2.10441023e-07 6.34087040e-07 1.11903379e-07
+ 1.48360015e-07 2.82475769e-07 1.12855321e-07 1.28705258e-07
+ 1.84209113e-07 3.22775426e-07 2.58728283e-07 2.45641780e-07
+ 1.31294311e-07 1.44934083e-07 1.27514405e-07 3.36128184e-07
+ 3.06668474e-07 2.04307587e-07 1.71903344e-07 2.39008987e-07
+ 4.00332662e-07 3.17530320e-07 4.77761883e-07 3.95107007e-07
+ 3.80385493e-07 2.42090449e-07 5.75693401e-08 1.44261996e-07
+ 2.50019066e-07 2.61244327e-07 4.55323076e-07 3.64404552e-08
+ 2.35935614e-07 9.50586607e-08 3.13875330e-07 2.43731243e-07
+ 3.70024889e-07 2.26516758e-07 3.10400849e-07 9.46552122e-08
+ 1.62578092e-07 1.12653511e-07 2.61858587e-07 1.23645979e-07
+ 2.04351495e-07 9.08393406e-08 4.03750681e-07 1.33317354e-07
+ 3.95766647e-07 2.01227086e-07 1.43021927e-07 3.50615913e-07
+ 2.84437380e-07 2.24757620e-07 3.54026000e-07 1.98605520e-07
+ 1.45401930e-07 1.22352018e-07 1.15790445e-07 1.43409287e-07
+ 3.92216602e-07 3.99307405e-07 5.37157235e-09 1.93651905e-07
+ 3.94930982e-08 2.88628485e-07 1.08715549e-07 3.49787444e-07
+ 2.86579683e-07 1.83875848e-07 3.75388617e-07 7.41169032e-07
+ 3.55104822e-08 3.62212406e-07 9.56864615e-08 3.36250285e-07
+ 3.14300890e-07 2.96400511e-07 3.34590804e-07 3.58652064e-07
+ 4.14939080e-07 2.42545112e-07 2.64141637e-07 5.00048074e-07
+ 2.87028713e-07 4.72998705e-07 1.90316878e-07 2.61482350e-07
+ 5.96506149e-07 3.33413061e-07 4.22619937e-07 9.18753814e-08
+ 3.35231056e-07 2.66508696e-07 8.16803145e-08 3.06391093e-07
+ 3.92296250e-07 1.91176156e-07 3.93447546e-07 2.22733301e-07
+ 1.61751104e-07 2.58397694e-07 5.04009867e-07 4.00659222e-07
+ 4.17402314e-07 2.17140269e-07 3.14416918e-07 2.83703929e-07
+ 2.46460718e-07 1.66822853e-07 2.89547844e-07 2.97148642e-07
+ 3.68108401e-07 1.59212806e-07 4.51314063e-07 5.90795738e-07
+ 2.27441684e-07]
+Time taken: 738941.16 ms
+
+Testing with 20 features and 100 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.05409865 0.02702522 0.04918839 0.02314815 0.02735792 0.03697688
+ 0.04153355 0.03608676 0.03527842 0.03016071 0.01529409 0.0089
+ 0.01135887 0.03339081 0.02000404 0.04546914 0.01820005 0.03980383
+ 0.01378747 0.03248376 0.03527842 0.01351534 0.01407407 0.02534681
+ 0.01096078 0.04777632 0.02921041 0.01244444 0.03727995 0.01977778
+ 0.05000676 0.01919178 0.03095949 0.0157037  0.03005849 0.01874877
+ 0.02129807 0.04579077 0.02083333 0.03437953 0.04798367 0.02811191
+ 0.02020894 0.03135559 0.03865387 0.01130263 0.00941347 0.01461366
+ 0.01975735 0.02807393 0.01820005 0.01967536 0.02105133 0.04066462
+ 0.03886653 0.08615385 0.02766769 0.02123651 0.02725194 0.08290462
+ 0.01987606 0.03158488 0.02261965 0.01967091 0.0254     0.03020408
+ 0.01733333 0.01351534 0.02567915 0.01602341 0.02323035 0.04166667
+ 0.03059773 0.01657786 0.00482065 0.04290278 0.05587293 0.04835004
+ 0.04595216 0.03378835 0.01550121 0.03828695 0.04045786 0.03748084
+ 0.02587464 0.03018306 0.03127572 0.03500586 0.03482405 0.02926383
+ 0.03253982 0.03065134 0.0243591  0.03194888 0.04324587 0.01621525
+ 0.049789   0.03469939 0.01163664 0.01398684 0.02276286 0.03741538
+ 0.00850309 0.0133     0.0159481  0.02842953 0.02848461 0.00647142
+ 0.04798367 0.0199     0.03018306 0.04308113 0.03020408 0.02256063
+ 0.04467556 0.01121971 0.01712622 0.02881892 0.01319853 0.02954841
+ 0.04716308 0.01891645 0.01936578 0.02811191 0.02129807 0.05730504
+ 0.02248042 0.03869607 0.02691529 0.01889    0.02199489 0.02780952
+ 0.03541564 0.02422998 0.02513897 0.01633749 0.06899592 0.02464547
+ 0.01675902 0.04164584 0.03253982 0.02726363 0.02960332 0.01565714
+ 0.03135015 0.03311025 0.03005484 0.02324638 0.02373346 0.03135559
+ 0.0177     0.02919228 0.03473136 0.02373346 0.03243895 0.03127572
+ 0.0482963  0.02329166 0.03935185 0.03741538 0.03005484 0.02516263
+ 0.0462963  0.03515536 0.0157037  0.0162037  0.00825397 0.03870852
+ 0.04023011 0.01476811 0.03314712 0.01142539 0.03177423 0.00572331
+ 0.03703704 0.02324638 0.02702227 0.04386023 0.03288282 0.0265
+ 0.04591837 0.03095949 0.02555436 0.03331812 0.04835004 0.01851852
+ 0.05675565 0.06352025 0.0162037  0.03177423]
+Time taken: 36445.29 ms
+
+Testing with 20 features and 1000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 4 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [0.00450643 0.00392978 0.00197972 0.00506726 0.00356791 0.00211493
+ 0.00197346 0.0041907  0.00197422 0.00246493 0.00477978 0.00282689
+ 0.0025195  0.00404916 0.00195906 0.00310984 0.00135106 0.0033509
+ 0.00185436 0.00329949 0.0022656  0.0039684  0.00211262 0.00317527
+ 0.0024804  0.00210584 0.00221865 0.0039472  0.00482911 0.00172003
+ 0.00292322 0.00093594 0.00407447 0.00342583 0.00178339 0.00179497
+ 0.00230351 0.00538205 0.00505712 0.00174118 0.00426808 0.00237217
+ 0.00458373 0.00134169 0.00294869 0.00340257 0.00413038 0.00094306
+ 0.00219391 0.00252018 0.00348262 0.00344257 0.00521027 0.00568498
+ 0.00158577 0.00260795 0.00252388 0.00285478 0.00217642 0.00246022
+ 0.00210414 0.00288364 0.00386135 0.00365818 0.00489863 0.00315864
+ 0.00370732 0.00179014 0.00187732 0.00174438 0.00438087 0.00235604
+ 0.0018317  0.00121659 0.0036821  0.00174519 0.00224757 0.00262538
+ 0.00748731 0.00116827 0.00307344 0.00211477 0.0022791  0.00293235
+ 0.00340187 0.0012778  0.002      0.00520563 0.00357212 0.00303611
+ 0.00407884 0.00201763 0.00530693 0.00389759 0.00461899 0.00467164
+ 0.00136058 0.00253088 0.00418719 0.00320744 0.00199198 0.00445928
+ 0.00061437 0.00193121 0.00331376 0.00576747 0.00191986 0.00234592
+ 0.0037944  0.00186623 0.00190942 0.00220669 0.00083685 0.00350566
+ 0.00180366 0.00195136 0.00225625 0.0075434  0.00233367 0.00402355
+ 0.00200513 0.00406126 0.00784799 0.00080963 0.00418719 0.00176967
+ 0.0033524  0.002799   0.00217404 0.00495917 0.00213394 0.00260558
+ 0.00119574 0.00487631 0.00446197 0.00193086 0.00327193 0.00363622
+ 0.00234932 0.00385131 0.00225574 0.00418575 0.00323605 0.00308141
+ 0.00499657 0.00357323 0.00454969 0.00213714 0.00334915 0.00260208
+ 0.00142204 0.00549814 0.00454736 0.00092858 0.00236788 0.00296273
+ 0.00206409 0.00213394 0.00261581 0.00174024 0.00444236 0.00207859
+ 0.00138377 0.00087299 0.00354613 0.00376042 0.00982483 0.00058325
+ 0.00168734 0.00222294 0.00157768 0.00477978 0.00086429 0.00580562
+ 0.00129792 0.00451116 0.00097997 0.00270549 0.00215615 0.00191906
+ 0.00266751 0.00139136 0.00411335 0.0033296  0.00420571 0.00408317
+ 0.00252018 0.002082   0.00153682 0.00460772]
+Time taken: 36586.63 ms
+
+Testing with 20 features and 10000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [2.61722928e-04 1.51047734e-05 2.18828242e-04 1.68966897e-04
+ 2.51366188e-04 2.57954551e-04 1.90882636e-04 2.14282674e-04
+ 5.63227215e-04 2.74533974e-04 3.70040510e-04 2.09770978e-04
+ 2.38325113e-04 5.10441399e-04 1.39653671e-04 3.59897573e-05
+ 6.07014277e-04 1.60109365e-04 2.46221567e-04 4.63193494e-04
+ 2.28185270e-04 6.92518215e-04 2.64320750e-04 3.71726477e-04
+ 2.65803165e-04 7.06341614e-05 2.22917964e-04 1.20136692e-04
+ 2.73665684e-04 8.33284449e-04 4.67440278e-04 2.68582812e-04
+ 7.62172005e-04 1.50568187e-04 1.04652230e-04 3.18903426e-04
+ 2.08876221e-04 2.86760564e-04 1.03040547e-04 3.19135889e-04
+ 1.99708527e-04 3.89341038e-04 1.88569756e-04 4.77396993e-04
+ 3.04739892e-04 1.33526405e-04 1.59014166e-04 3.77472701e-04
+ 3.47747848e-04 1.50976409e-04 3.91865587e-04 1.70669928e-04
+ 5.09895242e-05 3.43823931e-04 2.97266860e-04 4.51724268e-04
+ 5.08865425e-04 2.41659337e-04 4.33352011e-04 2.25528757e-04
+ 2.23046591e-04 3.34619840e-04 1.44831385e-04 1.49622332e-04
+ 3.63976229e-04 3.41945241e-04 1.85607583e-04 2.57173654e-04
+ 3.12370698e-04 3.26769792e-04 1.38352109e-04 1.53732898e-04
+ 9.31496001e-05 7.46392862e-04 1.49204096e-04 2.98417497e-04
+ 3.81586787e-04 3.80210367e-04 3.53694985e-04 2.02250454e-04
+ 2.19219077e-04 3.82744371e-04 4.23059148e-04 3.10710263e-04
+ 1.62075132e-04 4.99724925e-04 3.59691944e-04 1.86701847e-04
+ 1.51296596e-04 2.26958094e-04 2.71090653e-05 2.04381301e-04
+ 1.79986668e-04 3.56428579e-04 2.44613802e-04 2.84178420e-04
+ 2.00978178e-04 1.25924148e-04 2.59367919e-04 4.77192738e-05
+ 1.26443107e-04 9.51305972e-05 7.03155469e-05 7.05427400e-05
+ 1.79451919e-04 3.41983430e-04 1.61340322e-04 2.66449942e-04
+ 1.67450119e-04 2.68848091e-04 2.47132883e-04 3.46093098e-04
+ 4.07963297e-04 3.07728371e-04 9.56526114e-05 5.21103172e-04
+ 1.38898101e-04 2.50417201e-04 1.04580919e-04 2.41931619e-04
+ 4.17570470e-04 3.16181620e-04 1.39363691e-04 2.72006588e-04
+ 5.69186829e-04 4.38273831e-04 3.35237642e-04 7.41804858e-05
+ 1.40975675e-04 4.00986804e-04 1.10333053e-04 2.54744762e-04
+ 4.97965030e-04 3.23324670e-04 3.13700747e-04 2.08085762e-04
+ 2.59951995e-04 9.45154852e-04 7.38221528e-05 3.39517284e-04
+ 3.27683423e-04 2.85092038e-04 3.22143548e-04 2.00857652e-04
+ 3.36868089e-04 2.47732733e-04 3.88927292e-04 2.98733168e-04
+ 3.26344676e-04 0.00000000e+00 3.88180065e-04 2.83694088e-04
+ 1.70799683e-04 3.04614600e-04 2.86491617e-04 2.80508884e-04
+ 5.07391559e-04 3.67142291e-04 2.87047314e-04 1.43926590e-04
+ 1.99139548e-04 9.49310521e-05 6.94978501e-04 2.49034488e-04
+ 2.90144043e-04 9.66262181e-04 5.87820148e-04 2.58587187e-04
+ 2.62455705e-04 1.93573697e-04 3.58783131e-04 3.72106365e-04
+ 5.94322185e-04 2.36410930e-04 1.07319410e-04 5.54214466e-04
+ 3.27150521e-04 2.07994271e-04 1.52942161e-04 1.59263595e-04
+ 2.21442862e-04 5.55405545e-04 1.43364337e-04 1.94800810e-04
+ 1.91621324e-04 4.26422418e-04 3.47588562e-04 1.12529462e-04
+ 1.99039620e-04 3.57549941e-04]
+Time taken: 37584.57 ms
+
+Testing with 20 features and 100000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [1.42690121e-05 2.86151169e-05 1.24849824e-05 2.04134975e-05
+ 2.14600195e-05 9.32191525e-06 2.30552542e-05 5.92228922e-05
+ 2.62738788e-05 2.14696334e-05 3.50026001e-05 3.65987853e-05
+ 2.23064369e-05 3.08774051e-05 4.33058095e-05 8.14405910e-06
+ 1.63614394e-05 1.88282146e-05 2.73418324e-05 2.91024397e-05
+ 2.99035560e-05 3.01036021e-05 2.90057511e-05 2.03421603e-05
+ 1.92048323e-05 2.97673931e-06 4.69195589e-05 2.74493742e-05
+ 3.93139461e-05 2.68855506e-05 3.37416123e-05 3.04877084e-05
+ 2.91329636e-05 1.85429334e-05 4.38363786e-05 6.53429534e-05
+ 3.01224461e-05 2.87514643e-05 4.04917855e-05 4.23491888e-05
+ 3.31411703e-05 5.09284124e-05 3.17641282e-05 5.09972133e-05
+ 1.48271665e-05 1.88105542e-05 2.74794564e-05 1.12430832e-05
+ 2.41216550e-05 3.11045171e-05 4.43625873e-05 3.60532169e-05
+ 1.61859977e-05 3.07626778e-05 2.56393353e-05 2.31854622e-05
+ 2.14503272e-05 1.24368390e-05 2.74439466e-05 1.43448560e-05
+ 2.98805150e-05 2.72607767e-05 3.13559407e-05 3.55228592e-05
+ 1.60296341e-05 2.81609189e-05 5.19860265e-05 2.70633571e-05
+ 2.34082909e-05 3.11890238e-05 2.22154165e-05 3.31362302e-05
+ 2.87485908e-05 1.69105442e-05 6.10442945e-05 1.67822464e-05
+ 1.38081306e-05 2.87297164e-05 1.54652614e-05 1.38376012e-05
+ 5.01162718e-05 5.06058655e-05 2.36018720e-05 2.36309671e-05
+ 1.13736240e-05 3.47565108e-05 2.95561699e-05 6.63573608e-05
+ 4.77958047e-05 1.40552498e-05 2.67578512e-05 3.19688937e-05
+ 4.74958653e-06 3.27443639e-05 2.49580983e-05 4.57342139e-05
+ 2.88707548e-05 1.61757145e-05 6.25436508e-05 2.50465505e-05
+ 4.83921735e-05 1.85622760e-05 2.19442519e-05 3.63918062e-05
+ 3.13682038e-05 2.41465290e-05 1.28429955e-05 4.43860983e-05
+ 1.00030574e-05 3.20307525e-05 3.08159769e-05 2.10679142e-05
+ 2.75400898e-05 2.46098338e-05 2.42191209e-05 1.01109627e-05
+ 2.00696012e-05 4.11949978e-05 3.30857320e-05 4.52345991e-05
+ 1.57289771e-05 2.51406813e-05 1.47538186e-05 4.21413143e-05
+ 2.12421688e-05 3.56946334e-05 1.26350241e-05 7.96769946e-06
+ 1.48050961e-05 3.07056773e-05 3.05305861e-05 5.91912858e-06
+ 5.36956493e-05 2.23984320e-05 1.72900687e-05 1.72970712e-05
+ 1.84275583e-05 1.37019703e-05 1.91939233e-05 4.05593460e-05
+ 3.78866789e-05 8.60407604e-05 1.89426411e-05 2.50576674e-05
+ 4.19405237e-05 2.70999072e-05 3.38585696e-05 7.88643785e-06
+ 2.02176163e-05 2.39756155e-05 2.26294736e-05 2.98311865e-05
+ 3.99452989e-05 2.56659314e-05 1.60196350e-05 3.10721476e-05
+ 2.89378767e-05 1.11584209e-05 3.30572382e-05 3.25930667e-05
+ 1.47908999e-05 1.73562176e-05 3.37990072e-05 2.41919316e-05
+ 5.06576491e-05 4.03651822e-05 8.69984933e-06 1.92570597e-05
+ 8.90647330e-06 2.37100581e-05 3.39818072e-05 2.18975316e-05
+ 4.99878398e-05 1.95111935e-05 1.41880084e-05 2.65739347e-05
+ 1.62290300e-05 1.56401483e-05 2.38639659e-05 1.43249781e-05
+ 2.10531958e-05 7.24470245e-05 2.32733754e-05 3.27073542e-05
+ 1.15454029e-05 1.65533773e-05 2.22449913e-05 4.19747860e-05
+ 3.73058307e-05 1.44004713e-05]
+Time taken: 39513.50 ms
+
+Testing with 20 features and 1000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [4.17414566e-06 2.99292238e-06 4.21341216e-06 2.11520726e-06
+ 1.86351694e-06 2.65685892e-06 1.03440027e-06 2.93471449e-06
+ 2.56726203e-06 3.63183759e-06 6.09732546e-06 4.12324633e-06
+ 2.39815330e-06 4.21875711e-06 3.13505381e-06 2.64714478e-06
+ 9.07089688e-07 1.99982500e-06 1.80420773e-06 3.25793252e-06
+ 5.17026017e-06 2.96304883e-06 4.58824345e-06 3.39590978e-06
+ 3.55497807e-06 1.70873122e-06 3.50031327e-06 1.77084529e-06
+ 2.66301938e-06 2.10085736e-06 9.61423731e-08 1.57600087e-06
+ 8.51561127e-06 3.81924437e-06 1.50171321e-06 2.00676951e-06
+ 6.60082532e-06 1.68291958e-06 2.91426683e-06 3.26090703e-06
+ 2.49751154e-06 2.83425658e-06 3.65316089e-06 4.29233638e-06
+ 4.31465240e-06 5.34601395e-06 2.80317961e-06 2.81240462e-06
+ 3.04787959e-06 2.71408417e-06 3.39321839e-06 1.26201626e-06
+ 1.17116135e-06 2.16265319e-06 2.15902183e-06 4.12235549e-06
+ 6.77294977e-06 2.11517835e-06 1.06455276e-06 4.69157391e-06
+ 5.64178459e-06 4.38612796e-06 3.06673452e-06 2.81844942e-06
+ 2.82134992e-06 3.69848485e-06 1.02896093e-05 3.05848309e-06
+ 3.99054967e-06 4.97985834e-06 3.49736906e-06 3.47216593e-06
+ 3.41601393e-06 2.57792446e-06 2.79607391e-06 1.62499309e-06
+ 3.39179490e-06 1.68744948e-06 4.01286530e-06 2.72966449e-06
+ 3.80253120e-07 1.61952186e-06 2.06184170e-06 5.62480748e-06
+ 1.61235693e-06 3.39940960e-06 4.30841931e-06 1.68245236e-06
+ 2.87156916e-06 3.78351919e-06 2.08465982e-06 3.84735554e-06
+ 2.99389996e-06 2.10741618e-06 3.76219096e-06 2.38420412e-06
+ 3.04669403e-06 2.51635640e-06 1.64054292e-06 2.38560139e-06
+ 3.14502515e-06 2.08302944e-06 8.22658603e-07 3.12902613e-06
+ 3.94109129e-06 2.64684086e-06 3.89410834e-06 3.23007969e-06
+ 5.86440486e-06 5.80853350e-07 1.44656726e-06 2.87695501e-06
+ 5.70241425e-06 3.34270517e-06 4.26461203e-07 2.20175157e-06
+ 2.35205647e-06 4.52058720e-06 3.85112529e-06 2.63869095e-06
+ 2.42990629e-06 4.39199908e-06 4.45962157e-06 3.70010032e-06
+ 2.99058968e-06 1.84534373e-06 2.30371573e-06 6.50986403e-06
+ 1.76407158e-06 3.75019613e-06 3.84976140e-06 1.78781160e-06
+ 1.22488039e-06 4.06216459e-06 1.49938309e-06 1.26909503e-07
+ 8.42450855e-07 9.99316887e-07 3.58222541e-06 2.71020015e-06
+ 3.23931840e-06 1.94568473e-06 2.60807666e-06 3.40041960e-06
+ 2.41744549e-06 4.33514979e-06 3.47659343e-06 5.00094800e-06
+ 2.09870226e-06 3.19535807e-06 4.36340306e-06 4.23713001e-06
+ 3.43967694e-06 2.08261575e-06 3.72606210e-06 2.03785605e-06
+ 4.11472939e-06 1.80660473e-06 4.58355557e-06 4.47980155e-06
+ 4.81907113e-06 3.85381847e-06 1.33578551e-05 5.09879613e-06
+ 3.42822732e-06 3.70767141e-06 3.69307803e-06 2.51067573e-06
+ 9.37451850e-07 2.50758302e-06 3.43065245e-06 5.49320950e-06
+ 1.66573932e-06 5.67909502e-06 8.39611818e-07 2.13371398e-06
+ 4.49781107e-06 2.00085729e-06 6.20219089e-07 2.70585388e-06
+ 1.05830274e-06 1.65659305e-06 1.95106252e-06 5.09947613e-06
+ 1.77114369e-06 2.96248946e-06 5.68242182e-06 1.27257057e-06
+ 4.11682776e-06 1.54876030e-06]
+Time taken: 89714.24 ms
+
+Testing with 20 features and 10000000 samples...
+Number of GPUs available:  1
+Number of GPUs available:  1
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/Users/robsonlab/miniforge3/envs/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Starting chunk on GPU 0
+CCC result: [8.22110255e-08 1.84035020e-07 6.11597172e-07 1.58348043e-07
+ 4.47065756e-07 2.46600540e-07 2.70766635e-07 7.49209946e-08
+ 1.66139022e-07 3.27211080e-07 3.76073875e-08 3.32487975e-07
+ 1.98342256e-07 6.39801466e-07 5.63805181e-07 4.31332806e-07
+ 3.93411617e-07 2.86678805e-07 3.20920920e-07 1.09904997e-07
+ 1.23539842e-07 3.90198568e-07 9.18129042e-08 1.82898250e-07
+ 1.80555757e-07 2.97735830e-07 4.54980226e-07 2.04079068e-07
+ 1.33520725e-07 1.21405817e-07 1.53033099e-07 3.66915215e-07
+ 5.99410827e-08 1.56809518e-07 4.97827640e-07 1.19224403e-07
+ 2.27707639e-07 1.52994728e-07 2.94763345e-07 2.67726001e-07
+ 1.58543194e-07 6.20461492e-07 1.68656490e-07 2.11796420e-07
+ 2.07695282e-07 1.25177416e-07 3.02673581e-07 1.94643919e-07
+ 3.23341614e-07 5.58560448e-07 2.78061783e-07 4.85011605e-07
+ 5.15355119e-08 3.69456497e-07 1.76613479e-07 2.79472099e-07
+ 3.44496758e-07 2.48481144e-07 1.96938358e-07 2.52125734e-07
+ 3.36883688e-07 2.02566889e-07 3.87989753e-07 1.59275529e-07
+ 5.54075977e-07 2.04061059e-07 2.73287385e-07 1.63817871e-06
+ 2.25157584e-07 2.11918312e-07 2.23187406e-07 5.66825608e-07
+ 2.72600829e-07 1.63819655e-08 3.21734866e-07 2.00392740e-07
+ 2.05125564e-07 4.68860418e-07 3.23974365e-07 2.32281667e-07
+ 2.31278039e-07 3.13535996e-07 3.59183894e-07 3.01911854e-07
+ 8.10597899e-08 2.05471121e-07 3.49393325e-07 2.10983441e-07
+ 1.47643619e-07 3.07425322e-07 2.65512185e-07 2.27165939e-07
+ 2.52739279e-07 7.99355375e-08 2.80850949e-07 3.38954628e-07
+ 2.94508616e-07 2.66175541e-07 2.52986243e-07 2.09315539e-07
+ 1.70486654e-07 2.28889826e-07 3.81724820e-07 3.12219775e-07
+ 3.96165833e-07 3.60894477e-07 3.65294262e-07 3.99566270e-07
+ 2.38414795e-07 1.86077678e-07 1.68754151e-07 9.97923998e-08
+ 2.90875059e-07 3.25033373e-07 3.11238150e-07 1.26135205e-07
+ 5.15140779e-07 3.58838637e-07 1.08329720e-07 8.59894074e-08
+ 3.38653453e-07 2.73946333e-07 2.63461608e-07 4.94106359e-07
+ 3.36674096e-07 4.75265438e-07 2.65595362e-07 3.14376901e-07
+ 3.57618862e-07 2.14850648e-07 4.79576054e-07 1.15452618e-07
+ 5.36917510e-07 2.72126296e-07 3.18005012e-07 1.27202412e-07
+ 3.13550323e-07 1.12108923e-07 1.22250011e-06 2.31681126e-07
+ 1.08242721e-07 2.60460927e-07 2.18029333e-07 1.25004669e-07
+ 1.30315924e-07 2.91617348e-07 1.81993752e-07 1.33649901e-07
+ 2.18869928e-07 3.16283062e-07 3.64957788e-07 3.98379380e-07
+ 3.02892445e-07 3.35628097e-07 6.03495414e-07 3.01316428e-07
+ 3.22002113e-07 1.95629789e-07 1.83122483e-07 4.03297535e-07
+ 3.04992342e-07 3.53842916e-07 2.08684230e-07 2.48962870e-07
+ 1.20655458e-07 2.92478966e-07 3.06789107e-07 4.16306778e-07
+ 1.59685670e-07 3.35404062e-07 1.48155768e-07 2.36988433e-07
+ 1.52661357e-07 2.70164534e-07 2.30943524e-07 3.01347720e-07
+ 1.86141326e-07 2.99662115e-07 3.72156047e-07 2.65143037e-07
+ 5.00895384e-07 3.16097151e-07 2.53927402e-07 3.90624942e-07
+ 2.76087088e-07 1.22597212e-07 2.57189324e-07 3.61293672e-07
+ 3.41469226e-07 2.57154898e-07]
+Time taken: 810010.58 ms
+
