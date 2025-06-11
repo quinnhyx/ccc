@@ -89,9 +89,6 @@ def dot_sum(d_contingency, d_n_k, d_sm, row, col):
 
 @cuda.jit
 def gpu_contingency_matrix(part0, part1, cont_mat):
-    """
-    GPU kernel to compute the contingency matrix.
-    """
     idx = cuda.grid(1)
     if idx < part0.size:
         row = part0[idx]
@@ -125,7 +122,6 @@ def get_contingency_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
 
     # Copy result back to host
     return d_cont_mat.copy_to_host()
-
 
 def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarray:
     n_samples = np.int64(part0.shape[0])
@@ -177,6 +173,8 @@ def get_pair_confusion_matrix(part0: np.ndarray, part1: np.ndarray) -> np.ndarra
     end3.synchronize()
     time3 = cuda.event_elapsed_time(start3, end3)
     total_time += time3
+    sum_matrix_sq[grid_dim, block_dim](d_contingency, d_sum_squares, row, col)
+    cuda.synchronize()
     sum_squares = d_sum_squares.copy_to_host()[0]
 
     C = np.empty((2, 2), dtype = np.int64)
