@@ -14,7 +14,7 @@
 
 PYTHON_SCRIPT=test_gpu_ccc.py
 
-# LOGFILE="8gpu_ccc_scaling.log"
+LOGFILE="test_4gpu_ccc_scaling.log"
 
 
 
@@ -23,7 +23,8 @@ export NODES=1
 export GPUS_USED=4
 
 
-# echo "NODES GPUS_USED SIZE FEATURES TIME(s)" > logs/$LOGFILE
+
+echo "NODES GPUS_USED SIZE FEATURES TIME(s)" > logs/$LOGFILE
 
 
 
@@ -37,13 +38,13 @@ for FEATURES in {2..20..2}; do
 
 
 
-#    echo "Running CCC with SIZE=$SIZE, FEATURES=$FEATURES..."
+    echo "Running CCC with SIZE=$SIZE, FEATURES=$FEATURES..."
 
     OUTPUT=$(python $PYTHON_SCRIPT)
 
 
 
-    # echo "$OUTPUT" | tee -a logs/$LOGFILE
+    echo "$OUTPUT" | tee -a logs/$LOGFILE
 
   done
 

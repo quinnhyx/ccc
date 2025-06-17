@@ -1,0 +1,115 @@
+NODES GPUS_USED SIZE FEATURES TIME(s)
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 8 10000 2 1.3520
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 8 100000 2 1.6591
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 8 1000000 2 6.6694
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 8 10000000 2 85.8036
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 1
+1 8 10000 4 2.9930
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 5
+1 8 100000 4 3.7888
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 5
+1 8 1000000 4 14.4371
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 4
+1 8 10000000 4 201.2616
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 3
+1 8 10000 6 4.0403
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 5
+1 8 100000 6 4.9862
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 5
+1 8 1000000 6 21.1337
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 0
+1 8 10000000 6 309.3764
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 7
+1 8 10000 8 4.4992
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 3
+1 8 100000 8 5.8576
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 7
+1 8 1000000 8 29.3676

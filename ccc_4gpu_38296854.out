@@ -1,0 +1,86 @@
+Running CCC with SIZE=10000, FEATURES=2...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 4 10000 2 1.3183
+Running CCC with SIZE=100000, FEATURES=2...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 4 100000 2 1.7156
+Running CCC with SIZE=1000000, FEATURES=2...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 4 1000000 2 6.5537
+Running CCC with SIZE=10000000, FEATURES=2...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+1 4 10000000 2 84.4843
+Running CCC with SIZE=10000, FEATURES=4...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 4
+1 4 10000 4 3.0642
+Running CCC with SIZE=100000, FEATURES=4...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 5
+1 4 100000 4 3.7827
+Running CCC with SIZE=1000000, FEATURES=4...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 4
+1 4 1000000 4 14.4681
+Running CCC with SIZE=10000000, FEATURES=4...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 4
+1 4 10000000 4 199.4804
+Running CCC with SIZE=10000, FEATURES=6...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 4
+1 4 10000 6 4.0109
+Running CCC with SIZE=100000, FEATURES=6...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 3
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 6
+1 4 100000 6 5.0225
+Running CCC with SIZE=1000000, FEATURES=6...
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 0
+[INFO] Starting chunk on GPU 1
+[INFO] Starting chunk on GPU 4
+[INFO] Starting chunk on GPU 5
+[INFO] Starting chunk on GPU 6
+[INFO] Starting chunk on GPU 7
+[INFO] Starting chunk on GPU 2
+[INFO] Starting chunk on GPU 3
+1 4 1000000 6 21.1753
+Running CCC with SIZE=10000000, FEATURES=6...
