@@ -46,13 +46,11 @@ gpu_files = {
 
 gpu_dfs = []
 
-for file, gpus in gpu_files.items():
+for file, gpu_count in gpu_files.items():
 
     df = pd.read_csv(file, sep=r'\s+', engine='python')
 
-    df['Processor'] = f'{gpus} GPU'
-
-    df['GPUS'] = gpus
+    df['GPUS'] = gpu_count
 
     df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
@@ -68,27 +66,25 @@ gpu_df = pd.concat(gpu_dfs, ignore_index=True)
 
 cpu_df = pd.read_csv('cpu_ccc_scaling.log', sep=r'\s+', engine='python')
 
-cpu_df['Processor'] = 'CPU (24 threads)'
-
-cpu_df['GPUS'] = 0
+cpu_df['GPUS'] = 0  # Set to 0 for plotting
 
 cpu_df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# === Combine all ===
+# === Combine all
 
 df = pd.concat([gpu_df, cpu_df], ignore_index=True)
 
 
 
-# === Plot: Execution time vs # of processors, for each SIZE ===
+# === Plot: One plot per SIZE, showing execution time vs GPU/CPU count
 
 for size in sorted(df['SIZE'].unique()):
 
     subdf = df[df['SIZE'] == size]
 
-
+    
 
     fig, ax = plt.subplots()
 
@@ -98,15 +94,13 @@ for size in sorted(df['SIZE'].unique()):
 
         x='GPUS', y='TIME', hue='FEATURES',
 
-        style='Processor', markers=True, dashes=False,
-
-        palette='mako', marker='o', ax=ax, alpha=0.9
+        marker='o', ax=ax, palette='viridis', linewidth=2
 
     )
 
 
 
-    ax.set_title(f'CPU vs GPU Performance — SIZE = {size}')
+    ax.set_title(f'GPU/CPU Scaling Comparison — SIZE = {size}')
 
     ax.set_xlabel('Processor Count (0 = CPU)')
 
@@ -118,7 +112,9 @@ for size in sorted(df['SIZE'].unique()):
 
     plt.tight_layout()
 
-    fig.savefig(f'compare_cpu_gpu_size_{size}.png', dpi=300)
+
+
+    fig.savefig(f'compare_cpu_gpu_scaling_size_{size}.png', dpi=300)
 
     plt.close(fig)
 
