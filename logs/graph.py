@@ -102,3 +102,4 @@ for size in sorted(df['SIZE'].unique()):
 
     plt.close(fig)
 
+

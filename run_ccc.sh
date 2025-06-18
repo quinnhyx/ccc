@@ -14,7 +14,7 @@
 
 PYTHON_SCRIPT=test_gpu_ccc.py
 
-LOGFILE="test_4gpu_ccc_scaling.log"
+LOGFILE="4gpu_ccc_scaling.log"
 
 
 
@@ -22,6 +22,7 @@ export NODES=1
 
 export GPUS_USED=4
 
+export CUDA_VISIBLE_DEVICES=0,1,2,3   # <<< This enforces 4 visible GPUs
 
 
 echo "NODES GPUS_USED SIZE FEATURES TIME(s)" > logs/$LOGFILE
