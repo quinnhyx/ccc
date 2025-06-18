@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 
-# === PLOT SETTINGS ===
+# === Plot settings ===
 
 sns.set_theme(style="whitegrid", context="paper")
 
@@ -28,17 +28,17 @@ plt.rcParams.update({
 
 
 
-# === LOAD GPU LOGS ===
+# === Load GPU logs ===
 
 gpu_files = {
 
-    '1gpu_ccc_scaling.log': '1 GPU',
+    '1gpu_ccc_scaling.log': 1,
 
-    '2gpu_ccc_scaling.log': '2 GPUs',
+    '2gpu_ccc_scaling.log': 2,
 
-    '4gpu_ccc_scaling.log': '4 GPUs',
+    '4gpu_ccc_scaling.log': 4,
 
-    '8gpu_ccc_scaling.log': '8 GPUs',
+    '8gpu_ccc_scaling.log': 8,
 
 }
 
@@ -46,13 +46,13 @@ gpu_files = {
 
 gpu_dfs = []
 
-for file, label in gpu_files.items():
+for file, gpus in gpu_files.items():
 
     df = pd.read_csv(file, sep=r'\s+', engine='python')
 
-    df['Label'] = label
+    df['Processor'] = f'{gpus} GPU'
 
-    df['GPUS'] = int(label.split()[0])  # Extract numeric GPU count
+    df['GPUS'] = gpus
 
     df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
@@ -64,31 +64,31 @@ gpu_df = pd.concat(gpu_dfs, ignore_index=True)
 
 
 
-# === LOAD CPU LOG ===
+# === Load CPU log ===
 
 cpu_df = pd.read_csv('cpu_ccc_scaling.log', sep=r'\s+', engine='python')
 
-cpu_df['Label'] = 'CPU (24 threads)'
+cpu_df['Processor'] = 'CPU (24 threads)'
 
-cpu_df['GPUS'] = 0  # For x-axis consistency
+cpu_df['GPUS'] = 0
 
 cpu_df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# === COMBINE ALL DATA ===
+# === Combine all ===
 
 df = pd.concat([gpu_df, cpu_df], ignore_index=True)
 
 
 
-# === PLOT PER SIZE ===
+# === Plot: Execution time vs # of processors, for each SIZE ===
 
 for size in sorted(df['SIZE'].unique()):
 
     subdf = df[df['SIZE'] == size]
 
-    
+
 
     fig, ax = plt.subplots()
 
@@ -98,19 +98,17 @@ for size in sorted(df['SIZE'].unique()):
 
         x='GPUS', y='TIME', hue='FEATURES',
 
-        style='Label',  # Differentiate CPU vs GPU
+        style='Processor', markers=True, dashes=False,
 
-        markers=True, dashes=False,
-
-        marker='o', palette='viridis', ax=ax, alpha=0.9
+        palette='mako', marker='o', ax=ax, alpha=0.9
 
     )
 
 
 
-    ax.set_title(f'Execution Time vs GPU Count — SIZE = {size}')
+    ax.set_title(f'CPU vs GPU Performance — SIZE = {size}')
 
-    ax.set_xlabel('Number of GPUs (0 = CPU)')
+    ax.set_xlabel('Processor Count (0 = CPU)')
 
     ax.set_ylabel('Execution Time (s)')
 
@@ -120,9 +118,7 @@ for size in sorted(df['SIZE'].unique()):
 
     plt.tight_layout()
 
-
-
-    fig.savefig(f'gpuscaling_with_cpu_size_{size}.png', dpi=300)
+    fig.savefig(f'compare_cpu_gpu_size_{size}.png', dpi=300)
 
     plt.close(fig)
 
