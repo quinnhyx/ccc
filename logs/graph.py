@@ -30,13 +30,13 @@ plt.rcParams.update({
 
 files = {
 
-    '1gpu_ccc_scaling.log': 1,
+    'test_1gpu_ccc_scaling.log': 1,
 
-    '2gpu_ccc_scaling.log': 2,
+    'test_2gpu_ccc_scaling.log': 2,
 
-    '4gpu_ccc_scaling.log': 4,
+    'test_4gpu_ccc_scaling.log': 4,
 
-    '8gpu_ccc_scaling.log': 8,
+    'test_8gpu_ccc_scaling.log': 8,
 
 }
 
@@ -92,13 +92,17 @@ for size in sorted(df['SIZE'].unique()):
 
     ax.set_xticks([1, 2, 4, 8])
 
+    ax.set_ylim(bottom=0)
+
+    ax.set_xscale('log', base=2)
+
     ax.legend(title='Features', bbox_to_anchor=(1.02, 1), loc='upper left')
 
     plt.tight_layout()
 
     
 
-    fig.savefig(f'gpuscaling_size_{size}.png', dpi=300)
+    fig.savefig(f'test_gpuscaling_size_{size}.png', dpi=300)
 
     plt.close(fig)
 

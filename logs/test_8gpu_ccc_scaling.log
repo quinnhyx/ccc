@@ -1,115 +1,41 @@
 NODES GPUS_USED SIZE FEATURES TIME(s)
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-1 8 10000 2 1.4057
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-1 8 100000 2 1.6511
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-1 8 1000000 2 6.6248
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-1 8 10000000 2 84.5112
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 5
-1 8 10000 4 2.8941
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 2
-1 8 100000 4 3.7301
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 1
-1 8 1000000 4 14.4134
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 4
-1 8 10000000 4 200.6732
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 7
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 5
-1 8 10000 6 4.0259
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 7
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 2
-1 8 100000 6 4.6368
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 7
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 6
-1 8 1000000 6 21.3137
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 7
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 0
-1 8 10000000 6 305.1906
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 7
-1 8 10000 8 4.7298
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 7
-[INFO] Starting chunk on GPU 4
-1 8 100000 8 5.8419
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 0
-[INFO] Starting chunk on GPU 1
-[INFO] Starting chunk on GPU 2
-[INFO] Starting chunk on GPU 5
-[INFO] Starting chunk on GPU 4
-[INFO] Starting chunk on GPU 3
-[INFO] Starting chunk on GPU 6
-[INFO] Starting chunk on GPU 7
-1 8 1000000 8 29.3050
+1 8 10000 2 1.4310
+1 8 100000 2 1.9224
+1 8 1000000 2 6.6186
+1 8 10000000 2 84.7989
+1 8 10000 4 2.9287
+1 8 100000 4 3.6957
+1 8 1000000 4 14.4724
+1 8 10000000 4 202.7699
+1 8 10000 6 3.9473
+1 8 100000 6 4.8348
+1 8 1000000 6 21.0988
+1 8 10000000 6 309.7077
+1 8 10000 8 4.5695
+1 8 100000 8 5.7176
+1 8 1000000 8 29.5950
+1 8 10000000 8 417.4083
+1 8 10000 10 5.0518
+1 8 100000 10 6.6195
+1 8 1000000 10 34.0799
+1 8 10000000 10 517.2353
+1 8 10000 12 5.8574
+1 8 100000 12 7.7179
+1 8 1000000 12 40.7953
+1 8 10000000 12 627.0399
+1 8 10000 14 6.8490
+1 8 100000 14 9.1952
+1 8 1000000 14 47.6011
+1 8 10000000 14 736.2781
+1 8 10000 16 7.5367
+1 8 100000 16 10.2559
+1 8 1000000 16 61.0774
+1 8 10000000 16 853.8906
+1 8 10000 18 8.9476
+1 8 100000 18 11.7477
+1 8 1000000 18 68.8975
+1 8 10000000 18 950.7382
+1 8 10000 20 10.1601
+1 8 100000 20 13.0282
+1 8 1000000 20 77.9849
+1 8 10000000 20 1069.7019

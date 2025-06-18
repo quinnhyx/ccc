@@ -1,33 +1,60 @@
 #!/bin/bash
-#SBATCH --job-name=clustermatch_parallel
+
+#SBATCH --partition=gpu                # Use the same partition where gypsum-gpu106 belongs
+
+#SBATCH --nodelist=gypsum-gpu[106,108-115,118-119,121,124]       # Force it to run on this node
+
+#SBATCH --gres=gpu:1080_ti:1
+
 #SBATCH --nodes=1
-#SBATCH --ntasks=64  # Adjust based on the required parallelism
-#SBATCH --partition=defq
-#SBATCH --output=cpu_%j.out
-#SBATCH --output=ccc_%j.out
-#SBATCH --error=ccc_scaling_%j.err
+
+#SBATCH --cpus-per-task=24
+
+#SBATCH --time=08:00:00
+
+#SBATCH --mem=370g
+
+#SBATCH --job-name=ccc_cpu
+
+#SBATCH --output=ccc_cpu_%j.out
+
+#SBATCH --error=ccc_cpu_%j.err
+
+#SBATCH --exclusive
 
 
-# Load necessary modules
-#module load python
-#module load psutil  # If your script monitors resources
-#module load CUDA/11.2
 
-# Run Clustermatch with IPython
-#ipython3 -c "
-#import numpy as np
-#import pandas as pd
-#import time
-#from ccc.coef import ccc
+PYTHON_SCRIPT=test_cpu_ccc.py
 
-#x = np.random.normal(size=(8,10000))
-#y = np.random.normal(size=10000)
+LOGFILE="logs/cpu_ccc_scaling.log"
 
-#start = time.time()
-#ccc(x, y)
-#end = time.time()
-#diff = (end-start)*1000
-#print(f"Time taken: {diff} ms")
-#"
 
-python test_cpu_ccc.py
+
+export NODES=1
+
+export THREADS=24    # Optional, only if your code uses threads
+
+
+
+echo "NODES THREADS SIZE FEATURES TIME(s)" > $LOGFILE
+
+
+
+for FEATURES in {2..20..2}; do
+
+  for SIZE in 10000 100000 1000000 10000000; do
+
+    export FEATURES
+
+    export SIZE
+
+    echo "Running CCC (CPU) with SIZE=$SIZE, FEATURES=$FEATURES..."
+
+    OUTPUT=$(python $PYTHON_SCRIPT)
+
+    echo "$OUTPUT" | tee -a $LOGFILE
+
+  done
+
+done
+
