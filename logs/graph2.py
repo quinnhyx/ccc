@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 
-# === Plot style settings ===
+# === Plot settings ===
 
 sns.set_theme(style="whitegrid", context="paper")
 
@@ -28,25 +28,25 @@ plt.rcParams.update({
 
 
 
-# === File → GPU count mapping (0 = CPU) ===
+# === File: GPU count mapping ===
 
 files = {
 
     'cpu_ccc_scaling.log': 0,
 
-    '1gpu_ccc_scaling.log': 1,
+    'test_1gpu_ccc_scaling.log': 1,
 
-    '2gpu_ccc_scaling.log': 2,
+    'test_2gpu_ccc_scaling.log': 2,
 
-    '4gpu_ccc_scaling.log': 4,
+    'test_4gpu_ccc_scaling.log': 4,
 
-    '8gpu_ccc_scaling.log': 8,
+    'test_8gpu_ccc_scaling.log': 8,
 
 }
 
 
 
-# === Load all logs and label with GPU count ===
+# === Load and label logs ===
 
 dfs = []
 
@@ -54,13 +54,13 @@ for file, gpu in files.items():
 
     df = pd.read_csv(file, sep=r'\s+', engine='python')
 
-    df['GPUS'] = gpu  # Add GPU count column
+    df['GPUS'] = gpu
 
     dfs.append(df)
 
 
 
-# === Combine all into one DataFrame ===
+# === Combine all logs ===
 
 df = pd.concat(dfs, ignore_index=True)
 
@@ -68,13 +68,25 @@ df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# === Sort for clean plotting ===
+# === Filter: keep only FEATURES that appear for ALL GPU counts (incl. CPU)
+
+required_gpus = {0, 1, 2, 4, 8}
+
+feature_gpu_sets = df.groupby('FEATURES')['GPUS'].apply(set)
+
+common_features = feature_gpu_sets[feature_gpu_sets.apply(lambda s: required_gpus.issubset(s))].index
+
+df = df[df['FEATURES'].isin(common_features)]
+
+
+
+# === Sort data for clean line connections
 
 df = df.sort_values(by=['FEATURES', 'GPUS'])
 
 
 
-# === Plot execution time by GPU count, for each SIZE ===
+# === Plot: one plot per SIZE
 
 for size in sorted(df['SIZE'].unique()):
 
