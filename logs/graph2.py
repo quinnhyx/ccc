@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 
-# === Plot settings ===
+# === Plot style settings ===
 
 sns.set_theme(style="whitegrid", context="paper")
 
@@ -28,7 +28,7 @@ plt.rcParams.update({
 
 
 
-# === File: GPU count mapping ===
+# === File → GPU count mapping (0 = CPU) ===
 
 files = {
 
@@ -46,7 +46,7 @@ files = {
 
 
 
-# === Load logs ===
+# === Load all logs and label with GPU count ===
 
 dfs = []
 
@@ -54,13 +54,13 @@ for file, gpu in files.items():
 
     df = pd.read_csv(file, sep=r'\s+', engine='python')
 
-    df['GPUS'] = gpu
+    df['GPUS'] = gpu  # Add GPU count column
 
     dfs.append(df)
 
 
 
-# === Combine and clean ===
+# === Combine all into one DataFrame ===
 
 df = pd.concat(dfs, ignore_index=True)
 
@@ -68,21 +68,13 @@ df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# 🧼 Handle duplicates: take minimum TIME for same GPUS + SIZE + FEATURES
+# === Sort for clean plotting ===
 
-df = (
-
-    df.groupby(['GPUS', 'SIZE', 'FEATURES'], as_index=False)['TIME']
-
-    .min()
-
-    .sort_values(by=['FEATURES', 'GPUS'])
-
-)
+df = df.sort_values(by=['FEATURES', 'GPUS'])
 
 
 
-# === Plot per SIZE ===
+# === Plot execution time by GPU count, for each SIZE ===
 
 for size in sorted(df['SIZE'].unique()):
 
@@ -106,7 +98,7 @@ for size in sorted(df['SIZE'].unique()):
 
     ax.set_title(f'CPU vs GPU Scaling — SIZE = {size}')
 
-    ax.set_xlabel('Processor Count (0 = CPU)')
+    ax.set_xlabel('Number of GPUs (0 = CPU)')
 
     ax.set_ylabel('Execution Time (s)')
 
