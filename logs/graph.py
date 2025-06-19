@@ -91,11 +91,11 @@ for size in sorted(df['SIZE'].unique()):
 
     ax.set_ylabel('Execution Time (s)')
 
-    ax.set_xticks([1, 2, 4, 8])
+    ax.set_xticks([0, 1, 2, 4, 8])
 
-    ax.set_ylim(bottom=0)
+   # ax.set_ylim(bottom=0)
 
-    ax.set_xscale('log', base=2)
+    # ax.set_xscale('log', base=2)
 
     ax.legend(title='Features', bbox_to_anchor=(1.02, 1), loc='upper left')
 
