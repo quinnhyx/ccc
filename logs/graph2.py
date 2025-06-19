@@ -12,17 +12,17 @@ sns.set_theme(style="whitegrid", context="paper")
 
 plt.rcParams.update({
 
-    'figure.figsize':   (10, 6),
+    'figure.figsize': (10, 6),
 
-    'figure.dpi':       100,
+    'figure.dpi': 100,
 
-    'font.size':        12,
+    'font.size': 12,
 
-    'axes.titlesize':   13,
+    'axes.titlesize': 13,
 
-    'axes.labelsize':   12,
+    'axes.labelsize': 12,
 
-    'legend.fontsize':  10,
+    'legend.fontsize': 10,
 
 })
 
@@ -46,11 +46,11 @@ gpu_files = {
 
 gpu_dfs = []
 
-for file, gpu_count in gpu_files.items():
+for file, gpus in gpu_files.items():
 
     df = pd.read_csv(file, sep=r'\s+', engine='python')
 
-    df['GPUS'] = gpu_count
+    df['GPUS'] = gpus
 
     df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
@@ -66,25 +66,25 @@ gpu_df = pd.concat(gpu_dfs, ignore_index=True)
 
 cpu_df = pd.read_csv('cpu_ccc_scaling.log', sep=r'\s+', engine='python')
 
-cpu_df['GPUS'] = 0  # Set to 0 for plotting
+cpu_df['GPUS'] = 0  # Represent CPU as 0 GPUs
 
 cpu_df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# === Combine all
+# === Combine CPU + GPU data
 
 df = pd.concat([gpu_df, cpu_df], ignore_index=True)
 
 
 
-# === Plot: One plot per SIZE, showing execution time vs GPU/CPU count
+# === Plot: One per SIZE, X=GPUs (0 = CPU), lines per FEATURES
 
 for size in sorted(df['SIZE'].unique()):
 
     subdf = df[df['SIZE'] == size]
 
-    
+
 
     fig, ax = plt.subplots()
 
@@ -100,9 +100,9 @@ for size in sorted(df['SIZE'].unique()):
 
 
 
-    ax.set_title(f'GPU/CPU Scaling Comparison — SIZE = {size}')
+    ax.set_title(f'CPU vs GPU Performance — SIZE = {size}')
 
-    ax.set_xlabel('Processor Count (0 = CPU)')
+    ax.set_xlabel('Number of GPUs (0 = CPU)')
 
     ax.set_ylabel('Execution Time (s)')
 
@@ -112,9 +112,7 @@ for size in sorted(df['SIZE'].unique()):
 
     plt.tight_layout()
 
-
-
-    fig.savefig(f'compare_cpu_gpu_scaling_size_{size}.png', dpi=300)
+    fig.savefig(f'cpu_gpu_comparison_size_{size}.png', dpi=300)
 
     plt.close(fig)
 
