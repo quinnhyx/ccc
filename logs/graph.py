@@ -16,6 +16,8 @@ plt.rcParams.update({
 
     'font.size':        12,
 
+    'font.family':      'Liberation Sans',
+
     'axes.titlesize':   13,
 
     'axes.labelsize':   12,
@@ -29,15 +31,14 @@ plt.rcParams.update({
 # File-GPU mapping
 
 files = {
-    'cpu_ccc_scaling.log': 0,
 
-    'test_1gpu_ccc_scaling.log': 1,
+    '1gpu_ccc_scaling.log': 1,
 
-    'test_2gpu_ccc_scaling.log': 2,
+    '2gpu_ccc_scaling.log': 2,
 
-    'test_4gpu_ccc_scaling.log': 4,
+    '4gpu_ccc_scaling.log': 4,
 
-    'test_8gpu_ccc_scaling.log': 8,
+    '8gpu_ccc_scaling.log': 8,
 
 }
 
@@ -91,11 +92,7 @@ for size in sorted(df['SIZE'].unique()):
 
     ax.set_ylabel('Execution Time (s)')
 
-    ax.set_xticks([0, 1, 2, 4, 8])
-
-   # ax.set_ylim(bottom=0)
-
-    # ax.set_xscale('log', base=2)
+    ax.set_xticks([1, 2, 4, 8])
 
     ax.legend(title='Features', bbox_to_anchor=(1.02, 1), loc='upper left')
 
@@ -103,7 +100,7 @@ for size in sorted(df['SIZE'].unique()):
 
     
 
-    fig.savefig(f'cpu_gpuscaling_size_{size}.png', dpi=300)
+    fig.savefig(f'gpuscaling_size_{size}.png', dpi=300)
 
     plt.close(fig)
 
