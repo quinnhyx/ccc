@@ -29,6 +29,7 @@ plt.rcParams.update({
 # File-GPU mapping
 
 files = {
+    'cpu_ccc_scaling.log': 0,
 
     'test_1gpu_ccc_scaling.log': 1,
 
@@ -102,7 +103,7 @@ for size in sorted(df['SIZE'].unique()):
 
     
 
-    fig.savefig(f'test_gpuscaling_size_{size}.png', dpi=300)
+    fig.savefig(f'cpu_gpuscaling_size_{size}.png', dpi=300)
 
     plt.close(fig)
 
