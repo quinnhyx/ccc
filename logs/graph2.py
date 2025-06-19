@@ -34,13 +34,13 @@ files = {
 
     'cpu_ccc_scaling.log': 0,
 
-    'test_1gpu_ccc_scaling.log': 1,
+    '1gpu_ccc_scaling.log': 1,
 
-    'test_2gpu_ccc_scaling.log': 2,
+    '2gpu_ccc_scaling.log': 2,
 
-    'test_4gpu_ccc_scaling.log': 4,
+    '4gpu_ccc_scaling.log': 4,
 
-    'test_8gpu_ccc_scaling.log': 8,
+    '8gpu_ccc_scaling.log': 8,
 
 }
 
