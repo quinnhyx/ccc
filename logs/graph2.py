@@ -68,71 +68,35 @@ df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# === Create a human-readable label
+# === Clean duplicates (e.g., multiple trials: keep min TIME)
 
-df['Label'] = df['GPUS'].astype(str) + ' GPU(s)'
-
-
-
-# === Determine label order
-
-labels = df['Label'].unique()
-
-hue_order = sorted(labels, key=lambda x: int(x.split()[0]))
+df = df.groupby(['GPUS', 'SIZE', 'FEATURES'], as_index=False)['TIME'].min()
 
 
 
-# === Group by SIZE and FEATURES
+# === Plot per SIZE (hue = FEATURES)
 
-groups = df.groupby(['SIZE', 'FEATURES'])
+for size in sorted(df['SIZE'].unique()):
 
-
-
-for (size, feat), group in groups:
-
-    # Pivot and melt for plotting
-
-    pivot = (
-
-        group.groupby(['Label', 'GPUS'])['TIME']
-
-             .min()
-
-             .unstack('GPUS')
-
-             .reset_index()
-
-             .melt(id_vars='Label', var_name='GPUS', value_name='TIME')
-
-    )
+    subdf = df[df['SIZE'] == size]
 
 
-
-    # Convert GPU column to integer for x-axis
-
-    pivot['GPUS'] = pivot['GPUS'].astype(int)
-
-
-
-    # Plot
 
     fig, ax = plt.subplots()
 
     sns.lineplot(
 
-        data=pivot,
+        data=subdf,
 
-        x='GPUS', y='TIME', hue='Label',
+        x='GPUS', y='TIME', hue='FEATURES',
 
-        marker='o', ax=ax, palette="rocket", hue_order=hue_order,
-
-        alpha=0.85
+        marker='o', palette='viridis', ax=ax, linewidth=2, alpha=0.9
 
     )
 
 
 
-    ax.set_title(f'Performance Scaling — SIZE={size}, FEATURES={feat}')
+    ax.set_title(f'CPU vs GPU Scaling — SIZE = {size}')
 
     ax.set_xlabel('Number of GPUs (0 = CPU)')
 
@@ -140,11 +104,13 @@ for (size, feat), group in groups:
 
     ax.set_xticks([0, 1, 2, 4, 8])
 
-    ax.legend(title='Config', bbox_to_anchor=(1.02, 1), loc='upper left')
+    ax.legend(title='Features', bbox_to_anchor=(1.02, 1), loc='upper left')
 
     plt.tight_layout()
 
-    fig.savefig(f'perf_scaling_size{size}_feat{feat}.png', dpi=300)
+
+
+    fig.savefig(f'cpu_gpu_scaling_by_features_size{size}.png', dpi=300)
 
     plt.close(fig)
 
