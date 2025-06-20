@@ -6,6 +6,8 @@ import seaborn as sns
 
 
 
+# === Plot settings ===
+
 sns.set_theme(style="whitegrid", context="paper")
 
 plt.rcParams.update({
@@ -26,9 +28,10 @@ plt.rcParams.update({
 
 
 
-# File-GPU mapping
+# === File-GPU mapping ===
 
 files = {
+
     'cpu_ccc_scaling.log': 0,
 
     '1gpu_ccc_scaling.log': 1,
@@ -43,7 +46,7 @@ files = {
 
 
 
-# Load and combine
+# === Load logs ===
 
 dfs = []
 
@@ -57,50 +60,91 @@ for file, gpu in files.items():
 
 
 
+# === Combine and clean ===
+
 df = pd.concat(dfs, ignore_index=True)
 
 df.rename(columns={'TIME(s)': 'TIME'}, inplace=True)
 
 
 
-# Plot for each SIZE
+# === Create a human-readable label
 
-for size in sorted(df['SIZE'].unique()):
+df['Label'] = df['GPUS'].astype(str) + ' GPU(s)'
 
-    subdf = df[df['SIZE'] == size]
 
-    
+
+# === Determine label order
+
+labels = df['Label'].unique()
+
+hue_order = sorted(labels, key=lambda x: int(x.split()[0]))
+
+
+
+# === Group by SIZE and FEATURES
+
+groups = df.groupby(['SIZE', 'FEATURES'])
+
+
+
+for (size, feat), group in groups:
+
+    # Pivot and melt for plotting
+
+    pivot = (
+
+        group.groupby(['Label', 'GPUS'])['TIME']
+
+             .min()
+
+             .unstack('GPUS')
+
+             .reset_index()
+
+             .melt(id_vars='Label', var_name='GPUS', value_name='TIME')
+
+    )
+
+
+
+    # Convert GPU column to integer for x-axis
+
+    pivot['GPUS'] = pivot['GPUS'].astype(int)
+
+
+
+    # Plot
 
     fig, ax = plt.subplots()
 
     sns.lineplot(
 
-        data=subdf,
+        data=pivot,
 
-        x='GPUS', y='TIME', hue='FEATURES',
+        x='GPUS', y='TIME', hue='Label',
 
-        marker='o', ax=ax, palette='viridis', alpha=0.9
+        marker='o', ax=ax, palette="rocket", hue_order=hue_order,
+
+        alpha=0.85
 
     )
 
-    
 
-    ax.set_title(f'GPU Scaling Comparison — SIZE = {size}')
 
-    ax.set_xlabel('Number of GPUs')
+    ax.set_title(f'Performance Scaling — SIZE={size}, FEATURES={feat}')
+
+    ax.set_xlabel('Number of GPUs (0 = CPU)')
 
     ax.set_ylabel('Execution Time (s)')
 
     ax.set_xticks([0, 1, 2, 4, 8])
 
-    ax.legend(title='Features', bbox_to_anchor=(1.02, 1), loc='upper left')
+    ax.legend(title='Config', bbox_to_anchor=(1.02, 1), loc='upper left')
 
     plt.tight_layout()
 
-    
-
-    fig.savefig(f'gpuscaling_size_{size}.png', dpi=300)
+    fig.savefig(f'perf_scaling_size{size}_feat{feat}.png', dpi=300)
 
     plt.close(fig)
-
 
