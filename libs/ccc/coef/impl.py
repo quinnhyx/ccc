@@ -228,7 +228,6 @@ def cdist_parts_basic(x: NDArray, y: NDArray) -> NDArray[float]:
                 continue
 
             res[i, j] = ari(x[i], y[j])
-
     return res
 
 
@@ -334,7 +333,7 @@ def get_chunks(
         new_chunk = get_chunks(res[idx], 2)
         res[idx] = new_chunk[0]
         res.insert(idx + 1, new_chunk[1])
-
+    
     return res
 
 
@@ -425,27 +424,17 @@ def compute_ccc_perms(params) -> NDArray[float]:
 
     return ccc_perm_values
 
-
 def compute_coef(params_and_gpu):
     """
-    Given a list of indexes representing each a pair of
-    objects/rows/genes, it computes the CCC coefficient for
-    each of them. This function is supposed to be used to parallelize
-    processing.
+    Compute CCC for a list of feature pairs on a specific GPU.
 
     Args:
-        params: a tuple with eight elements: 1) the indexes of the features
-            to compare, 2) the number of features, 3) the partitions for each
-            feature, 4) the number of permutations to compute the p-value, 5)
-            the number of threads to use for parallelization, 6) the ratio
-            between the number of chunks and the number of threads, 7) the
-            executor to use for cdist parallelization, and 8) the executor to use
-            for parallelization of permutations.
+        params_and_gpu: ((params), gpu_id)
+            - params: tuple containing all necessary arguments
+            - gpu_id: assigned GPU to run on
 
     Returns:
-        Returns a tuple with three arrays. The first array has the CCC
-        coefficients, the second array has the indexes of the partitions that
-        maximized the coefficient, and the third array has the p-values.
+        (max_ari_list, max_part_idx_list, pvalues): arrays of results
     """
     params, gpu_id = params_and_gpu
     (
@@ -455,18 +444,19 @@ def compute_coef(params_and_gpu):
         pvalue_n_perms,
         default_n_threads,
         n_chunks_threads_ratio,
-        cdist_executor,
-        executor,
     ) = params
 
-    print(f"[INFO] Starting chunk on GPU {gpu_id}")
+    print(f"[INFO] Running chunk on GPU {gpu_id}")
 
-    with cuda.gpus[gpu_id]:
-        cdist_func = cdist_parts_basic
-        if cdist_executor is not False:
-
-            def cdist_func(x, y):
-                return cdist_parts_parallel(x, y, cdist_executor)
+    # Each process initializes its own executor
+    with (
+        cuda.gpus[gpu_id],
+        ThreadPoolExecutor(max_workers=default_n_threads) as cdist_executor,
+        ThreadPoolExecutor(max_workers=default_n_threads) as perm_executor
+    ):
+        # define cdist function that uses the thread pool
+        def cdist_func(x, y):
+            return cdist_parts_parallel(x, y, cdist_executor)
 
         n_idxs = len(idx_list)
         max_ari_list = np.full(n_idxs, np.nan, dtype=float)
@@ -476,39 +466,26 @@ def compute_coef(params_and_gpu):
         for idx, data_idx in enumerate(idx_list):
             i, j = get_coords_from_index(n_features, data_idx)
 
-            # get partitions for the pair of objects
             obji_parts, objj_parts = parts[i], parts[j]
 
-            # compute ari only if partitions are not marked as "missing"
-            # (negative values), which is assigned when partitions have
-            # one cluster (usually when all data in the feature has the same
-            # value).
             if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
                 continue
 
-            # compare all partitions of one object to the all the partitions
-            # of the other object, and get the maximium ARI
             max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
                 obji_parts, objj_parts, cdist_func
             )
 
-            # compute p-value if requested
+            # Optional p-value
             if pvalue_n_perms is not None and pvalue_n_perms > 0:
-                # with ThreadPoolExecutor(max_workers=pvalue_n_jobs) as executor_perms:
-                # select the variable that generated more partitions as the one
-                # to permute
-                obj_parts_sel_i = obji_parts
-                obj_parts_sel_j = objj_parts
+                obj_parts_sel_i, obj_parts_sel_j = obji_parts, objj_parts
                 if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
-                    obj_parts_sel_i = objj_parts
-                    obj_parts_sel_j = obji_parts
+                    obj_parts_sel_i, obj_parts_sel_j = objj_parts, obji_parts
 
                 p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
 
                 p_inputs = get_chunks(
-                        pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
+                    pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
                 )
-            
                 p_inputs = [
                     (
                         i,
@@ -519,24 +496,18 @@ def compute_coef(params_and_gpu):
                     for i in p_inputs
                 ]
 
-                for params, p_ccc_val in zip(
+                for params_perm, p_ccc_val in zip(
                     p_inputs,
-                    executor.map(
-                        compute_ccc_perms,
-                        p_inputs,
-                    ),
+                    perm_executor.map(compute_ccc_perms, p_inputs),
                 ):
-                    p_idx = params[0]
-
+                    p_idx = params_perm[0]
                     p_ccc_values[p_idx] = p_ccc_val
 
-                # compute p-value
                 pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
                     pvalue_n_perms + 1
                 )
 
-        return max_ari_list, max_part_idx_list, pvalues
-
+    return max_ari_list, max_part_idx_list, pvalues
 
 def get_n_workers(n_jobs: int | None) -> int:
     """
@@ -562,7 +533,6 @@ def get_n_workers(n_jobs: int | None) -> int:
                          "Please check the n_jobs argument provided")
 
     return n_workers
-
 
 def ccc(
     x: NDArray,
@@ -777,24 +747,22 @@ def ccc(
         # we have several feature pairs to compare), because parallelization is
         # already performed at this level. Otherwise, more threads than
         # specified by the user are started.
-        map_func = map
-        cdist_executor = False
-        inner_executor = DummyExecutor()
-
+        
+        map_func = map  # default to serial
         if n_workers > 1:
             if n_features_comp == 1:
                 map_func = map
-                cdist_executor = executor
-                inner_executor = pexecutor
 
             else:
                 map_func = pexecutor.map
 
-        # iterate over all chunks of object pairs and compute the coefficient on GPU
         n_gpus = torch.cuda.device_count()
-        if n_gpus>0:
+        print(f"GPUs available: {n_gpus}")
+
+        if n_gpus > 0:
             pair_chunks = get_chunks(n_features_comp, n_gpus, n_chunks_threads_ratio)
 
+            # Prepare input per GPU
             inputs = [
                 (
                     (
@@ -804,8 +772,6 @@ def ccc(
                         pvalue_n_perms,
                         n_workers,
                         n_chunks_threads_ratio,
-                        cdist_executor,
-                        inner_executor,
                     ),
                     gpu_id % n_gpus,
                 )
@@ -815,19 +781,19 @@ def ccc(
             max_ari_all = []
             max_part_idx_all = []
             pval_all = []
+          
+            with ProcessPoolExecutor(max_workers=len(inputs)) as pool:
+                results = list(pool.map(compute_coef, inputs))
 
-        with ProcessPoolExecutor(max_workers=len(inputs)) as pool:
-            results = pool.map(compute_coef, inputs)
+            for result in results:
+                max_ari_all.append(result[0])
+                max_part_idx_all.append(result[1])
+                pval_all.append(result[2])
 
-        for result in results:
-            max_ari_all.append(result[0])
-            max_part_idx_all.append(result[1])
-            pval_all.append(result[2])
-
-        cm_values = np.concatenate(max_ari_all)
-        max_parts = np.vstack(max_part_idx_all)
-        cm_pvalues = np.concatenate(pval_all)
-
+            # Step: Concatenate results
+            cm_values = np.concatenate(max_ari_all)
+            max_parts = np.vstack(max_part_idx_all)
+            cm_pvalues = np.concatenate(pval_all)
 
     # return an array of values or a single scalar, depending on the input data
     if cm_values.shape[0] == 1:
@@ -852,4 +818,3 @@ def ccc(
             return cm_values, cm_pvalues
         else:
             return cm_values
-
