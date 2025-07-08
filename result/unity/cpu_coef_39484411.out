@@ -1,0 +1,163 @@
+compute_coef: 0.23 seconds
+Running CCC with CPU support...
+
+Testing with 2 features and 10000 samples...
+compute_coef: 0.00 seconds
+Time taken: 0.03 s
+
+Testing with 2 features and 100000 samples...
+compute_coef: 0.02 seconds
+Time taken: 0.32 s
+
+Testing with 2 features and 1000000 samples...
+compute_coef: 0.19 seconds
+Time taken: 4.52 s
+
+Testing with 2 features and 10000000 samples...
+compute_coef: 2.00 seconds
+Time taken: 63.89 s
+
+Testing with 4 features and 10000 samples...
+compute_coef: 0.01 seconds
+Time taken: 0.06 s
+
+Testing with 4 features and 100000 samples...
+compute_coef: 0.11 seconds
+Time taken: 0.72 s
+
+Testing with 4 features and 1000000 samples...
+compute_coef: 1.15 seconds
+Time taken: 9.44 s
+
+Testing with 4 features and 10000000 samples...
+compute_coef: 12.01 seconds
+Time taken: 135.56 s
+
+Testing with 6 features and 10000 samples...
+compute_coef: 0.03 seconds
+Time taken: 0.11 s
+
+Testing with 6 features and 100000 samples...
+compute_coef: 0.28 seconds
+Time taken: 1.19 s
+
+Testing with 6 features and 1000000 samples...
+compute_coef: 2.87 seconds
+Time taken: 14.66 s
+
+Testing with 6 features and 10000000 samples...
+compute_coef: 30.05 seconds
+Time taken: 215.22 s
+
+Testing with 8 features and 10000 samples...
+compute_coef: 0.06 seconds
+Time taken: 0.16 s
+
+Testing with 8 features and 100000 samples...
+compute_coef: 0.52 seconds
+Time taken: 1.72 s
+
+Testing with 8 features and 1000000 samples...
+compute_coef: 5.36 seconds
+Time taken: 21.10 s
+
+Testing with 8 features and 10000000 samples...
+compute_coef: 55.99 seconds
+Time taken: 302.36 s
+
+Testing with 10 features and 10000 samples...
+compute_coef: 0.10 seconds
+Time taken: 0.22 s
+
+Testing with 10 features and 100000 samples...
+compute_coef: 0.84 seconds
+Time taken: 2.34 s
+
+Testing with 10 features and 1000000 samples...
+compute_coef: 8.61 seconds
+Time taken: 28.18 s
+
+Testing with 10 features and 10000000 samples...
+compute_coef: 89.98 seconds
+Time taken: 396.59 s
+
+Testing with 12 features and 10000 samples...
+compute_coef: 0.15 seconds
+Time taken: 0.29 s
+
+Testing with 12 features and 100000 samples...
+compute_coef: 1.23 seconds
+Time taken: 3.03 s
+
+Testing with 12 features and 1000000 samples...
+compute_coef: 12.64 seconds
+Time taken: 36.32 s
+
+Testing with 12 features and 10000000 samples...
+compute_coef: 131.76 seconds
+Time taken: 499.42 s
+
+Testing with 14 features and 10000 samples...
+compute_coef: 0.21 seconds
+Time taken: 0.37 s
+
+Testing with 14 features and 100000 samples...
+compute_coef: 1.70 seconds
+Time taken: 3.79 s
+
+Testing with 14 features and 1000000 samples...
+compute_coef: 17.40 seconds
+Time taken: 44.87 s
+
+Testing with 14 features and 10000000 samples...
+compute_coef: 181.60 seconds
+Time taken: 610.50 s
+
+Testing with 16 features and 10000 samples...
+compute_coef: 0.27 seconds
+Time taken: 0.46 s
+
+Testing with 16 features and 100000 samples...
+compute_coef: 2.24 seconds
+Time taken: 4.62 s
+
+Testing with 16 features and 1000000 samples...
+compute_coef: 22.94 seconds
+Time taken: 54.27 s
+
+Testing with 16 features and 10000000 samples...
+compute_coef: 239.80 seconds
+Time taken: 730.93 s
+
+Testing with 18 features and 10000 samples...
+compute_coef: 0.35 seconds
+Time taken: 0.56 s
+
+Testing with 18 features and 100000 samples...
+compute_coef: 2.85 seconds
+Time taken: 5.54 s
+
+Testing with 18 features and 1000000 samples...
+compute_coef: 29.28 seconds
+Time taken: 64.63 s
+
+Testing with 18 features and 10000000 samples...
+compute_coef: 305.12 seconds
+Time taken: 858.68 s
+
+Testing with 20 features and 10000 samples...
+compute_coef: 0.43 seconds
+Time taken: 0.67 s
+
+Testing with 20 features and 100000 samples...
+compute_coef: 3.54 seconds
+Time taken: 6.52 s
+
+Testing with 20 features and 1000000 samples...
+compute_coef: 36.32 seconds
+Time taken: 75.48 s
+
+Testing with 20 features and 10000000 samples...
+compute_coef: 379.13 seconds
+Time taken: 990.36 s
+

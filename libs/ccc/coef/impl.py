@@ -8,16 +8,25 @@ from concurrent.futures import ThreadPoolExecutor, as_completed, ProcessPoolExec
 from typing import Iterable, Union
 
 import numpy as np
-import torch
 from numpy.typing import NDArray
-from numba import cuda, njit
 from numba.typed import List
 
+from numba import cuda,njit
+from mpi4py import MPI
+
+import torch
+
 from ccc.pytorch.core import unravel_index_2d
+from ccc.sklearn import metrics
 from ccc.sklearn.metrics import adjusted_rand_index as ari
 from ccc.scipy.stats import rank
 from ccc.utils import chunker, DummyExecutor
 
+USE_GPU = False
+
+import multiprocessing as mp
+
+mp.set_start_method("spawn",force=True)
 
 @njit(cache=True, nogil=True)
 def get_perc_from_k(k: int) -> list[float]:
@@ -227,7 +236,7 @@ def cdist_parts_basic(x: NDArray, y: NDArray) -> NDArray[float]:
             if y[j, 0] < 0:
                 continue
 
-            res[i, j] = ari(x[i], y[j])
+            res[i, j] = ari(x[i], y[j], USE_GPU)
 
     return res
 
@@ -285,13 +294,9 @@ def get_coords_from_index(n_obj: int, idx: int) -> tuple[int]:
 def get_chunks(
     iterable: Union[int, Iterable], n_threads: int, ratio: float = 1
 ) -> Iterable[Iterable[int]]:
-    
     """
-    Updates: Split elements according to the number of GPUs available for
-    parallel processing, if none of the gpus are detected, use cpu cores instead.
-    
     It splits elements in an iterable in chunks according to the number of
-    CPU cores available for parallel processing.
+    CPU/GPU cores available for parallel processing.
 
     Args:
         iterable: an iterable to be split in chunks. If it is an integer, it
@@ -301,27 +306,25 @@ def get_chunks(
             n_threads. For example, with ratio=1, the function will just split
             the iterable in n_threads chunks. If ratio is larger than 1, then
             it will split in n_threads * ratio chunks.
+        gpu: whether the program uses a GPU
 
     Results:
         Another iterable with chunks according to the arguments given. For
         example, if iterable is [0, 1, 2, 3, 4, 5] and n_threads is 2, it will
         return [[0, 1, 2], [3, 4, 5]].
     """
-
     if isinstance(iterable, int):
         iterable = np.arange(iterable)
 
     n = len(iterable)
 
-    n_gpus = torch.cuda.device_count()
-
-    # if number of gpu=0, fall back to cpu cores
-    if n_gpus == 0:
-        expected_n_chunks = n_threads * ratio
-    else:
+    if USE_GPU:
+        n_gpus = torch.cuda.device_count()
         expected_n_chunks = int(n_gpus * ratio)
+        expected_n_chunks = max(1, min(expected_n_chunks, n))
 
-    expected_n_chunks = max(1, min(expected_n_chunks, n))
+    else:
+        expected_n_chunks = n_threads * ratio
 
     res = list(chunker(iterable, int(np.ceil(n / expected_n_chunks))))
 
@@ -336,6 +339,7 @@ def get_chunks(
         res.insert(idx + 1, new_chunk[1])
 
     return res
+
 
 
 def get_feature_type_and_encode(feature_data: NDArray) -> tuple[NDArray, bool]:
@@ -426,7 +430,7 @@ def compute_ccc_perms(params) -> NDArray[float]:
     return ccc_perm_values
 
 
-def compute_coef(params_and_gpu):
+def compute_coef(params):
     """
     Given a list of indexes representing each a pair of
     objects/rows/genes, it computes the CCC coefficient for
@@ -447,7 +451,6 @@ def compute_coef(params_and_gpu):
         coefficients, the second array has the indexes of the partitions that
         maximized the coefficient, and the third array has the p-values.
     """
-    params, gpu_id = params_and_gpu
     (
         idx_list,
         n_features,
@@ -459,83 +462,79 @@ def compute_coef(params_and_gpu):
         executor,
     ) = params
 
-    print(f"[INFO] Starting chunk on GPU {gpu_id}")
+    print("hello, compute_coef")
+    cdist_func = cdist_parts_basic
+    if cdist_executor is not False:
 
-    with cuda.gpus[gpu_id]:
-        cdist_func = cdist_parts_basic
-        if cdist_executor is not False:
+        def cdist_func(x, y):
+            return cdist_parts_parallel(x, y, cdist_executor)
 
-            def cdist_func(x, y):
-                return cdist_parts_parallel(x, y, cdist_executor)
+    n_idxs = len(idx_list)
+    max_ari_list = np.full(n_idxs, np.nan, dtype=float)
+    max_part_idx_list = np.zeros((n_idxs, 2), dtype=np.uint64)
+    pvalues = np.full(n_idxs, np.nan, dtype=float)
 
-        n_idxs = len(idx_list)
-        max_ari_list = np.full(n_idxs, np.nan, dtype=float)
-        max_part_idx_list = np.zeros((n_idxs, 2), dtype=np.uint64)
-        pvalues = np.full(n_idxs, np.nan, dtype=float)
+    for idx, data_idx in enumerate(idx_list):
+        i, j = get_coords_from_index(n_features, data_idx)
 
-        for idx, data_idx in enumerate(idx_list):
-            i, j = get_coords_from_index(n_features, data_idx)
+        # get partitions for the pair of objects
+        obji_parts, objj_parts = parts[i], parts[j]
 
-            # get partitions for the pair of objects
-            obji_parts, objj_parts = parts[i], parts[j]
+        # compute ari only if partitions are not marked as "missing"
+        # (negative values), which is assigned when partitions have
+        # one cluster (usually when all data in the feature has the same
+        # value).
+        if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
+            continue
 
-            # compute ari only if partitions are not marked as "missing"
-            # (negative values), which is assigned when partitions have
-            # one cluster (usually when all data in the feature has the same
-            # value).
-            if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
-                continue
+        # compare all partitions of one object to the all the partitions
+        # of the other object, and get the maximium ARI
+        max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
+            obji_parts, objj_parts, cdist_func
+        )
 
-            # compare all partitions of one object to the all the partitions
-            # of the other object, and get the maximium ARI
-            max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
-                obji_parts, objj_parts, cdist_func
+        # compute p-value if requested
+        if pvalue_n_perms is not None and pvalue_n_perms > 0:
+            # with ThreadPoolExecutor(max_workers=pvalue_n_jobs) as executor_perms:
+            # select the variable that generated more partitions as the one
+            # to permute
+            obj_parts_sel_i = obji_parts
+            obj_parts_sel_j = objj_parts
+            if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
+                obj_parts_sel_i = objj_parts
+                obj_parts_sel_j = obji_parts
+
+            p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
+            p_inputs = get_chunks(
+                pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
+            )
+            p_inputs = [
+                (
+                    i,
+                    obj_parts_sel_i,
+                    obj_parts_sel_j,
+                    len(i),
+                )
+                for i in p_inputs
+            ]
+
+            for params, p_ccc_val in zip(
+                p_inputs,
+                executor.map(
+                    compute_ccc_perms,
+                    p_inputs,
+                ),
+            ):
+                p_idx = params[0]
+
+                p_ccc_values[p_idx] = p_ccc_val
+
+            # compute p-value
+            pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
+                pvalue_n_perms + 1
             )
 
-            # compute p-value if requested
-            if pvalue_n_perms is not None and pvalue_n_perms > 0:
-                # with ThreadPoolExecutor(max_workers=pvalue_n_jobs) as executor_perms:
-                # select the variable that generated more partitions as the one
-                # to permute
-                obj_parts_sel_i = obji_parts
-                obj_parts_sel_j = objj_parts
-                if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
-                    obj_parts_sel_i = objj_parts
-                    obj_parts_sel_j = obji_parts
-
-                p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
-
-                p_inputs = get_chunks(
-                        pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
-                )
-            
-                p_inputs = [
-                    (
-                        i,
-                        obj_parts_sel_i,
-                        obj_parts_sel_j,
-                        len(i),
-                    )
-                    for i in p_inputs
-                ]
-
-                for params, p_ccc_val in zip(
-                    p_inputs,
-                    executor.map(
-                        compute_ccc_perms,
-                        p_inputs,
-                    ),
-                ):
-                    p_idx = params[0]
-
-                    p_ccc_values[p_idx] = p_ccc_val
-
-                # compute p-value
-                pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
-                    pvalue_n_perms + 1
-                )
-
-        return max_ari_list, max_part_idx_list, pvalues
+    return max_ari_list, max_part_idx_list, pvalues
 
 
 def get_n_workers(n_jobs: int | None) -> int:
@@ -564,7 +563,92 @@ def get_n_workers(n_jobs: int | None) -> int:
     return n_workers
 
 
-def ccc(
+def gpu_compute_coef(params_and_gpu):
+    """
+    Same as compute_coef() in impl.py, but manually assigns different data chunks to each GPU.
+
+    Args:
+        Same as compute_coef() in impl.py.
+
+    Returns:
+        Same as compute_coef() in impl.py.
+    """
+    params, gpu_id = params_and_gpu
+    (
+        idx_list,
+        n_features,
+        parts,
+        pvalue_n_perms,
+        default_n_threads,
+        n_chunks_threads_ratio,
+    ) = params
+    print("hi, gpu_compute_coef")
+
+    print(f"[INFO] Running chunk on GPU {gpu_id}")
+
+    # Each process initializes its own executor
+    with (
+        cuda.gpus[gpu_id],
+        ThreadPoolExecutor(max_workers=default_n_threads) as cdist_executor,
+        ThreadPoolExecutor(max_workers=default_n_threads) as perm_executor
+    ):
+        # define cdist function that uses the thread pool
+        def cdist_func(x, y):
+            return cdist_parts_parallel(x, y, cdist_executor)
+
+        n_idxs = len(idx_list)
+        max_ari_list = np.full(n_idxs, np.nan, dtype=float)
+        max_part_idx_list = np.zeros((n_idxs, 2), dtype=np.uint64)
+        pvalues = np.full(n_idxs, np.nan, dtype=float)
+
+        for idx, data_idx in enumerate(idx_list):
+            i, j = get_coords_from_index(n_features, data_idx)
+
+            obji_parts, objj_parts = parts[i], parts[j]
+
+            if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
+                continue
+
+            max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
+                obji_parts, objj_parts, cdist_func
+            )
+
+            # Optional p-value
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                obj_parts_sel_i, obj_parts_sel_j = obji_parts, objj_parts
+                if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
+                    obj_parts_sel_i, obj_parts_sel_j = objj_parts, obji_parts
+
+                p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
+
+                p_inputs = get_chunks(
+                    pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
+                )
+                p_inputs = [
+                    (
+                        i,
+                        obj_parts_sel_i,
+                        obj_parts_sel_j,
+                        len(i),
+                    )
+                    for i in p_inputs
+                ]
+
+                for params_perm, p_ccc_val in zip(
+                    p_inputs,
+                    perm_executor.map(compute_ccc_perms, p_inputs),
+                ):
+                    p_idx = params_perm[0]
+                    p_ccc_values[p_idx] = p_ccc_val
+
+                pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
+                    pvalue_n_perms + 1
+                )
+    
+    return max_ari_list, max_part_idx_list, pvalues
+
+
+def ccc_original(
     x: NDArray,
     y: NDArray = None,
     internal_n_clusters: Union[int, Iterable[int]] = None,
@@ -640,6 +724,8 @@ def ccc(
             singleton cases were found (-1; usually because input data has all the same
             value) or for categorical features (-2).
     """
+    print("hi, ccc-original")
+    
     n_objects = None
     n_features = None
     # this is a boolean array of size n_features with True if the feature is numerical and False otherwise
@@ -790,44 +876,30 @@ def ccc(
             else:
                 map_func = pexecutor.map
 
-        # iterate over all chunks of object pairs and compute the coefficient on GPU
-        n_gpus = torch.cuda.device_count()
-        if n_gpus>0:
-            pair_chunks = get_chunks(n_features_comp, n_gpus, n_chunks_threads_ratio)
+        # iterate over all chunks of object pairs and compute the coefficient
+        inputs = get_chunks(n_features_comp, n_workers, n_chunks_threads_ratio)
+        inputs = [
+            (
+                i,
+                n_features,
+                parts,
+                pvalue_n_perms,
+                n_workers,
+                n_chunks_threads_ratio,
+                cdist_executor,
+                inner_executor,
+            )
+            for i in inputs
+        ]
 
-            inputs = [
-                (
-                    (
-                        idxs,
-                        n_features,
-                        parts,
-                        pvalue_n_perms,
-                        n_workers,
-                        n_chunks_threads_ratio,
-                        cdist_executor,
-                        inner_executor,
-                    ),
-                    gpu_id % n_gpus,
-                )
-                for gpu_id, idxs in enumerate(pair_chunks)
-            ]
+        for params, (max_ari_list, max_part_idx_list, pvalues) in zip(
+            inputs, map_func(compute_coef, inputs)
+        ):
+            f_idx = params[0]
 
-            max_ari_all = []
-            max_part_idx_all = []
-            pval_all = []
-
-        with ProcessPoolExecutor(max_workers=len(inputs)) as pool:
-            results = pool.map(compute_coef, inputs)
-
-        for result in results:
-            max_ari_all.append(result[0])
-            max_part_idx_all.append(result[1])
-            pval_all.append(result[2])
-
-        cm_values = np.concatenate(max_ari_all)
-        max_parts = np.vstack(max_part_idx_all)
-        cm_pvalues = np.concatenate(pval_all)
-
+            cm_values[f_idx] = max_ari_list
+            max_parts[f_idx, :] = max_part_idx_list
+            cm_pvalues[f_idx] = pvalues
 
     # return an array of values or a single scalar, depending on the input data
     if cm_values.shape[0] == 1:
@@ -853,3 +925,847 @@ def ccc(
         else:
             return cm_values
 
+
+def ccc_mpi(
+    x: NDArray,
+    y: NDArray = None,
+    internal_n_clusters: Union[int, Iterable[int]] = None,
+    return_parts: bool = False,
+    n_chunks_threads_ratio: int = 1,
+    n_jobs: int = 1,
+    pvalue_n_perms: int = None,
+    partitioning_executor: str = "thread",
+) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
+    """
+    MPI implementation of the Clustermatch Correlation Coefficient (CCC).
+    This function should be called by all MPI processes.
+
+    Args:
+        Same as ccc_original() in impl.py.
+    
+    Returns:
+        Same as ccc_original() in impl.py
+    """
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    size = comm.Get_size()
+    
+    # Process input data (same as original implementation)
+    n_objects = None
+    n_features = None
+    n_workers = None
+    X_numerical_type = None
+                
+    if rank == 0:
+        if x.ndim == 1 and (y is not None and y.ndim == 1):
+            # both x and y are 1d arrays
+            if not x.shape == y.shape:
+                raise ValueError("x and y need to be of the same size")
+            n_objects = x.shape[0]
+            n_features = 2
+
+            X = np.zeros((n_features, n_objects))
+            X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+            X[0, :], X_numerical_type[0] = get_feature_type_and_encode(x)
+            X[1, :], X_numerical_type[1] = get_feature_type_and_encode(y)
+        elif x.ndim == 2 and y is None:
+            # x is a 2d array; two things could happen: 1) this is an numpy array,
+            # in that case, features are in rows, objects are in columns; 2) or this is a
+            # pandas dataframe, which is the opposite (features in columns and objects in rows),
+            # plus we have the features data type (numerical, categorical, etc)
+
+            if isinstance(x, np.ndarray):
+                if not get_feature_type_and_encode(x[0, :])[1]:
+                    raise ValueError("If data is a 2d numpy array, it has to be numerical. Use pandas.DataFrame if "
+                                    "you need to mix features with different data types")
+                n_objects = x.shape[1]
+                n_features = x.shape[0]
+
+                X = x
+                X_numerical_type = np.full((n_features,), True, dtype=bool)
+            elif hasattr(x, "to_numpy"):
+                # Here I assume that if x has the attribute "to_numpy" is of type pandas.DataFrame
+                # Using isinstance(x, pandas.DataFrame) would be more appropriate, but I dont want to
+                # have pandas as a dependency just for that
+                n_objects = x.shape[0]
+                n_features = x.shape[1]
+
+                X = np.zeros((n_features, n_objects))
+                X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+                for f_idx in range(n_features):
+                    X[f_idx, :], X_numerical_type[f_idx] = get_feature_type_and_encode(
+                        x.iloc[:, f_idx]
+                    )
+        else:
+            raise ValueError("Wrong combination of parameters x and y")
+        
+        # get number of cores to use
+        n_workers = get_n_workers(n_jobs)
+
+    if internal_n_clusters is not None:
+        _tmp_list = List()
+
+        if isinstance(internal_n_clusters, int):
+            # this interprets internal_n_clusters as the maximum k
+            internal_n_clusters = range(2, internal_n_clusters + 1)
+
+        for x in internal_n_clusters:
+            _tmp_list.append(x)
+        internal_n_clusters = _tmp_list
+        
+    # Broadcast basic parameters to all processes
+    n_objects = comm.bcast(n_objects, root=0)
+    n_features = comm.bcast(n_features, root=0)
+    n_workers = comm.bcast(n_workers, root=0)
+    
+    # get matrix of partitions for each object pair
+    
+    range_n_clusters = get_range_n_clusters(n_objects, internal_n_clusters)
+
+    if range_n_clusters.shape[0] == 0:
+        raise ValueError(f"Data has too few objects: {n_objects}")
+    
+     
+    # Distribute data for partitioning
+    if rank == 0:
+        # Split features among processes
+        chunks = np.array_split(range(n_features), size)
+                
+    else:
+        X = None
+        X_numerical_type = None
+        chunks = None
+    
+    local_chunk = comm.scatter(chunks, root=0)
+    X = comm.bcast(X, root=0)
+    X_numerical_type = comm.bcast(X_numerical_type, root=0)
+    
+    # Compute local partitions
+    parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    
+    with (
+        ThreadPoolExecutor(max_workers=n_workers) as executor,
+        ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
+    ):
+        map_func = map
+        if n_workers > 1:
+            if partitioning_executor == "thread":
+                map_func = executor.map
+            elif partitioning_executor == "process":
+                map_func = pexecutor.map
+
+        # pre-compute the internal partitions for each object in parallel
+        # Only process local features assigned to this MPI process
+
+        # first, create a list with features-k pairs that will be used to parallelize
+        # the partitioning step (only for local features)
+        local_feature_k_pairs = [
+            (f_idx, c_idx, c)
+            for f_idx in local_chunk
+            for c_idx, c in enumerate(range_n_clusters)
+        ]
+        
+        if len(local_feature_k_pairs) > 0:
+            inputs = get_chunks(
+                local_feature_k_pairs,
+                n_workers,
+                n_chunks_threads_ratio,
+            )
+
+            # then, flatten the list of features-k pairs into a list that is divided into
+            # chunks that will be used to parallelize the partitioning step.
+            inputs = [
+                [
+                    (
+                        feature_k_pair,
+                        X[feature_k_pair[0]],
+                        X_numerical_type[feature_k_pair[0]],
+                    )
+                    for feature_k_pair in chunk
+                ]
+                for chunk in inputs
+            ]
+
+            for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
+                # get the set of feature indexes and cluster indexes
+                f_idxs = [p[0][0] for p in params]
+                c_idxs = [p[0][1] for p in params]
+
+                # update the partitions for each feature-k pair
+                parts[f_idxs, c_idxs] = ps
+    
+    comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
+    
+    # Compute CCC coefficients
+    n_features_comp = (n_features * (n_features - 1)) // 2
+    cm_values = np.full(n_features_comp, np.nan)
+    cm_pvalues = np.full(n_features_comp, np.nan)
+    max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
+    
+    # # Distribute computation across processes
+    local_indices = np.array_split(range(n_features_comp), size)[rank]
+    
+    with (
+        ThreadPoolExecutor(max_workers=n_workers) as executor,
+        ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
+    ):
+        # Below, there are two layers of parallelism: 1) parallel execution
+        # across feature pairs and 2) the cdist_parts_parallel function, which
+        # also runs several threads to compare partitions using ari. In 2) we
+        # need to disable parallelization in case len(local_indices) > 1 (that is,
+        # we have several feature pairs to compare), because parallelization is
+        # already performed at this level. Otherwise, more threads than
+        # specified by the user are started.
+        map_func = map
+        cdist_executor = False
+        inner_executor = DummyExecutor()
+
+        if n_workers > 1 and len(local_indices) > 0:
+            if len(local_indices) == 1:
+                map_func = map
+                cdist_executor = executor
+                inner_executor = pexecutor
+            else:
+                map_func = pexecutor.map
+
+        # iterate over all chunks of object pairs and compute the coefficient
+        # (only for local indices assigned to this MPI process)
+        if len(local_indices) > 0:
+            inputs = get_chunks(local_indices, n_workers, n_chunks_threads_ratio)
+            inputs = [
+                (
+                    i,
+                    n_features,
+                    parts,
+                    pvalue_n_perms,
+                    n_workers,
+                    n_chunks_threads_ratio,
+                    cdist_executor,
+                    inner_executor,
+                )
+                for i in inputs
+            ]
+
+            for params, (max_ari_list, max_part_idx_list, pvalues) in zip(
+                inputs, map_func(compute_coef, inputs)
+            ):
+                f_idx = params[0]
+
+                cm_values[f_idx] = max_ari_list
+                max_parts[f_idx, :] = max_part_idx_list
+                cm_pvalues[f_idx] = pvalues
+
+    # Gather results
+    all_results = comm.gather((cm_values[local_indices], max_parts[local_indices], cm_pvalues[local_indices]), root=0)
+    
+    
+    if rank == 0:
+        # Combine results
+        for proc_rank, (proc_cm_values, proc_max_parts, proc_cm_pvalues) in enumerate(all_results):
+            proc_indices = np.array_split(range(n_features_comp), size)[proc_rank]
+            if len(proc_indices) > 0:
+                cm_values[proc_indices] = proc_cm_values
+                max_parts[proc_indices] = proc_max_parts
+                cm_pvalues[proc_indices] = proc_cm_pvalues
+            
+        # return an array of values or a single scalar, depending on the input data
+        if cm_values.shape[0] == 1:
+            if return_parts:
+                if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                    return (cm_values[0], cm_pvalues[0]), max_parts[0], parts
+                else:
+                    return cm_values[0], max_parts[0], parts
+            else:
+                if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                    return cm_values[0], cm_pvalues[0]
+                
+                else:
+                    return cm_values[0]
+
+        if return_parts:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return (cm_values, cm_pvalues), max_parts, parts
+            else:
+                return cm_values, max_parts, parts
+        else:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return cm_values, cm_pvalues
+            else:
+                return cm_values
+            
+    # Non-root processes return None
+    return None
+
+def ccc_gpu(
+    x: NDArray,
+    y: NDArray = None,
+    internal_n_clusters: Union[int, Iterable[int]] = None,
+    return_parts: bool = False,
+    n_chunks_threads_ratio: int = 1,
+    n_jobs: int = 1,
+    pvalue_n_perms: int = None,
+    partitioning_executor: str = "thread",
+) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
+    """
+    GPU implementation of the Clustermatch Correlation Coefficient (CCC).
+
+    Args:
+        Same as ccc_original() in impl.py.
+    
+    Returns:
+        Same as ccc_original() in impl.py
+    """
+    print("hello, ccc_gpu")
+    n_objects = None
+    n_features = None
+    # this is a boolean array of size n_features with True if the feature is numerical and False otherwise
+    X_numerical_type = None
+    if x.ndim == 1 and (y is not None and y.ndim == 1):
+        # both x and y are 1d arrays
+        if not x.shape == y.shape:
+            raise ValueError("x and y need to be of the same size")
+        n_objects = x.shape[0]
+        n_features = 2
+
+        X = np.zeros((n_features, n_objects))
+        X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+        X[0, :], X_numerical_type[0] = get_feature_type_and_encode(x)
+        X[1, :], X_numerical_type[1] = get_feature_type_and_encode(y)
+    elif x.ndim == 2 and y is None:
+        # x is a 2d array; two things could happen: 1) this is an numpy array,
+        # in that case, features are in rows, objects are in columns; 2) or this is a
+        # pandas dataframe, which is the opposite (features in columns and objects in rows),
+        # plus we have the features data type (numerical, categorical, etc)
+
+        if isinstance(x, np.ndarray):
+            if not get_feature_type_and_encode(x[0, :])[1]:
+                raise ValueError("If data is a 2d numpy array, it has to be numerical. Use pandas.DataFrame if "
+                                 "you need to mix features with different data types")
+            n_objects = x.shape[1]
+            n_features = x.shape[0]
+
+            X = x
+            X_numerical_type = np.full((n_features,), True, dtype=bool)
+        elif hasattr(x, "to_numpy"):
+            # Here I assume that if x has the attribute "to_numpy" is of type pandas.DataFrame
+            # Using isinstance(x, pandas.DataFrame) would be more appropriate, but I dont want to
+            # have pandas as a dependency just for that
+            n_objects = x.shape[0]
+            n_features = x.shape[1]
+
+            X = np.zeros((n_features, n_objects))
+            X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+            for f_idx in range(n_features):
+                X[f_idx, :], X_numerical_type[f_idx] = get_feature_type_and_encode(
+                    x.iloc[:, f_idx]
+                )
+    else:
+        raise ValueError("Wrong combination of parameters x and y")
+
+    # get number of cores to use
+    n_workers = get_n_workers(n_jobs)
+
+    if internal_n_clusters is not None:
+        _tmp_list = List()
+
+        if isinstance(internal_n_clusters, int):
+            # this interprets internal_n_clusters as the maximum k
+            internal_n_clusters = range(2, internal_n_clusters + 1)
+
+        for x in internal_n_clusters:
+            _tmp_list.append(x)
+        internal_n_clusters = _tmp_list
+
+    # get matrix of partitions for each object pair
+    range_n_clusters = get_range_n_clusters(n_objects, internal_n_clusters)
+
+    if range_n_clusters.shape[0] == 0:
+        raise ValueError(f"Data has too few objects: {n_objects}")
+
+    # store a set of partitions per row (object) in X as a multidimensional
+    # array, where the second dimension is the number of partitions per object.
+    parts = (
+        np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    )
+
+    # cm_values stores the CCC coefficients
+    n_features_comp = (n_features * (n_features - 1)) // 2
+    cm_values = np.full(n_features_comp, np.nan)
+    cm_pvalues = np.full(n_features_comp, np.nan)
+
+    # for each object pair being compared, max_parts has the indexes of the
+    # partitions that maximimized the ARI
+    max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
+
+    with (
+        ThreadPoolExecutor(max_workers=n_workers) as executor,
+        ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
+    ):
+        map_func = map
+        if n_workers > 1:
+            if partitioning_executor == "thread":
+                map_func = executor.map
+            elif partitioning_executor == "process":
+                map_func = pexecutor.map
+
+        # pre-compute the internal partitions for each object in parallel
+
+        # first, create a list with features-k pairs that will be used to parallelize
+        # the partitioning step
+        inputs = get_chunks(
+            [
+                (f_idx, c_idx, c)
+                for f_idx in range(n_features)
+                for c_idx, c in enumerate(range_n_clusters)
+            ],
+            n_workers,
+            n_chunks_threads_ratio,
+        )
+
+        # then, flatten the list of features-k pairs into a list that is divided into
+        # chunks that will be used to parallelize the partitioning step.
+        inputs = [
+            [
+                (
+                    feature_k_pair,
+                    X[feature_k_pair[0]],
+                    X_numerical_type[feature_k_pair[0]],
+                )
+                for feature_k_pair in chunk
+            ]
+            for chunk in inputs
+        ]
+
+        for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
+            # get the set of feature indexes and cluster indexes
+            f_idxs = [p[0][0] for p in params]
+            c_idxs = [p[0][1] for p in params]
+
+            # update the partitions for each feature-k pair
+            parts[f_idxs, c_idxs] = ps
+
+        # Below, there are two layers of parallelism: 1) parallel execution
+        # across feature pairs and 2) the cdist_parts_parallel function, which
+        # also runs several threads to compare partitions using ari. In 2) we
+        # need to disable parallelization in case len(cm_values) > 1 (that is,
+        # we have several feature pairs to compare), because parallelization is
+        # already performed at this level. Otherwise, more threads than
+        # specified by the user are started.
+        
+        map_func = map  # default to serial
+        if n_workers > 1:
+            if n_features_comp == 1:
+                map_func = map
+
+            else:
+                map_func = pexecutor.map
+
+        n_gpus = torch.cuda.device_count()
+        print(f"GPUs available: {n_gpus}")
+
+        if n_gpus > 0:
+            pair_chunks = get_chunks(n_features_comp, n_gpus, n_chunks_threads_ratio)
+
+            # Prepare input per GPU
+            inputs = [
+                (
+                    (
+                        idxs,
+                        n_features,
+                        parts,
+                        pvalue_n_perms,
+                        n_workers,
+                        n_chunks_threads_ratio,
+                    ),
+                    gpu_id % n_gpus,
+                )
+                for gpu_id, idxs in enumerate(pair_chunks)
+            ]
+
+            max_ari_all = []
+            max_part_idx_all = []
+            pval_all = []
+          
+            with ProcessPoolExecutor(max_workers=len(inputs)) as pool:
+                results = list(pool.map(gpu_compute_coef, inputs))
+
+            for result in results:
+                max_ari_all.append(result[0])
+                max_part_idx_all.append(result[1])
+                pval_all.append(result[2])
+
+            # Step: Concatenate results
+            cm_values = np.concatenate(max_ari_all)
+            max_parts = np.vstack(max_part_idx_all)
+            cm_pvalues = np.concatenate(pval_all)
+            
+            # print(f"cm_values: {cm_pvalues}, max_parts: {max_parts}, cm_pvalues: {cm_pvalues}")
+
+    # return an array of values or a single scalar, depending on the input data
+    if cm_values.shape[0] == 1:
+        if return_parts:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return (cm_values[0], cm_pvalues[0]), max_parts[0], parts
+            else:
+                return cm_values[0], max_parts[0], parts
+        else:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return cm_values[0], cm_pvalues[0]
+            else:
+                return cm_values[0]
+
+    if return_parts:
+        if pvalue_n_perms is not None and pvalue_n_perms > 0:
+            return (cm_values, cm_pvalues), max_parts, parts
+        else:
+            return cm_values, max_parts, parts
+    else:
+        if pvalue_n_perms is not None and pvalue_n_perms > 0:
+            return cm_values, cm_pvalues
+        else:
+            return cm_values
+
+def ccc_mpi_gpu(
+    x: NDArray,
+    y: NDArray = None,
+    internal_n_clusters: Union[int, Iterable[int]] = None,
+    return_parts: bool = False,
+    n_chunks_threads_ratio: int = 1,
+    n_jobs: int = 1,
+    pvalue_n_perms: int = None,
+    partitioning_executor: str = "thread",
+) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
+    """
+    MPI_GPU implementation of the Clustermatch Correlation Coefficient (CCC).
+    This function should be called by all MPI_GPU processes.
+
+    Args:
+        Same as ccc_original() in impl.py.
+    
+    Returns:
+        Same as ccc_original() in impl.py
+    """
+    import socket
+
+    def get_local_rank():
+        comm = MPI.COMM_WORLD
+        rank = comm.Get_rank()
+        hostname = socket.gethostname()
+        all_hosts = comm.allgather(hostname)
+        local_rank = sum(1 for i in range(rank) if all_hosts[i] == hostname)
+        return local_rank
+
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    size = comm.Get_size()
+    
+    # Process input data (same as original implementation)
+    n_objects = None
+    n_features = None
+    n_workers = None
+    X_numerical_type = None
+                
+    if rank == 0:
+        if x.ndim == 1 and (y is not None and y.ndim == 1):
+            # both x and y are 1d arrays
+            if not x.shape == y.shape:
+                raise ValueError("x and y need to be of the same size")
+            n_objects = x.shape[0]
+            n_features = 2
+
+            X = np.zeros((n_features, n_objects))
+            X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+            X[0, :], X_numerical_type[0] = get_feature_type_and_encode(x)
+            X[1, :], X_numerical_type[1] = get_feature_type_and_encode(y)
+        elif x.ndim == 2 and y is None:
+            # x is a 2d array; two things could happen: 1) this is an numpy array,
+            # in that case, features are in rows, objects are in columns; 2) or this is a
+            # pandas dataframe, which is the opposite (features in columns and objects in rows),
+            # plus we have the features data type (numerical, categorical, etc)
+
+            if isinstance(x, np.ndarray):
+                if not get_feature_type_and_encode(x[0, :])[1]:
+                    raise ValueError("If data is a 2d numpy array, it has to be numerical. Use pandas.DataFrame if "
+                                    "you need to mix features with different data types")
+                n_objects = x.shape[1]
+                n_features = x.shape[0]
+
+                X = x
+                X_numerical_type = np.full((n_features,), True, dtype=bool)
+            elif hasattr(x, "to_numpy"):
+                # Here I assume that if x has the attribute "to_numpy" is of type pandas.DataFrame
+                # Using isinstance(x, pandas.DataFrame) would be more appropriate, but I dont want to
+                # have pandas as a dependency just for that
+                n_objects = x.shape[0]
+                n_features = x.shape[1]
+
+                X = np.zeros((n_features, n_objects))
+                X_numerical_type = np.full((n_features,), True, dtype=bool)
+
+                for f_idx in range(n_features):
+                    X[f_idx, :], X_numerical_type[f_idx] = get_feature_type_and_encode(
+                        x.iloc[:, f_idx]
+                    )
+        else:
+            raise ValueError("Wrong combination of parameters x and y")
+        
+        # get number of cores to use
+        n_workers = get_n_workers(n_jobs)
+
+    if internal_n_clusters is not None:
+        _tmp_list = List()
+
+        if isinstance(internal_n_clusters, int):
+            # this interprets internal_n_clusters as the maximum k
+            internal_n_clusters = range(2, internal_n_clusters + 1)
+
+        for x in internal_n_clusters:
+            _tmp_list.append(x)
+        internal_n_clusters = _tmp_list
+        
+    # Broadcast basic parameters to all processes
+    n_objects = comm.bcast(n_objects, root=0)
+    n_features = comm.bcast(n_features, root=0)
+    n_workers = comm.bcast(n_workers, root=0)
+    
+    # get matrix of partitions for each object pair
+    
+    range_n_clusters = get_range_n_clusters(n_objects, internal_n_clusters)
+
+    if range_n_clusters.shape[0] == 0:
+        raise ValueError(f"Data has too few objects: {n_objects}")
+    
+     
+    # Distribute data for partitioning
+    if rank == 0:
+        # Split features among processes
+        chunks = np.array_split(range(n_features), size)
+                
+    else:
+        X = None
+        X_numerical_type = None
+        chunks = None
+    
+    local_chunk = comm.scatter(chunks, root=0)
+    X = comm.bcast(X, root=0)
+    X_numerical_type = comm.bcast(X_numerical_type, root=0)
+    
+    # Compute local partitions
+    parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    
+    with (
+        ThreadPoolExecutor(max_workers=n_workers) as executor,
+        ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
+    ):
+        map_func = map
+        if n_workers > 1:
+            if partitioning_executor == "thread":
+                map_func = executor.map
+            elif partitioning_executor == "process":
+                map_func = pexecutor.map
+
+        # pre-compute the internal partitions for each object in parallel
+        # Only process local features assigned to this MPI process
+
+        # first, create a list with features-k pairs that will be used to parallelize
+        # the partitioning step (only for local features)
+        local_feature_k_pairs = [
+            (f_idx, c_idx, c)
+            for f_idx in local_chunk
+            for c_idx, c in enumerate(range_n_clusters)
+        ]
+        
+        if len(local_feature_k_pairs) > 0:
+            inputs = get_chunks(
+                local_feature_k_pairs,
+                n_workers,
+                n_chunks_threads_ratio,
+            )
+
+            # then, flatten the list of features-k pairs into a list that is divided into
+            # chunks that will be used to parallelize the partitioning step.
+            inputs = [
+                [
+                    (
+                        feature_k_pair,
+                        X[feature_k_pair[0]],
+                        X_numerical_type[feature_k_pair[0]],
+                    )
+                    for feature_k_pair in chunk
+                ]
+                for chunk in inputs
+            ]
+
+            for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
+                # get the set of feature indexes and cluster indexes
+                f_idxs = [p[0][0] for p in params]
+                c_idxs = [p[0][1] for p in params]
+
+                # update the partitions for each feature-k pair
+                parts[f_idxs, c_idxs] = ps
+    
+    comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
+    
+    # Compute CCC coefficients
+    n_features_comp = (n_features * (n_features - 1)) // 2
+    cm_values = np.full(n_features_comp, np.nan)
+    cm_pvalues = np.full(n_features_comp, np.nan)
+    max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
+    
+    # # Distribute computation across processes
+    local_indices = np.array_split(range(n_features_comp), size)[rank]
+    local_rank = get_local_rank()
+    n_gpus = torch.cuda.device_count()
+    gpu_id = get_local_rank() % n_gpus
+    hostname = socket.gethostname()
+    print(f"[Rank {rank} on {hostname}] Local rank: {local_rank}, GPUs available: {n_gpus}")
+
+    with (
+        ThreadPoolExecutor(max_workers=n_workers) as executor,
+        ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
+    ):
+        # Below, there are two layers of parallelism: 1) parallel execution
+        # across feature pairs and 2) the cdist_parts_parallel function, which
+        # also runs several threads to compare partitions using ari. In 2) we
+        # need to disable parallelization in case len(local_indices) > 1 (that is,
+        # we have several feature pairs to compare), because parallelization is
+        # already performed at this level. Otherwise, more threads than
+        # specified by the user are started.
+        map_func = map
+        # cdist_executor = False
+        # inner_executor = DummyExecutor()
+
+        if n_workers > 1 and len(local_indices) > 0:
+            if len(local_indices) == 1:
+                map_func = map
+                # cdist_executor = executor
+                # inner_executor = pexecutor
+            else:
+                map_func = pexecutor.map
+
+        # iterate over all chunks of object pairs and compute the coefficient
+        # (only for local indices assigned to this MPI process)
+        if len(local_indices) > 0 and n_gpus > 0:
+            pair_chunks = get_chunks(local_indices, n_workers, n_chunks_threads_ratio)
+            
+            inputs = [
+                (
+                    (
+                        idxs,
+                        n_features,
+                        parts,
+                        pvalue_n_perms,
+                        n_workers,
+                        n_chunks_threads_ratio
+                    ),
+                    gpu_id
+                )
+                for idxs in pair_chunks
+            ]
+
+            max_ari_all, max_part_idx_all, pval_all = [], [], []
+            with ThreadPoolExecutor(max_workers=min(len(inputs), n_gpus)) as pool:
+                results = list(pool.map(gpu_compute_coef, inputs))
+
+            for result in results:
+                max_ari_all.append(result[0])
+                max_part_idx_all.append(result[1])
+                pval_all.append(result[2])
+
+            local_cm_values = np.concatenate(max_ari_all)
+            local_max_parts = np.vstack(max_part_idx_all)
+            local_cm_pvalues = np.concatenate(pval_all)
+
+    # Gather results
+    all_results = comm.gather((local_cm_values, local_max_parts, local_cm_pvalues), root=0)
+    
+    
+    if rank == 0:
+        cm_values = np.full(n_features_comp, np.nan)
+        cm_pvalues = np.full(n_features_comp, np.nan)
+        max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
+
+        for proc_rank, (proc_cm_values, proc_max_parts, proc_cm_pvalues) in enumerate(all_results):
+            proc_indices = np.array_split(range(n_features_comp), size)[proc_rank]
+            cm_values[proc_indices] = proc_cm_values
+            max_parts[proc_indices] = proc_max_parts
+            cm_pvalues[proc_indices] = proc_cm_pvalues
+    
+        # return an array of values or a single scalar, depending on the input data
+        if cm_values.shape[0] == 1:
+            if return_parts:
+                if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                    return (cm_values[0], cm_pvalues[0]), max_parts[0], parts
+                else:
+                    return cm_values[0], max_parts[0], parts
+            else:
+                if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                    return cm_values[0], cm_pvalues[0]
+                
+                else:
+                    return cm_values[0]
+
+        if return_parts:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return (cm_values, cm_pvalues), max_parts, parts
+            else:
+                return cm_values, max_parts, parts
+        else:
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                return cm_values, cm_pvalues
+            else:
+                return cm_values
+            
+    # Non-root processes return None
+    return None
+
+def ccc(
+    x: NDArray,
+    y: NDArray = None,
+    internal_n_clusters: Union[int, Iterable[int]] = None,
+    return_parts: bool = False,
+    n_chunks_threads_ratio: int = 1,
+    n_jobs: int = 1,
+    pvalue_n_perms: int = None,
+    partitioning_executor: str = "thread",
+    
+    gpu: bool = False,
+    node: bool = False,
+    
+) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
+
+    # if node < 1:
+    #     raise ValueError(f"Number of nodexs cannot be negative.")
+    
+    if gpu == True and torch.cuda.is_available() == False:
+        raise RuntimeError("GPU not found. Please ensure CUDA is available.")
+    
+    USE_GPU = gpu
+    if node and gpu:
+        print("mpi-gpu")
+        return ccc_mpi_gpu(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
+    
+    elif gpu:
+        print("gpu")
+        return ccc_gpu(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
+    
+    elif node:
+        print("mpi")
+        return ccc_mpi(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
+    
+    else:
+        print("original")
+        # return 3345
+        return ccc_original(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
+
+# if __name__ =="__main__":
+#     np.random.seed(123)
+#     x = np.random.rand(100)
+#     y = np.random.rand(100)
+#     result= ccc(x, y, gpu=True, node=2)
+#     print(result)

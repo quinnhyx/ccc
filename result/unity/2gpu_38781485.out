@@ -1,3 +1,4 @@
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -7,6 +8,67 @@
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+Running CCC with GPU support...
+
+Testing with 2 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+Time taken: 2.14 s
+
+Testing with 2 features and 100000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+Time taken: 2.47 s
+
+Testing with 2 features and 1000000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+Time taken: 6.54 s
+
+Testing with 2 features and 10000000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+Time taken: 65.36 s
+
+Testing with 4 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -26,6 +88,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 3.06 s
+
+Testing with 4 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -42,6 +110,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 3.61 s
+
+Testing with 4 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -58,6 +132,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 12.06 s
+
+Testing with 4 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -74,13 +154,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 131.86 s
+
+Testing with 6 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -100,6 +180,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 3.99 s
+
+Testing with 6 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -116,6 +202,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 4.86 s
+
+Testing with 6 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -132,6 +224,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 17.24 s
+
+Testing with 6 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -148,13 +246,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 202.38 s
+
+Testing with 8 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -174,6 +272,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 5.45 s
+
+Testing with 8 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -190,6 +294,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 6.60 s
+
+Testing with 8 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -206,6 +316,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 23.68 s
+
+Testing with 8 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -222,13 +338,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 272.65 s
+
+Testing with 10 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -248,6 +364,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 7.46 s
+
+Testing with 10 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -264,6 +386,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 8.63 s
+
+Testing with 10 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -280,6 +408,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 33.35 s
+
+Testing with 10 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -296,13 +430,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 352.70 s
+
+Testing with 12 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -322,6 +456,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 9.88 s
+
+Testing with 12 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -338,6 +478,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 11.16 s
+
+Testing with 12 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -354,6 +500,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 38.16 s
+
+Testing with 12 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -370,13 +522,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 425.71 s
+
+Testing with 14 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -396,6 +548,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 12.51 s
+
+Testing with 14 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -412,6 +570,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 13.94 s
+
+Testing with 14 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -428,6 +592,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 46.93 s
+
+Testing with 14 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -444,13 +614,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 512.61 s
+
+Testing with 16 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -470,6 +640,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 15.63 s
+
+Testing with 16 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -486,6 +662,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 17.39 s
+
+Testing with 16 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -502,6 +684,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 55.37 s
+
+Testing with 16 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -518,13 +706,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 596.43 s
+
+Testing with 18 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -544,6 +732,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 19.50 s
+
+Testing with 18 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -560,6 +754,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 20.98 s
+
+Testing with 18 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -576,6 +776,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 65.15 s
+
+Testing with 18 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -592,13 +798,13 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 685.32 s
+
+Testing with 20 features and 10000 samples...
+GPUs available: 2
+/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
@@ -618,6 +824,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 23.45 s
+
+Testing with 20 features and 100000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -634,6 +846,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 25.19 s
+
+Testing with 20 features and 1000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -650,6 +868,12 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 1
+[INFO] Running chunk on GPU 0
+Time taken: 75.94 s
+
+Testing with 20 features and 10000000 samples...
+GPUs available: 2
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
@@ -666,75 +890,7 @@
   warn(NumbaPerformanceWarning(msg))
 /work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
   warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 40 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
-/work/pi_mrobson_smith_edu/ccc-env-gpu/lib/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
-  warn(NumbaPerformanceWarning(msg))
+[INFO] Running chunk on GPU 0
+[INFO] Running chunk on GPU 1
+Time taken: 777.63 s
+

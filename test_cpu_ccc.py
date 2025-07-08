@@ -1,68 +1,44 @@
-#import numpy as np
-#from ccc.coef import ccc
-#import time
+import numpy as np
 
-#data_sizes = [10000,100000,1000000,10000000] 
-#feature_counts = list(range(2, 21, 2))  # 2, 4, ..., 20
+import pandas as pd
 
-#print("Running CCC timing test...\n")
-
-#for n_features in feature_counts:
- #   for data_size in data_sizes:
-  #      print(f"Testing with {n_features} features and {data_size} samples...")
-   #     x = np.random.normal(size=(n_features, data_size))
-
-    #    start = time.time()
-     #   result = ccc(x)
-      #  end = time.time()
-       # elapsed_ms = (end - start) * 1000
-
-       # print(f"CCC result: {result}")
-       # print(f"Time taken: {elapsed_ms:.2f} ms\n")
-
-import os
+from ccc.coef import ccc
 
 import time
 
-import numpy as np
-
-from ccc.coef import ccc  # Your CPU-only CCC implementation
 
 
+data_sizes = [10000,100000,1000000,10000000]  # 100 to 10,000,000
 
-# Optional thread control for NumPy, if CCC uses multithreading
-
-THREADS = int(os.environ.get("THREADS", 1))
-
-os.environ["OMP_NUM_THREADS"] = str(THREADS)
-
-os.environ["MKL_NUM_THREADS"] = str(THREADS)
+feature_counts = list(range(2, 21, 2))  # 2, 4, 6, ..., 20
 
 
 
-# Parameters
-
-SIZE = int(os.environ.get("SIZE", 1000000))
-
-FEATURES = int(os.environ.get("FEATURES", 10))
-
-NODES = int(os.environ.get("NODES", 1))
+print("Running CCC with CPU support...\n")
 
 
 
-# Run CCC
+for n_features in feature_counts:
 
-x = np.random.normal(size=(FEATURES, SIZE))
+    for data_size in data_sizes:
 
-start = time.time()
+        print(f"Testing with {n_features} features and {data_size} samples...")
 
-ccc(x)
-
-end = time.time()
+        x = np.random.normal(size=(n_features, data_size))
 
 
 
-# Output log format
+        start = time.time()
 
-print(f"{NODES} {THREADS} {SIZE} {FEATURES} {end - start:.4f}")
+        result = ccc(x)
+
+        end = time.time()
+
+        elapsed_s = end - start
+
+
+
+        # print(f"CCC result: {result}")
+
+        print(f"Time taken: {elapsed_s:.2f} s\n")
 
