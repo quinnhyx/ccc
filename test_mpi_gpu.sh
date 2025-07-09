@@ -2,9 +2,11 @@
 #SBATCH --job-name=ccc_simple_test
 #SBATCH --output=ccc_test_4rank2gpu_%j.out
 #SBATCH --error=ccc_test_4rank2gpu_%j.err
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=2
-#SBATCH --gres=gpu:2
+#SBATCH --nodes=1
+#SBATCH --nodelist=gypsum-gpu[160-164,166,168,171,173-177,181,190-192]
+#SBATCH --mem=370G
+#SBATCH --ntasks-per-node=24
+#SBATCH --gres=gpu:8
 #SBATCH --partition=gpu
 #SBATCH --time=01:00:00
 #SBATCH --exclusive
@@ -12,12 +14,12 @@
 set -e
 
 # Parameters 
-PYTHON_SCRIPT=test_ccc_mpi_gpu.py
+PYTHON_SCRIPT=test_mpi_gpu.py
 PYTHONPATH=./libs
 
-SIZE=10000
-FEATURES=20
-RANKS=4
+SIZE=10000000
+FEATURES=4
+RANKS=24
 
 OUTPUT=$(env PYTHONPATH=$PYTHONPATH \
         SIZE=$SIZE FEATURES=$FEATURES \

@@ -1625,6 +1625,12 @@ def ccc_mpi_gpu(
     hostname = socket.gethostname()
     print(f"[Rank {rank} on {hostname}] Local rank: {local_rank}, GPUs available: {n_gpus}")
 
+    # Ensure variables are defined even if no work is assigned
+    local_cm_values = np.array([])
+    local_max_parts = np.zeros((0, 2), dtype=np.uint64)
+    local_cm_pvalues = np.array([])
+
+
     with (
         ThreadPoolExecutor(max_workers=n_workers) as executor,
         ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
@@ -1735,7 +1741,7 @@ def ccc(
     partitioning_executor: str = "thread",
     
     gpu: bool = False,
-    node: bool = False,
+    mpi: bool = False,
     
 ) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
 
@@ -1746,7 +1752,7 @@ def ccc(
         raise RuntimeError("GPU not found. Please ensure CUDA is available.")
     
     USE_GPU = gpu
-    if node and gpu:
+    if mpi and gpu:
         print("mpi-gpu")
         return ccc_mpi_gpu(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
     
@@ -1754,7 +1760,7 @@ def ccc(
         print("gpu")
         return ccc_gpu(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
     
-    elif node:
+    elif mpi:
         print("mpi")
         return ccc_mpi(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
     
