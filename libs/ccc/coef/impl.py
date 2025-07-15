@@ -340,8 +340,6 @@ def get_chunks(
 
     return res
 
-
-
 def get_feature_type_and_encode(feature_data: NDArray) -> tuple[NDArray, bool]:
     """
     Given the data of one feature as a 1d numpy array (it could also be a pandas.Series),
@@ -462,7 +460,6 @@ def compute_coef(params):
         executor,
     ) = params
 
-    print("hello, compute_coef")
     cdist_func = cdist_parts_basic
     if cdist_executor is not False:
 
@@ -536,6 +533,219 @@ def compute_coef(params):
 
     return max_ari_list, max_part_idx_list, pvalues
 
+def mpi_compute_coef(params):
+    """
+    Given a list of indexes representing each a pair of
+    objects/rows/genes, it computes the CCC coefficient for
+    each of them. This function is supposed to be used to parallelize
+    processing.
+
+    Args:
+        params: a tuple with eight elements: 1) the indexes of the features
+            to compare, 2) the number of features, 3) the partitions for each
+            feature, 4) the number of permutations to compute the p-value, 5)
+            the number of threads to use for parallelization, 6) the ratio
+            between the number of chunks and the number of threads, 7) the
+            executor to use for cdist parallelization, and 8) the executor to use
+            for parallelization of permutations.
+
+    Returns:
+        Returns a tuple with three arrays. The first array has the CCC
+        coefficients, the second array has the indexes of the partitions that
+        maximized the coefficient, and the third array has the p-values.
+    """
+    (
+        idx_list,
+        n_features,
+        parts,
+        pvalue_n_perms,
+        default_n_threads,
+        n_chunks_threads_ratio,
+        cdist_executor,
+        executor,
+        feat_map,
+    ) = params
+
+    cdist_func = cdist_parts_basic
+    if cdist_executor is not False:
+
+        def cdist_func(x, y):
+            return cdist_parts_parallel(x, y, cdist_executor)
+
+    n_idxs = len(idx_list)
+    max_ari_list = np.full(n_idxs, np.nan, dtype=float)
+    max_part_idx_list = np.zeros((n_idxs, 2), dtype=np.uint64)
+    pvalues = np.full(n_idxs, np.nan, dtype=float)
+
+    for idx, data_idx in enumerate(idx_list):
+        i, j = get_coords_from_index(n_features, data_idx)
+
+        # get partitions for the pair of objects
+        # obji_parts, objj_parts = parts[i], parts[j]
+        obji_parts, objj_parts = parts[feat_map[i]], parts[feat_map[j]]
+
+
+        # compute ari only if partitions are not marked as "missing"
+        # (negative values), which is assigned when partitions have
+        # one cluster (usually when all data in the feature has the same
+        # value).
+        if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
+            continue
+
+        # compare all partitions of one object to the all the partitions
+        # of the other object, and get the maximium ARI
+        max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
+            obji_parts, objj_parts, cdist_func
+        )
+
+        # compute p-value if requested
+        if pvalue_n_perms is not None and pvalue_n_perms > 0:
+            # with ThreadPoolExecutor(max_workers=pvalue_n_jobs) as executor_perms:
+            # select the variable that generated more partitions as the one
+            # to permute
+            obj_parts_sel_i = obji_parts
+            obj_parts_sel_j = objj_parts
+            if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
+                obj_parts_sel_i = objj_parts
+                obj_parts_sel_j = obji_parts
+
+            p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
+            p_inputs = get_chunks(
+                pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
+            )
+            p_inputs = [
+                (
+                    i,
+                    obj_parts_sel_i,
+                    obj_parts_sel_j,
+                    len(i),
+                )
+                for i in p_inputs
+            ]
+
+            for params, p_ccc_val in zip(
+                p_inputs,
+                executor.map(
+                    compute_ccc_perms,
+                    p_inputs,
+                ),
+            ):
+                p_idx = params[0]
+
+                p_ccc_values[p_idx] = p_ccc_val
+
+            # compute p-value
+            pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
+                pvalue_n_perms + 1
+            )
+
+    return max_ari_list, max_part_idx_list, pvalues
+
+def mpi_gpu_compute_coef(params_and_gpu):
+    """
+    Given a list of indexes representing each a pair of
+    objects/rows/genes, it computes the CCC coefficient for
+    each of them. This function is supposed to be used to parallelize
+    processing.
+
+    Args:
+        params: a tuple with eight elements: 1) the indexes of the features
+            to compare, 2) the number of features, 3) the partitions for each
+            feature, 4) the number of permutations to compute the p-value, 5)
+            the number of threads to use for parallelization, 6) the ratio
+            between the number of chunks and the number of threads, 7) the
+            executor to use for cdist parallelization, and 8) the executor to use
+            for parallelization of permutations.
+
+    Returns:
+        Returns a tuple with three arrays. The first array has the CCC
+        coefficients, the second array has the indexes of the partitions that
+        maximized the coefficient, and the third array has the p-values.
+    """
+    params, gpu_id = params_and_gpu
+    (
+        idx_list,
+        n_features,
+        parts,
+        pvalue_n_perms,
+        default_n_threads,
+        n_chunks_threads_ratio,
+        feat_map,
+    ) = params
+    print("hi, mpi_gpu_compute_coef")
+    print(f"[INFO] Running chunk on GPU {gpu_id}")
+
+    with (
+        cuda.gpus[gpu_id],
+        ThreadPoolExecutor(max_workers=default_n_threads) as cdist_executor,
+        ThreadPoolExecutor(max_workers=default_n_threads) as perm_executor
+    ):
+        def cdist_func(x, y):
+            return cdist_parts_parallel(x, y, cdist_executor)
+
+        n_idxs = len(idx_list)
+        max_ari_list = np.full(n_idxs, np.nan, dtype=float)
+        max_part_idx_list = np.zeros((n_idxs, 2), dtype=np.uint64)
+        pvalues = np.full(n_idxs, np.nan, dtype=float)
+
+        for idx, data_idx in enumerate(idx_list):
+            i, j = get_coords_from_index(n_features, data_idx)
+
+            # get partitions for the pair of objects
+            # obji_parts, objj_parts = parts[i], parts[j]
+            obji_parts, objj_parts = parts[feat_map[i]], parts[feat_map[j]]
+
+
+            # compute ari only if partitions are not marked as "missing"
+            # (negative values), which is assigned when partitions have
+            # one cluster (usually when all data in the feature has the same
+            # value).
+            if obji_parts[0, 0] == -2 or objj_parts[0, 0] == -2:
+                continue
+
+            # compare all partitions of one object to the all the partitions
+            # of the other object, and get the maximium ARI
+            max_ari_list[idx], max_part_idx_list[idx] = compute_ccc(
+                obji_parts, objj_parts, cdist_func
+            )
+
+            # compute p-value if requested
+            if pvalue_n_perms is not None and pvalue_n_perms > 0:
+                # with ThreadPoolExecutor(max_workers=pvalue_n_jobs) as executor_perms:
+                # select the variable that generated more partitions as the one
+                # to permute
+                obj_parts_sel_i = obji_parts
+                obj_parts_sel_j = objj_parts
+                if (obji_parts[:, 0] >= 0).sum() > (objj_parts[:, 0] >= 0).sum():
+                    obj_parts_sel_i = objj_parts
+                    obj_parts_sel_j = obji_parts
+
+                p_ccc_values = np.full(pvalue_n_perms, np.nan, dtype=float)
+                p_inputs = get_chunks(
+                    pvalue_n_perms, default_n_threads, n_chunks_threads_ratio
+                )
+                p_inputs = [
+                    (
+                        i,
+                        obj_parts_sel_i,
+                        obj_parts_sel_j,
+                        len(i),
+                    )
+                    for i in p_inputs
+                ]
+
+                for params_perm, p_ccc_val in zip(
+                    p_inputs,
+                    perm_executor.map(compute_ccc_perms, p_inputs),
+                ):
+                    p_idx = params_perm[0]
+                    p_ccc_values[p_idx] = p_ccc_val
+
+                pvalues[idx] = (np.sum(p_ccc_values >= max_ari_list[idx]) + 1) / (
+                    pvalue_n_perms + 1
+                )
+
+        return max_ari_list, max_part_idx_list, pvalues
 
 def get_n_workers(n_jobs: int | None) -> int:
     """
@@ -583,7 +793,6 @@ def gpu_compute_coef(params_and_gpu):
         n_chunks_threads_ratio,
     ) = params
     print("hi, gpu_compute_coef")
-
     print(f"[INFO] Running chunk on GPU {gpu_id}")
 
     # Each process initializes its own executor
@@ -724,7 +933,6 @@ def ccc_original(
             singleton cases were found (-1; usually because input data has all the same
             value) or for categorical features (-2).
     """
-    print("hi, ccc-original")
     
     n_objects = None
     n_features = None
@@ -939,12 +1147,13 @@ def ccc_mpi(
     """
     MPI implementation of the Clustermatch Correlation Coefficient (CCC).
     This function should be called by all MPI processes.
-
+    
     Args:
-        Same as ccc_original() in impl.py.
+        Same as ccc() in impl.py, except n_jobs and executor-related parameters 
+        are not needed since MPI handles parallelization.
     
     Returns:
-        Same as ccc_original() in impl.py
+        Same as ccc() in impl.py
     """
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -1032,19 +1241,24 @@ def ccc_mpi(
     if rank == 0:
         # Split features among processes
         chunks = np.array_split(range(n_features), size)
+        X_chunks = [X[chunk] for chunk in chunks]
+        X_type_chunks = [X_numerical_type[chunk] for chunk in chunks]
                 
     else:
-        X = None
-        X_numerical_type = None
+        X_chunks = None
+        X_type_chunks = None
         chunks = None
     
     local_chunk = comm.scatter(chunks, root=0)
-    X = comm.bcast(X, root=0)
-    X_numerical_type = comm.bcast(X_numerical_type, root=0)
-    
+    local_X = comm.scatter(X_chunks, root=0)
+    local_X_type = comm.scatter(X_type_chunks, root=0)
+        
     # Compute local partitions
-    parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
-    
+    # parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    local_parts = np.zeros((len(local_chunk), range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+
+    feature_to_local = {f: i for i, f in enumerate(local_chunk)}
+
     with (
         ThreadPoolExecutor(max_workers=n_workers) as executor,
         ProcessPoolExecutor(max_workers=n_workers) as pexecutor,
@@ -1080,30 +1294,70 @@ def ccc_mpi(
                 [
                     (
                         feature_k_pair,
-                        X[feature_k_pair[0]],
-                        X_numerical_type[feature_k_pair[0]],
+                        local_X[feature_to_local[feature_k_pair[0]]],
+                        local_X_type[feature_to_local[feature_k_pair[0]]],
                     )
                     for feature_k_pair in chunk
                 ]
                 for chunk in inputs
             ]
 
-            for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
-                # get the set of feature indexes and cluster indexes
-                f_idxs = [p[0][0] for p in params]
-                c_idxs = [p[0][1] for p in params]
+            # for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
+            #     # get the set of feature indexes and cluster indexes
+            #     f_idxs = [p[0][0] for p in params]
+            #     c_idxs = [p[0][1] for p in params]
 
-                # update the partitions for each feature-k pair
-                parts[f_idxs, c_idxs] = ps
+            #     # update the partitions for each feature-k pair
+            #     parts[f_idxs, c_idxs] = ps
     
-    comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
     
+            for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
+                for (f_idx, c_idx), part_values in zip([(p[0][0], p[0][1]) for p in params], ps):
+                    local_idx = list(local_chunk).index(f_idx)
+                    local_parts[local_idx, c_idx] = part_values
+
+    # comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
+    
+    all_parts = comm.gather(local_parts, root=0)
+
     # Compute CCC coefficients
     n_features_comp = (n_features * (n_features - 1)) // 2
     cm_values = np.full(n_features_comp, np.nan)
     cm_pvalues = np.full(n_features_comp, np.nan)
     max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
-    
+
+
+    if rank == 0:
+        parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+        for proc_rank, part in enumerate(all_parts):
+            for i, f_idx in enumerate(chunks[proc_rank]):
+                parts[f_idx] = part[i]
+
+        all_local_indices = np.array_split(range(n_features_comp), size)
+        all_needed_feats = []
+
+        for local_idx in all_local_indices:
+            feats = set()
+            for idx in local_idx:
+                i, j = get_coords_from_index(n_features, idx)
+                feats.update([i, j])
+            all_needed_feats.append(sorted(list(feats)))
+
+        send_parts = [parts[feat_list] for feat_list in all_needed_feats]
+        send_feat_idx = all_needed_feats
+    else:
+        send_parts = None
+        send_feat_idx = None
+        parts = None
+
+
+    sub_parts = comm.scatter(send_parts, root=0)
+    needed_feat_indices = comm.scatter(send_feat_idx, root=0)
+
+    # {original feature index → local index in sub_parts}
+    feat_map = {f: i for i, f in enumerate(needed_feat_indices)}
+
+        
     # # Distribute computation across processes
     local_indices = np.array_split(range(n_features_comp), size)[rank]
     
@@ -1138,18 +1392,19 @@ def ccc_mpi(
                 (
                     i,
                     n_features,
-                    parts,
+                    sub_parts,
                     pvalue_n_perms,
                     n_workers,
                     n_chunks_threads_ratio,
                     cdist_executor,
                     inner_executor,
+                    feat_map
                 )
                 for i in inputs
             ]
 
             for params, (max_ari_list, max_part_idx_list, pvalues) in zip(
-                inputs, map_func(compute_coef, inputs)
+                inputs, map_func(mpi_compute_coef, inputs)
             ):
                 f_idx = params[0]
 
@@ -1217,7 +1472,6 @@ def ccc_gpu(
     Returns:
         Same as ccc_original() in impl.py
     """
-    print("hello, ccc_gpu")
     n_objects = None
     n_features = None
     # this is a boolean array of size n_features with True if the feature is numerical and False otherwise
@@ -1428,6 +1682,7 @@ def ccc_gpu(
             return cm_values, cm_pvalues
         else:
             return cm_values
+        
 
 def ccc_mpi_gpu(
     x: NDArray,
@@ -1450,7 +1705,7 @@ def ccc_mpi_gpu(
         Same as ccc_original() in impl.py
     """
     import socket
-
+    print("hi, ccc_mpi_gpu")
     def get_local_rank():
         comm = MPI.COMM_WORLD
         rank = comm.Get_rank()
@@ -1540,23 +1795,28 @@ def ccc_mpi_gpu(
     if range_n_clusters.shape[0] == 0:
         raise ValueError(f"Data has too few objects: {n_objects}")
     
-     
+    
     # Distribute data for partitioning
     if rank == 0:
         # Split features among processes
         chunks = np.array_split(range(n_features), size)
+        X_chunks = [X[chunk] for chunk in chunks]
+        X_type_chunks = [X_numerical_type[chunk] for chunk in chunks]
                 
     else:
-        X = None
-        X_numerical_type = None
+        X_chunks = None
+        X_type_chunks = None
         chunks = None
     
     local_chunk = comm.scatter(chunks, root=0)
-    X = comm.bcast(X, root=0)
-    X_numerical_type = comm.bcast(X_numerical_type, root=0)
-    
+    local_X = comm.scatter(X_chunks, root=0)
+    local_X_type = comm.scatter(X_type_chunks, root=0)
+        
     # Compute local partitions
-    parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    # parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+    local_parts = np.zeros((len(local_chunk), range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+
+    feature_to_local = {f: i for i, f in enumerate(local_chunk)}
     
     with (
         ThreadPoolExecutor(max_workers=n_workers) as executor,
@@ -1593,8 +1853,8 @@ def ccc_mpi_gpu(
                 [
                     (
                         feature_k_pair,
-                        X[feature_k_pair[0]],
-                        X_numerical_type[feature_k_pair[0]],
+                        local_X[feature_to_local[feature_k_pair[0]]],
+                        local_X_type[feature_to_local[feature_k_pair[0]]],
                     )
                     for feature_k_pair in chunk
                 ]
@@ -1602,14 +1862,50 @@ def ccc_mpi_gpu(
             ]
 
             for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
-                # get the set of feature indexes and cluster indexes
-                f_idxs = [p[0][0] for p in params]
-                c_idxs = [p[0][1] for p in params]
+                for (f_idx, c_idx), part_values in zip([(p[0][0], p[0][1]) for p in params], ps):
+                    local_idx = list(local_chunk).index(f_idx)
+                    local_parts[local_idx, c_idx] = part_values
 
-                # update the partitions for each feature-k pair
-                parts[f_idxs, c_idxs] = ps
+    # comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
     
-    comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
+    all_parts = comm.gather(local_parts, root=0)
+
+    # Compute CCC coefficients
+    n_features_comp = (n_features * (n_features - 1)) // 2
+    cm_values = np.full(n_features_comp, np.nan)
+    cm_pvalues = np.full(n_features_comp, np.nan)
+    max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
+
+
+    if rank == 0:
+        parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
+        for proc_rank, part in enumerate(all_parts):
+            for i, f_idx in enumerate(chunks[proc_rank]):
+                parts[f_idx] = part[i]
+
+        all_local_indices = np.array_split(range(n_features_comp), size)
+        all_needed_feats = []
+
+        for local_idx in all_local_indices:
+            feats = set()
+            for idx in local_idx:
+                i, j = get_coords_from_index(n_features, idx)
+                feats.update([i, j])
+            all_needed_feats.append(sorted(list(feats)))
+
+        send_parts = [parts[feat_list] for feat_list in all_needed_feats]
+        send_feat_idx = all_needed_feats
+    else:
+        send_parts = None
+        send_feat_idx = None
+        parts = None
+
+
+    sub_parts = comm.scatter(send_parts, root=0)
+    needed_feat_indices = comm.scatter(send_feat_idx, root=0)
+
+    # {original feature index → local index in sub_parts}
+    feat_map = {f: i for i, f in enumerate(needed_feat_indices)}
     
     # Compute CCC coefficients
     n_features_comp = (n_features * (n_features - 1)) // 2
@@ -1617,19 +1913,13 @@ def ccc_mpi_gpu(
     cm_pvalues = np.full(n_features_comp, np.nan)
     max_parts = np.zeros((n_features_comp, 2), dtype=np.uint64)
     
-    # # Distribute computation across processes
+    # Distribute computation across processes
     local_indices = np.array_split(range(n_features_comp), size)[rank]
     local_rank = get_local_rank()
     n_gpus = torch.cuda.device_count()
     gpu_id = get_local_rank() % n_gpus
     hostname = socket.gethostname()
     print(f"[Rank {rank} on {hostname}] Local rank: {local_rank}, GPUs available: {n_gpus}")
-
-    # Ensure variables are defined even if no work is assigned
-    local_cm_values = np.array([])
-    local_max_parts = np.zeros((0, 2), dtype=np.uint64)
-    local_cm_pvalues = np.array([])
-
 
     with (
         ThreadPoolExecutor(max_workers=n_workers) as executor,
@@ -1656,6 +1946,10 @@ def ccc_mpi_gpu(
 
         # iterate over all chunks of object pairs and compute the coefficient
         # (only for local indices assigned to this MPI process)
+        local_cm_values = np.array([], dtype=np.float64)
+        local_max_parts = np.zeros((0, 2), dtype=np.uint64)
+        local_cm_pvalues = np.array([], dtype=np.float64)
+        
         if len(local_indices) > 0 and n_gpus > 0:
             pair_chunks = get_chunks(local_indices, n_workers, n_chunks_threads_ratio)
             
@@ -1664,10 +1958,11 @@ def ccc_mpi_gpu(
                     (
                         idxs,
                         n_features,
-                        parts,
+                        sub_parts,
                         pvalue_n_perms,
                         n_workers,
-                        n_chunks_threads_ratio
+                        n_chunks_threads_ratio,
+                        feat_map
                     ),
                     gpu_id
                 )
@@ -1676,7 +1971,7 @@ def ccc_mpi_gpu(
 
             max_ari_all, max_part_idx_all, pval_all = [], [], []
             with ThreadPoolExecutor(max_workers=min(len(inputs), n_gpus)) as pool:
-                results = list(pool.map(gpu_compute_coef, inputs))
+                results = list(pool.map(mpi_gpu_compute_coef, inputs))
 
             for result in results:
                 max_ari_all.append(result[0])
@@ -1766,12 +2061,4 @@ def ccc(
     
     else:
         print("original")
-        # return 3345
         return ccc_original(x,y,internal_n_clusters,return_parts,n_chunks_threads_ratio,n_jobs,pvalue_n_perms,partitioning_executor)
-
-# if __name__ =="__main__":
-#     np.random.seed(123)
-#     x = np.random.rand(100)
-#     y = np.random.rand(100)
-#     result= ccc(x, y, gpu=True, node=2)
-#     print(result)

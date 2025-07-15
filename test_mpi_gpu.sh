@@ -1,33 +1,40 @@
 #!/bin/bash
 #SBATCH --job-name=ccc_simple_test
-#SBATCH --output=ccc_test_4rank2gpu_%j.out
-#SBATCH --error=ccc_test_4rank2gpu_%j.err
+#SBATCH --output=ccc_gpu_24rank8gpu_%j.out
+#SBATCH --error=ccc_gpu_24rank8gpu_%j.err
 #SBATCH --nodes=1
-#SBATCH --nodelist=gypsum-gpu[160-164,166,168,171,173-177,181,190-192]
 #SBATCH --mem=370G
 #SBATCH --ntasks-per-node=24
-#SBATCH --gres=gpu:8
+#SBATCH --gpus=8
+#SBATCH --constraint=1080ti
 #SBATCH --partition=gpu
 #SBATCH --time=01:00:00
 #SBATCH --exclusive
 
 set -e
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
-# Parameters 
+# Parameters
 PYTHON_SCRIPT=test_mpi_gpu.py
 PYTHONPATH=./libs
 
 SIZE=10000000
-FEATURES=4
-RANKS=24
+FEATURES=16
+# RANKS=24
+
+# OUTPUT=$(env PYTHONPATH=$PYTHONPATH \
+#         SIZE=$SIZE FEATURES=$FEATURES \
+#         mpiexec -n $RANKS python $PYTHON_SCRIPT)
 
 OUTPUT=$(env PYTHONPATH=$PYTHONPATH \
-        SIZE=$SIZE FEATURES=$FEATURES \
-        mpiexec -n $RANKS python $PYTHON_SCRIPT)
+       SIZE=$SIZE FEATURES=$FEATURES \
+       python $PYTHON_SCRIPT)
 
-TIME_TAKEN=$(echo "$OUTPUT" \
-            | grep "\[rank 0\]" \
-            | grep -oE "[0-9]+\.[0-9]+")
+# TIME_TAKEN=$(echo "$OUTPUT" \
+#             | grep "\[rank 0\]" \
+#             | grep -oE "[0-9]+\.[0-9]+")
+
+TIME_TAKEN=$(echo "$OUTPUT")
 
 echo "$OUTPUT"
 echo "Time taken: $TIME_TAKEN seconds"
