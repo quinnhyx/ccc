@@ -672,7 +672,6 @@ def mpi_gpu_compute_coef(params_and_gpu):
         n_chunks_threads_ratio,
         feat_map,
     ) = params
-    print("hi, mpi_gpu_compute_coef")
     print(f"[INFO] Running chunk on GPU {gpu_id}")
 
     with (
@@ -792,7 +791,7 @@ def gpu_compute_coef(params_and_gpu):
         default_n_threads,
         n_chunks_threads_ratio,
     ) = params
-    print("hi, gpu_compute_coef")
+
     print(f"[INFO] Running chunk on GPU {gpu_id}")
 
     # Each process initializes its own executor
@@ -1230,7 +1229,6 @@ def ccc_mpi(
     n_workers = comm.bcast(n_workers, root=0)
     
     # get matrix of partitions for each object pair
-    
     range_n_clusters = get_range_n_clusters(n_objects, internal_n_clusters)
 
     if range_n_clusters.shape[0] == 0:
@@ -1254,7 +1252,6 @@ def ccc_mpi(
     local_X_type = comm.scatter(X_type_chunks, root=0)
         
     # Compute local partitions
-    # parts = np.zeros((n_features, range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
     local_parts = np.zeros((len(local_chunk), range_n_clusters.shape[0], n_objects), dtype=np.int16) - 1
 
     feature_to_local = {f: i for i, f in enumerate(local_chunk)}
@@ -1301,22 +1298,11 @@ def ccc_mpi(
                 ]
                 for chunk in inputs
             ]
-
-            # for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
-            #     # get the set of feature indexes and cluster indexes
-            #     f_idxs = [p[0][0] for p in params]
-            #     c_idxs = [p[0][1] for p in params]
-
-            #     # update the partitions for each feature-k pair
-            #     parts[f_idxs, c_idxs] = ps
-    
     
             for params, ps in zip(inputs, map_func(get_feature_parts, inputs)):
                 for (f_idx, c_idx), part_values in zip([(p[0][0], p[0][1]) for p in params], ps):
                     local_idx = list(local_chunk).index(f_idx)
                     local_parts[local_idx, c_idx] = part_values
-
-    # comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
     
     all_parts = comm.gather(local_parts, root=0)
 
@@ -1614,7 +1600,6 @@ def ccc_gpu(
         if n_workers > 1:
             if n_features_comp == 1:
                 map_func = map
-
             else:
                 map_func = pexecutor.map
 
@@ -1657,8 +1642,6 @@ def ccc_gpu(
             max_parts = np.vstack(max_part_idx_all)
             cm_pvalues = np.concatenate(pval_all)
             
-            # print(f"cm_values: {cm_pvalues}, max_parts: {max_parts}, cm_pvalues: {cm_pvalues}")
-
     # return an array of values or a single scalar, depending on the input data
     if cm_values.shape[0] == 1:
         if return_parts:
@@ -1705,7 +1688,6 @@ def ccc_mpi_gpu(
         Same as ccc_original() in impl.py
     """
     import socket
-    print("hi, ccc_mpi_gpu")
     def get_local_rank():
         comm = MPI.COMM_WORLD
         rank = comm.Get_rank()
@@ -1865,8 +1847,6 @@ def ccc_mpi_gpu(
                 for (f_idx, c_idx), part_values in zip([(p[0][0], p[0][1]) for p in params], ps):
                     local_idx = list(local_chunk).index(f_idx)
                     local_parts[local_idx, c_idx] = part_values
-
-    # comm.Allreduce(MPI.IN_PLACE, parts, op=MPI.MAX)
     
     all_parts = comm.gather(local_parts, root=0)
 
@@ -1933,14 +1913,10 @@ def ccc_mpi_gpu(
         # already performed at this level. Otherwise, more threads than
         # specified by the user are started.
         map_func = map
-        # cdist_executor = False
-        # inner_executor = DummyExecutor()
 
         if n_workers > 1 and len(local_indices) > 0:
             if len(local_indices) == 1:
                 map_func = map
-                # cdist_executor = executor
-                # inner_executor = pexecutor
             else:
                 map_func = pexecutor.map
 
@@ -2040,8 +2016,6 @@ def ccc(
     
 ) -> tuple[NDArray[float], NDArray[float], NDArray[np.uint64], NDArray[np.int16]]:
 
-    # if node < 1:
-    #     raise ValueError(f"Number of nodexs cannot be negative.")
     
     if gpu == True and torch.cuda.is_available() == False:
         raise RuntimeError("GPU not found. Please ensure CUDA is available.")

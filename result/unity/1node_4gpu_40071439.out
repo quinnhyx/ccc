@@ -1,0 +1,602 @@
+Allocated nodes:
+gypsum-gpu134
+=== NODES=1 RANKS_PER_NODE=24 TOTAL_RANKS=24 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=1===
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.40 seconds
+[rank 0] Time elapsed: 188.6413 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 12.94 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.97 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.15 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.86 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.37 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.65 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 14.09 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 8 on gypsum-gpu134] Local rank: 8, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.63 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 9 on gypsum-gpu134] Local rank: 9, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.61 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 10 on gypsum-gpu134] Local rank: 10, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.74 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 11 on gypsum-gpu134] Local rank: 11, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.43 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 12 on gypsum-gpu134] Local rank: 12, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.52 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 13 on gypsum-gpu134] Local rank: 13, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.34 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 14 on gypsum-gpu134] Local rank: 14, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.23 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 15 on gypsum-gpu134] Local rank: 15, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.02 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 16 on gypsum-gpu134] Local rank: 16, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.97 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 17 on gypsum-gpu134] Local rank: 17, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.30 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 18 on gypsum-gpu134] Local rank: 18, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 14.88 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 19 on gypsum-gpu134] Local rank: 19, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.87 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 20 on gypsum-gpu134] Local rank: 20, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.87 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 21 on gypsum-gpu134] Local rank: 21, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.37 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 22 on gypsum-gpu134] Local rank: 22, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.90 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 23 on gypsum-gpu134] Local rank: 23, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.97 seconds
+Time taken:188.6413
+=== NODES=1 RANKS_PER_NODE=8 TOTAL_RANKS=8 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=1===
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 25.65 seconds
+[rank 0] Time elapsed: 207.9503 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 25.68 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.75 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 27.07 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 26.77 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 27.04 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.88 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 26.19 seconds
+Time taken:207.9503
+=== NODES=1 RANKS_PER_NODE=24 TOTAL_RANKS=24 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=2===
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.52 seconds
+[rank 0] Time elapsed: 186.6499 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.38 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.96 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.93 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.19 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.85 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.74 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.09 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 8 on gypsum-gpu134] Local rank: 8, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.07 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 9 on gypsum-gpu134] Local rank: 9, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.77 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 10 on gypsum-gpu134] Local rank: 10, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.62 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 11 on gypsum-gpu134] Local rank: 11, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.94 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 12 on gypsum-gpu134] Local rank: 12, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.92 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 13 on gypsum-gpu134] Local rank: 13, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.73 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 14 on gypsum-gpu134] Local rank: 14, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.04 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 15 on gypsum-gpu134] Local rank: 15, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.24 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 16 on gypsum-gpu134] Local rank: 16, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.79 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 17 on gypsum-gpu134] Local rank: 17, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 14.30 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 18 on gypsum-gpu134] Local rank: 18, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 14.21 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 19 on gypsum-gpu134] Local rank: 19, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.37 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 20 on gypsum-gpu134] Local rank: 20, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.88 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 21 on gypsum-gpu134] Local rank: 21, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.09 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 22 on gypsum-gpu134] Local rank: 22, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.18 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 23 on gypsum-gpu134] Local rank: 23, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.19 seconds
+Time taken:186.6499
+=== NODES=1 RANKS_PER_NODE=8 TOTAL_RANKS=8 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=2===
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 27.47 seconds
+[rank 0] Time elapsed: 208.4861 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 27.09 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.10 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 26.99 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 26.03 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 26.52 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.77 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 26.40 seconds
+Time taken:208.4861
+=== NODES=1 RANKS_PER_NODE=24 TOTAL_RANKS=24 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=3===
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.60 seconds
+[rank 0] Time elapsed: 186.4823 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.31 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.27 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.01 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.51 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.30 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.77 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.99 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 8 on gypsum-gpu134] Local rank: 8, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.65 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 9 on gypsum-gpu134] Local rank: 9, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.32 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 10 on gypsum-gpu134] Local rank: 10, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.31 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 11 on gypsum-gpu134] Local rank: 11, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.99 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 12 on gypsum-gpu134] Local rank: 12, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 13.51 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 13 on gypsum-gpu134] Local rank: 13, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.12 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 14 on gypsum-gpu134] Local rank: 14, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.94 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 15 on gypsum-gpu134] Local rank: 15, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.46 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 16 on gypsum-gpu134] Local rank: 16, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.94 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 17 on gypsum-gpu134] Local rank: 17, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 13.06 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 18 on gypsum-gpu134] Local rank: 18, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 13.56 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 19 on gypsum-gpu134] Local rank: 19, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 13.20 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 20 on gypsum-gpu134] Local rank: 20, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 12.89 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 21 on gypsum-gpu134] Local rank: 21, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 12.98 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 22 on gypsum-gpu134] Local rank: 22, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 12.76 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 23 on gypsum-gpu134] Local rank: 23, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 12.98 seconds
+Time taken:186.4823
+=== NODES=1 RANKS_PER_NODE=8 TOTAL_RANKS=8 THREADS=1 FEATURES=16 SIZE=10000000 RUN_ID=3===
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 1 on gypsum-gpu134] Local rank: 1, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 26.84 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 2 on gypsum-gpu134] Local rank: 2, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.97 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 3 on gypsum-gpu134] Local rank: 3, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 26.87 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 4 on gypsum-gpu134] Local rank: 4, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 27.10 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 5 on gypsum-gpu134] Local rank: 5, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 1
+Compute coef: 26.91 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 6 on gypsum-gpu134] Local rank: 6, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 2
+Compute coef: 26.78 seconds
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 7 on gypsum-gpu134] Local rank: 7, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 3
+Compute coef: 26.33 seconds
+[rank 0] Calling CCC...
+mpi-gpu
+hi, ccc_mpi_gpu
+[Rank 0 on gypsum-gpu134] Local rank: 0, GPUs available: 4
+hi, mpi_gpu_compute_coef
+[INFO] Running chunk on GPU 0
+Compute coef: 26.41 seconds
+[rank 0] Time elapsed: 208.9875 seconds
+Time taken:208.9875

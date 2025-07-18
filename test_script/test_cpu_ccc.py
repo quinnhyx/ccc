@@ -2,15 +2,15 @@ import numpy as np
 
 import pandas as pd
 
-from ccc.coef import ccc
+from ccc.coef.impl import ccc
 
 import time
 
 
 
-data_sizes = [10000,100000,1000000,10000000]  # 100 to 10,000,000
+data_sizes = [10000000]  # 100 to 10,000,000
 
-feature_counts = list(range(2, 21, 2))  # 2, 4, 6, ..., 20
+feature_counts = [16]  # 2, 4, 6, ..., 20
 
 
 

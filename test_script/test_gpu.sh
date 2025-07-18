@@ -4,9 +4,13 @@
 
 #SBATCH --nodes=1
 
-#SBATCH --gres=gpu:1080ti:8
+#SBATCH --gres=gpu:8
 
-#SBATCH --ntasks-per-node=24
+#SBATCH --ntasks-per-node=1
+
+#SBATCH --cpus-per-task=24
+
+#SBATCH --constraint=1080ti
 
 #SBATCH --time=01:00:00
 
